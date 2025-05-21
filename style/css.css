@@ -57,6 +57,18 @@ p {
   font-size: 18px;
 }
 
+/* For Original (blue) */
+#yomz-original-carousel .product-thumbs .swiper-slide-thumb-active img {
+  border: 3px solid #1EB9F0 !important;
+  border-radius: 6px;
+}
+
+/* For Sours (green) */
+#yomz-sours-carousel .product-thumbs .swiper-slide-thumb-active img {
+  border: 3px solid #0AA13C !important;
+  border-radius: 6px;
+}
+
 /* .next-prev-btn .next-btn {
   background: #1eb9f0;
 } */
@@ -80,6 +92,14 @@ p {
   background-color: #0AA03C;
   border-color: #0AA03C;
 } */
+
+.imgBorderGreen {
+  border: 3px solid #0AA03C !important;
+}
+
+.imgBorderBlue {
+  border: 3px solid #1EB9F0 !important;
+}
 
 .fontGreen {
   color: #0AA03C !important;
