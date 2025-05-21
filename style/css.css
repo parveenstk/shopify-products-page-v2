@@ -57,9 +57,9 @@ p {
   font-size: 18px;
 }
 
-
-
-.container{max-width: 1200px;}
+.container {
+  max-width: 1200px;
+}
 
 .cursor {
   cursor: pointer !important;
@@ -79,7 +79,11 @@ p {
   padding: 10px 0;
 }
 
-.topheader p{color: #fff; margin-bottom: 0px; text-align: center;}
+.topheader p {
+  color: #fff;
+  margin-bottom: 0px;
+  text-align: center;
+}
 
 header {
   padding: 20px 0;
@@ -325,19 +329,19 @@ header {
 }
 
 .nastya-faves h2 {
-    text-transform: uppercase;
-    font-size: 75px;
-    color: #000;
-    text-align: center;
-    margin-bottom: 50px;
-    background: #fff;
-    border-radius: 26px;
-    border: 1px solid #000;
-    display: inline-block !important;
-    padding-left: 50px;
-    padding-right: 50px;
-    /* text-align: center; */
-    /* justify-content: center; */
+  text-transform: uppercase;
+  font-size: 75px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 50px;
+  background: #fff;
+  border-radius: 26px;
+  border: 1px solid #000;
+  display: inline-block !important;
+  padding-left: 50px;
+  padding-right: 50px;
+  /* text-align: center; */
+  /* justify-content: center; */
 }
 
 .meet-founder {
@@ -745,7 +749,9 @@ header {
 
 /*Table*/
 
-  .table-com{padding: 40px 0 80px !important;}
+.table-com {
+  padding: 40px 0 80px !important;
+}
 
 .heading-compres {
   font-size: 32px;
@@ -970,12 +976,12 @@ th.new-calistoga-font img {
   color: #000;
   text-align: center;
   margin-bottom: 30px;
-      background: #fff;
-    border-radius: 26px;
-    border: 1px solid #000;
-    display: inline-block !important;
-    padding-left: 50px;
-    padding-right: 50px;
+  background: #fff;
+  border-radius: 26px;
+  border: 1px solid #000;
+  display: inline-block !important;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /*results*/
@@ -989,10 +995,11 @@ th.new-calistoga-font img {
   padding: 130px 0 180px;
   background-repeat: no-repeat;
 }
-  .beary-deatils img {
-    background: #fff;
-    padding: 20px;
-    border-radius: 26px;
+
+.beary-deatils img {
+  background: #fff;
+  padding: 20px;
+  border-radius: 26px;
 }
 
 .happy-beary .shopnow-btn a.btn {
@@ -1113,20 +1120,20 @@ th.new-calistoga-font img {
 }
 
 .supplement-details h3 {
-    font-size: 54px;
-    border-radius: 26px;
-    border: 1px solid #000;
-    display: inline-block !important;
-    padding-left: 30px;
-    padding-right: 30px;
-    background: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  font-size: 54px;
+  border-radius: 26px;
+  border: 1px solid #000;
+  display: inline-block !important;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .supplement-details p {
-    font-size: 28px;
-    margin: 20px 0px;
+  font-size: 28px;
+  margin: 20px 0px;
 }
 
 .supplement-images {
@@ -1142,62 +1149,90 @@ th.new-calistoga-font img {
 
 /*supplement*/
 
-
 /*promise*/
 
-.promise{    background: #1EB9F0 url(../images/bry-icons.png);
-    padding: 20px 0 90px;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: 13%;}
+.promise {
+  background: #1EB9F0 url(../images/bry-icons.png);
+  padding: 20px 0 90px;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 13%;
+}
 
-.promise-block-one .icon-square{width: 20%;}
+.promise-block-one .icon-square {
+  width: 20%;
+}
+
 .promise-block-two {
-    padding: 30px 20px 20px !important;
-    margin-top: 20px;
+  padding: 30px 20px 20px !important;
+  margin-top: 20px;
 }
+
 .promise-block-one {
-    background: #fff;
-    border: 1px solid #000;
-    border-radius: 26px;
-    overflow: hidden;
-    padding: 10px 120px 10px 20px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 26px;
+  overflow: hidden;
+  padding: 10px 120px 10px 20px;
 }
-.promise-block-one p{margin-bottom: 0px;}
+
+.promise-block-one p {
+  margin-bottom: 0px;
+}
+
 .promise-block-one h4 {
-    font-size: 34px;
-    font-family: 'Century Gothic';
+  font-size: 34px;
+  font-family: 'Century Gothic';
 }
 
-.comman-list-check li{font-family: 'Century Gothic'; text-transform:uppercase; }
+.comman-list-check li {
+  font-family: 'Century Gothic';
+  text-transform: uppercase;
+}
 
-.comman-list-check li {display: flex; align-items: center; gap: 5px; margin-bottom: 10px;}
+.comman-list-check li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
 
-.comman-list-check li img{width: 22px;}
+.comman-list-check li img {
+  width: 22px;
+}
+
 /*promise*/
 
 /*supplement*/
 
+.bottom-faqs {
+  padding: 80px 0;
+}
 
-.bottom-faqs{padding: 80px 0;}
 .bottom-faqs h3 {
-    text-align: center;
-    font-size: 65px;
-    margin-bottom: 30px;
+  text-align: center;
+  font-size: 65px;
+  margin-bottom: 30px;
 }
 
 .bottom-faqs .accordion-button:not(.collapsed) {
-    background: #FFEB00;
+  background: #FFEB00;
 }
 
 .bottom-faqs .accordion-item {
-    border: 1px solid #000;
+  border: 1px solid #000;
 }
 
-.bottom-faqs h4.accordion-header{font-family: "Super Caramel";}
+.bottom-faqs h4.accordion-header {
+  font-family: "Super Caramel";
+}
 
-.bottom-faqs h4.accordion-header .accordion-button{font-size: 22px; color: #000; text-transform: uppercase; font-weight: 500;}
-
+.bottom-faqs h4.accordion-header .accordion-button {
+  font-size: 22px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+}
 
 /*ARTICLES*/
 
@@ -1213,12 +1248,12 @@ th.new-calistoga-font img {
   text-align: center;
   margin-bottom: 30px;
   text-transform: uppercase;
-      background: #fff;
-    border-radius: 26px;
-    border: 1px solid #000;
-    display: inline-block !important;
-    padding-left: 50px;
-    padding-right: 50px;
+  background: #fff;
+  border-radius: 26px;
+  border: 1px solid #000;
+  display: inline-block !important;
+  padding-left: 50px;
+  padding-right: 50px;
 
 }
 
@@ -1282,7 +1317,10 @@ th.new-calistoga-font img {
   font-family: 'Century Gothic';
 }
 
-.articlesnone-title h3{background: none; border:none;}
+.articlesnone-title h3 {
+  background: none;
+  border: none;
+}
 
 .articles .shopnow-btn {
   text-align: center;
@@ -1297,14 +1335,16 @@ th.new-calistoga-font img {
 
 }
 
-.article-items a.btn{font-family: 'Century Gothic';}
+.article-items a.btn {
+  font-family: 'Century Gothic';
+}
 
 /*ARTICLES*/
 
 /*Fotoer*/
 
 .footer1 .container {
-    max-width: 1320px;
+  max-width: 1320px;
 }
 
 footer {
@@ -1470,8 +1510,6 @@ footer .subscribe-form button {
 }
 
 /*Footer*/
-
-
 
 .desktop-header {
   display: inherit !important;
@@ -1866,8 +1904,6 @@ footer .subscribe-form button {
     margin-bottom: 41px;
   }
 
-
-
   .beary-deatils p {
     font-size: 24px;
   }
@@ -2056,8 +2092,8 @@ footer .subscribe-form button {
 }
 
 .card-cont p {
-    margin-top: 15px;
-    height: 70px;
+  margin-top: 15px;
+  height: 70px;
 }
 
 .card-cont1 h4 {
@@ -2070,11 +2106,12 @@ footer .subscribe-form button {
 }
 
 .card-cont1 {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 14px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 14px;
 }
+
 .card-cont {
   background: white;
   padding: 30px;
@@ -2090,24 +2127,26 @@ footer .subscribe-form button {
   border: 3px solid black;
 }
 
-
 /*hunger*/
 
-.hunger{padding: 50px 0 0px;}
+.hunger {
+  padding: 50px 0 0px;
+}
 
 .hunger .hunger-contact {
-    background: #ffffff;
-    border: 3px solid black;
-    border-radius: 10px;
-    padding: 34px;
-    margin: 0 auto;
+  background: #ffffff;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 34px;
+  margin: 0 auto;
 }
 
 .hunger .hunger-contact p {
-    line-height: 30px;
-    font-size: 23px;
-    margin-top: 28px;
+  line-height: 30px;
+  font-size: 23px;
+  margin-top: 28px;
 }
+
 /*hunger*/
 
 /*Products*/
@@ -2214,24 +2253,19 @@ footer .subscribe-form button {
   border: 2px solid #1EB9F0 !important;
 }
 
-.product-thumbs .swiper-slide img {
-    border: 3px solid #1EB9F0;
-    padding: 10px;
-    border-radius: 15px;
-}
-
 .form-check-input:checked {
-    background-color: #1EB9F0;
-    border-color: #1EB9F0;
+  background-color: #1EB9F0;
+  border-color: #1EB9F0;
 }
 
 .form-check-input[type=checkbox] {
-    border-radius: .25em;
-    border: 2px solid #1EB9F0;
+  border-radius: .25em;
+  border: 2px solid #1EB9F0;
 }
+
 .flavor-part p {
-    margin-bottom: 20px;
-    margin-top: 15px;
+  margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 .form-check {
@@ -2770,62 +2804,66 @@ p.people {
   margin-bottom: 10px !important;
 }
 
-
 /*Newcss*/
 .form-check-input:checked {
   background-color: #1EB9F0;
   border-color: #1EB9F0;
 }
- 
+
 #checkSour:checked {
   background-color: #0AA03C;
   border-color: #0AA03C;
 }
- 
+
 .imgBorderGreen {
   border: 3px solid #0AA03C !important;
 }
- 
+
 .imgBorderBlue {
   border: 3px solid #1EB9F0 !important;
 }
- 
+
 .fontGreen {
   color: #0AA03C !important;
 }
- 
+
 .borderGreenBox {
   border: 4px solid #0AA03C !important;
 }
- 
+
 .borderBlue {
   border: 4px solid #1EB9F0 !important;
 }
- 
+
 .buttonBlue {
   background-color: #1EB9F0 !important;
 }
- 
+
 .borderGreen {
   border: 4px solid #0AA03C !important;
 }
- 
+
 .buttonGreen {
   background-color: #0AA03C !important;
 }
- 
+
 .product-thumbs .swiper-slide {
   padding: 0px 5px;
 }
- 
-.product-thumbs .swiper-slide img {
+
+#yomz-original-carousel .product-thumbs .swiper-slide img {
   border: 3px solid #1EB9F0;
   padding: 10px;
   border-radius: 15px;
 }
+
+#yomz-sours-carousel .product-thumbs .swiper-slide img {
+  border: 3px solid #0AA03C;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 /*Newcss*/
-
-
 
 /*Products*/
 
