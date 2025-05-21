@@ -57,6 +57,14 @@ p {
   font-size: 18px;
 }
 
+#faq-yomzOriginal-2 {
+  display: none;
+}
+
+#faq-yomzSours-2 {
+  display: none;
+}
+
 .products-banner .container {
   max-width: 1100px;
 }
@@ -542,12 +550,6 @@ header {
 
 .owl-carousel .card video {
   width: 100%;
-}
-
-@media (max-width: 767px) {
-  .gtco-testimonials {
-    margin-top: 20px;
-  }
 }
 
 .gtco-testimonials h2 {
@@ -2633,6 +2635,22 @@ p.people {
 }
 
 @media screen and (max-width: 767px) {
+
+  .show2 {
+    display: block !important;
+  }
+
+  .hide2 {
+    display: none !important; 
+  }
+
+  #faq-yomzOriginal-1 {
+    display: none;
+  }
+
+  #faq-yomzSours-1 {
+    display: none;
+  }
 
   .topheader {
     padding: 7px 0;

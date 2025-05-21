@@ -33,6 +33,12 @@ const offerThree = document.getElementById('offer-three');
 const boxBorder3 = document.getElementById('offer3-boxBorder');
 const saveText3 = document.getElementById('offer3-saveText');
 
+// faqs ( yomz original & yomz sours )
+const faqOriginal1 = document.getElementById('faq-yomzOriginal-1')
+const faqOriginal2 = document.getElementById('faq-yomzOriginal-2')
+const faqSours1 = document.getElementById('faq-yomzSours-1')
+const faqSours2 = document.getElementById('faq-yomzSours-2')
+
 const handleCheckboxClick = (clicked) => {
     console.log("clicked:", clicked.value);
 
@@ -49,6 +55,10 @@ const handleCheckboxClick = (clicked) => {
 
         boxBorder3.classList.add('borderGreenBox');
         saveText3.classList.add('fontGreen');
+
+        // faq section mobile
+        faqOriginal2.classList.remove('show2');
+        faqSours2.classList.add('show2');
 
         checkOriginal.style.accentColor = 'black';
         originalButton.classList.remove('borderBlue');
@@ -72,6 +82,11 @@ const handleCheckboxClick = (clicked) => {
         boxBorder2.classList.remove('borderGreenBox');
         offer2Opt1.classList.remove('borderGreenBox');
         saveText2.classList.remove('fontGreen');
+
+        // faq section mobile
+        faqSours2.classList.remove('show2');
+        faqOriginal2.classList.add('show2');
+
         offer2Month.classList.remove('buttonGreen');
         checkSour.style.accentColor = 'green';
         soursButton.classList.remove('borderGreen');
