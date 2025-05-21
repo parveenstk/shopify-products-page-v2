@@ -110,7 +110,7 @@
                         </div>
                         <div class="swiper-slide">
                            <img src="images/slider/3.jpg" alt="image3-img" class="img-fluid">
-                        </div>                       
+                        </div>
                         <div class="swiper-slide">
                            <img src="images/slider/1.jpg" alt="image5-img" class="img-fluid">
                         </div>
@@ -128,7 +128,7 @@
                         </div>
                         <div class="swiper-slide">
                            <img src="images/slider/3.jpg" alt="..." class="img-fluid">
-                        </div>                      
+                        </div>
                         <div class="swiper-slide">
                            <img src="images/slider/1.jpg" alt="..." class="img-fluid">
                         </div>
@@ -148,7 +148,7 @@
                         </div>
                         <div class="swiper-slide">
                            <img src="images/slider/green/3.jpg" alt="image3-img" class="img-fluid">
-                        </div>                        
+                        </div>
                         <div class="swiper-slide">
                            <img src="images/slider/green/1.jpg" alt="image5-img" class="img-fluid">
                         </div>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="swiper-slide">
                            <img src="images/slider/green/3.jpg" alt="..." class="img-fluid">
-                        </div>                      
+                        </div>
                         <div class="swiper-slide">
                            <img src="images/slider/green/1.jpg" alt="..." class="img-fluid">
                         </div>
@@ -175,9 +175,9 @@
                </div>
 
 
-                <!-- FAQS -->
+               <!-- FAQS -->
 
-              <!--   <div class="top-faqs-part mt-3">
+               <!--   <div class="top-faqs-part mt-3">
                      <div class="accordion" id="accordionExample">
                           <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne">
@@ -259,7 +259,7 @@
                         <div class="classbtn1">
 
                            <!-- Yomz Original -->
-                           <div class="form-check form-checkblue">
+                           <div id="original-Button" class="form-check borderBlue">
                               <input class="form-check-input product-red" type="checkbox" value="yomzOriginal"
                                  id="checkOriginal" name="productType" onclick="handleCheckboxClick(this)" checked>
                               <label class="form-check-label cursor" for="checkOriginal">
@@ -268,7 +268,7 @@
                            </div>
 
                            <!-- Yomz Sour -->
-                           <div class="form-check form-checkred">
+                           <div id="sours-Button" class="form-check">
                               <input class="form-check-input product-green" type="checkbox" value="yomzSours"
                                  id="checkSour" name="productType" onclick="handleCheckboxClick(this)">
                               <label class="form-check-label cursor" for="checkSour">
@@ -280,7 +280,7 @@
                      </div>
                      <p class="text-center mt-3">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>
                      <div class="next-prev-btn">
-                        <button class="btn next-btn" id="nextStep1">NEXT</button>
+                        <button class="btn next-btn buttonBlue" id="nextStep1">NEXT</button>
                      </div>
                   </div>
                   <!-- first-steps -->
@@ -439,8 +439,9 @@
                            </div>
 
                            <div class="next-prev-btn next-prev-btn-new d-flex">
-                              <button id="backStep2" class="btn prev-btn"><img src="images/prev.svg" class="img-fluid"> </button>
-                              <button id="nextStep2" class="btn next-btn">NEXT STEP</button>
+                              <button id="backStep2" class="btn prev-btn"><img src="images/prev.svg" class="img-fluid">
+                              </button>
+                              <button id="nextStep2" class="btn next-btn buttonBlue">NEXT STEP</button>
                            </div>
                         </div>
 
@@ -458,7 +459,7 @@
                            <div class="box-padding">
                               <div class="classbtn1 slt-price">
                                  <div class="form-check">
-                                    <input class="form-check-input product-red" type="checkbox" value="" id="value"
+                                    <input class="form-check-input product-red" type="checkbox" value="" id="value1"
                                        checked>
                                     <label class="form-check-label" for="value">
                                        <span class="item-title">Try Once</span> <span class="tab-price">
@@ -550,8 +551,9 @@
 
                         <div class="gift-value-title">
                            <div class="next-prev-btn next-prev-btn-new d-flex">
-                              <button id="backStep3" class="btn prev-btn"><img src="images/prev.svg" class="img-fluid"> </button>
-                              <button class="btn next-btn">NEXT STEP</button>
+                              <button id="backStep3" class="btn prev-btn"><img src="images/prev.svg" class="img-fluid">
+                              </button>
+                              <button id="nextStep3" class="btn next-btn buttonBlue">NEXT STEP</button>
                            </div>
                         </div>
 
@@ -1167,7 +1169,7 @@
                <div class="subscribe-form">
                   <form class="row g-3">
                      <div class="col-12 p-0 respo">
-                        <input type="email" class="form-control" id="inputPassword2" placeholder="Your Email Address">
+                        <input type="email" class="form-control" id="inputPassword" placeholder="Your Email Address">
                         <button type="submit" class="btn btn-primary mb-3"> <img src="images/email.svg"> </button>
                      </div>
                   </form>
@@ -1483,45 +1485,10 @@
 
    </script>
    <script src='https://unpkg.com/swiper@6.5.4/swiper-bundle.min.js'></script>
-   <script type="text/javascript">
-      // product left start ---------->
-      if ($(".product-left").length) {
-         var productSlider = new Swiper('.product-slider', {
-            spaceBetween: 0,
-            centeredSlides: true,
-            loop: true,
-            direction: 'horizontal',
-            loopedSlides: 5,
-            navigation: {
-               nextEl: ".swiper-button-next",
-               prevEl: ".swiper-button-prev",
-            },
-            resizeObserver: true,
-         });
-         var productThumbs = new Swiper('.product-thumbs', {
-            spaceBetween: 0,
-            centeredSlides: false,
-            loop: true,
-            slideToClickedSlide: true,
-            direction: 'horizontal',
-            slidesPerView: 5,
-            loopedSlides: 5,
-         });
-         productSlider.controller.control = productThumbs;
-         productThumbs.controller.control = productSlider;
-
-      }
-      // product left end ---------->
-
-
-
-
-     
-
-   </script>
 
    <!-- import script -->
-   <script src="js/index.js"></script>
+   <script src="./js/index.js"></script>
+   <script type="text/javascript" src="./js/carousel.js"></script>
 </body>
 
 </html>
