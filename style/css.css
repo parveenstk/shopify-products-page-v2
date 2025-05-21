@@ -57,7 +57,9 @@ p {
   font-size: 18px;
 }
 
-.container{max-width: 1200px;}
+.container {
+  max-width: 1200px;
+}
 
 .cursor {
   cursor: pointer !important;
@@ -2090,23 +2092,24 @@ footer .subscribe-form button {
 }
 
 .product-thumbs .swiper-slide img {
-    border: 3px solid #1EB9F0;
-    padding: 10px;
-    border-radius: 15px;
+  border: 3px solid #1EB9F0;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 .form-check-input:checked {
-    background-color: #1EB9F0;
-    border-color: #1EB9F0;
+  background-color: #1EB9F0;
+  border-color: #1EB9F0;
 }
 
 .form-check-input[type=checkbox] {
-    border-radius: .25em;
-    border: 2px solid #1EB9F0;
+  border-radius: .25em;
+  border: 2px solid #1EB9F0;
 }
+
 .flavor-part p {
-    margin-bottom: 20px;
-    margin-top: 15px;
+  margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 .form-check {
