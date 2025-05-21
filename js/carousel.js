@@ -30,7 +30,7 @@ if ($(".product-left").length) {
             loop: true,
             slideToClickedSlide: true,
             direction: 'horizontal',
-            slidesPerView: 5,
+            slidesPerView: 4,
             loopedSlides: slideCount,
         });
 
