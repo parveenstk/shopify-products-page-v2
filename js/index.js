@@ -34,7 +34,7 @@ const boxBorder3 = document.getElementById('offer3-boxBorder');
 const saveText3 = document.getElementById('offer3-saveText');
 
 const handleCheckboxClick = (clicked) => {
-    // console.log("clicked:", clicked.value);
+    console.log("clicked:", clicked.value);
 
     if (clicked.value === 'yomzSours') {
         // Show sour
