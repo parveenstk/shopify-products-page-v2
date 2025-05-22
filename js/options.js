@@ -1,4 +1,4 @@
-// Offer2 - Selection Options
+// Offer2 ( Best Value Box ) - Selection Options
 
 const selectedOpt = (clicked) => {
     const opts = document.querySelectorAll('.offer2-opts');

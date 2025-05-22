@@ -59,6 +59,66 @@ p {
 
 /* New Css */
 
+.step {
+  display: flex;
+  align-items: center;
+
+  .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+  }
+
+  .completed {
+    background-color: #4CAF50 !important;
+  }
+
+  .active {
+    background-color: #2c3e50 !important;
+  }
+
+  .bar {
+    width: 50px;
+    height: 5px;
+    background-color: #ccc;
+    margin: 0 10px;
+  }
+
+  .compltedBar {
+    width: 50px;
+    height: 5px;
+    background-color: #4CAF50;
+    margin: 0 10px;
+  }
+}
+
+.circleCompleted {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.circleActive {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}
+
 .offer2-opts {
   border: 1px solid #dee2e6 !important;
 }
@@ -1859,45 +1919,6 @@ p.daily-natu {
   display: flex;
   align-items: center;
   font-family: sans-serif;
-}
-
-.step {
-  display: flex;
-  align-items: center;
-
-  .completed {
-    background-color: #4CAF50;
-  }
-}
-
-.circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #ccc;
-  color: white;
-  text-align: center;
-  line-height: 30px;
-  font-weight: bold;
-}
-
-.circle.completed {
-  background-color: #4CAF50;
-}
-
-.circle.active {
-  background-color: #2c3e50;
-}
-
-.bar {
-  width: 50px;
-  height: 5px;
-  background-color: #ccc;
-  margin: 0 10px;
-}
-
-.bar.completed {
-  background-color: #4CAF50;
 }
 
 .slt-price .form-check-label {

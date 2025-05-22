@@ -41,11 +41,7 @@ const faqSours1 = document.getElementById('faq-yomzSours-1');
 const faqSours2 = document.getElementById('faq-yomzSours-2');
 
 const handleCheckboxClick = (clicked) => {
-    console.log("clicked:", clicked.value);
-
-    // const colorSchema = {
-    //     buttonGreen : 
-    // }
+    // console.log("clicked:", clicked.value);
 
     if (clicked.value === 'yomzSours') {
         // Show sour
@@ -124,25 +120,59 @@ const handleCheckboxClick = (clicked) => {
 
 // console.log(offerTwo);
 
+// Stepper ( bar & circle )
+const circle1 = document.getElementById('step1-circle');
+const bar1 = document.getElementById('step1-bar');
+const circle2 = document.getElementById('step2-circle');
+const bar2 = document.getElementById('step2-bar');
+const circle3 = document.getElementById('step3-circle');
+
+// to move next1 to next2
 nextStep1.addEventListener('click', () => {
     offerTwo.classList.remove('hide');
     offerOne.classList.add('hide');
+    replaceCls(circle1, 'active', 'completed');
+    replaceCls(bar1, 'bar', 'compltedBar');
+    replaceCls(circle2, 'circle', 'circleActive');
 })
 
+// to move next2 to next3
 nextStep2.addEventListener('click', () => {
     offerThree.classList.remove('hide');
     offerTwo.classList.add('hide');
-
+    replaceCls(circle2, 'circleActive', 'circleCompleted');
+    replaceCls(bar2, 'bar', 'compltedBar');
+    replaceCls(circle3, 'circle', 'circleActive');
 })
 
+// to backward backButton-2 to step1
 backStep2.addEventListener('click', () => {
     offerTwo.classList.add('hide');
     offerOne.classList.remove('hide');
     offerOne.classList.add('show');
+    replaceCls(circle2, 'circleActive', 'circle');
+    replaceCls(bar1, 'compltedBar', 'bar');
+    replaceCls(circle1, 'completed', 'active');
 })
 
+// to backward backButton - 3 to backButton - 2
 backStep3.addEventListener('click', () => {
     offerThree.classList.add('hide');
     offerTwo.classList.add('show');
     offerTwo.classList.remove('hide');
+    replaceCls(circle3, 'circleActive', 'circle');
+    replaceCls(bar2, 'compltedBar', 'bar');
+    replaceCls(circle2, 'circleCompleted', 'circleActive');
 })
+
+const addCls = (element, className) => {
+    element.classList.add(`${className}`);
+}
+
+const remvoeCls = (element, className) => {
+    element.classList.remove(`${className}`);
+}
+
+const replaceCls = (element, existedCls, toChangedCls) => {
+    element.classList.replace(`${existedCls}`, `${toChangedCls}`)
+}
