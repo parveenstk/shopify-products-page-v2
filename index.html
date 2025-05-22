@@ -317,17 +317,22 @@
                         <p> <img src="images/star.svg"> <span>3,572</span></p>
                      </div>
                   </div>
+
+                  <!-- Stepper -->
                   <div class="flavor-part stampform">
                      <div class="step-container d-flex align-items-center justify-content-center">
-                        <div class="step">
+                        <!-- Step - 1 -->
+                        <div id="step-1" class="step">
                            <div class="circle completed">1</div>
                            <div class="bar completed"></div>
                         </div>
-                        <div class="step">
+                        <!-- Step - 2 -->
+                        <div id="step-2" class="step">
                            <div class="circle active">2</div>
                            <div class="bar"></div>
                         </div>
-                        <div class="step">
+                        <!-- Step - 3 -->
+                        <div id="step-3" class="step">
                            <div class="circle">3</div>
                         </div>
                      </div>
@@ -346,7 +351,7 @@
                            <div id="original-Button" class="form-check borderBlue">
                               <input class="form-check-input product-red" type="checkbox" value="yomzOriginal"
                                  id="checkOriginal" name="productType" onclick="handleCheckboxClick(this)" checked>
-                              <label class="form-check-label cursor" for="checkOriginal">
+                              <label class="form-check-label cursor padding13" for="checkOriginal">
                                  <img src="images/original.png" class="img-fluid" alt="Original">
                                  <span><b>Original</b></span>
                               </label>
@@ -356,14 +361,14 @@
                            <div id="sours-Button" class="form-check">
                               <input class="form-check-input product-green" type="checkbox" value="yomzSours"
                                  id="checkSour" name="productType" onclick="handleCheckboxClick(this)">
-                              <label class="form-check-label cursor" for="checkSour">
+                              <label class="form-check-label cursor padding13" for="checkSour">
                                  <img src="images/sour.png" class="img-fluid" alt="Sour"> <span><b>Sour</b></span>
                               </label>
                            </div>
 
                         </div>
                      </div>
-                     <p class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>
+                     <p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>
                      <div class="next-prev-btn">
                         <button class="btn next-btn buttonBlue" id="nextStep1">NEXT</button>
                      </div>
@@ -372,7 +377,7 @@
 
                   <!-- Second Step -->
                   <div id="offer-two" class="sec-steps hide">
-                     <!-- <div id="offer-two" class="sec-steps"> -->
+                  <!-- <div id="offer-two" class="sec-steps"> -->
 
                      <div class="classbtn1 slt-price">
                         <div class="form-check">
@@ -384,6 +389,7 @@
                      </div>
 
                      <div class="best-value best-value-blue">
+
                         <div id="offer2-boxBorder" class="best-value-item">
                            <div id="offer2-boxHeader" class="head">
                               <p>BEST VALUE</p>
@@ -408,10 +414,11 @@
 
                               <div class="item-bag">
                                  <div class="row">
+                                    <!-- Option 1 -->
                                     <div class="col-6">
-                                       <!-- Option - 1 -->
                                        <div class="slt-bag-item">
-                                          <div id="offer2-opt1" class="card">
+                                          <div onclick="selectedOpt(this);" id="offer2-opt1" data-value="opt1"
+                                             class="card borderBlueOffer2 offer2-opts">
                                              <div class="badge">SAVE $12</div>
                                              <div class="d-flex text-left">
                                                 <div class="col-4 px-0">
@@ -426,10 +433,11 @@
                                        </div>
                                     </div>
 
+                                    <!-- Option 2 -->
                                     <div class="col-6">
-                                       <!-- Option - 2 -->
                                        <div class="slt-bag-item">
-                                          <div class="card unsalect">
+                                          <div onclick="selectedOpt(this);" id="offer2-opt2" data-value="opt2"
+                                             class="card unsalect offer2-opts">
                                              <div class="badge">SAVE $12</div>
                                              <div class="d-flex text-left">
                                                 <div class="col-4 px-0">
@@ -444,10 +452,11 @@
                                        </div>
                                     </div>
 
+                                    <!-- Option 3 -->
                                     <div class="col-6">
-                                       <!-- Option - 3 -->
                                        <div class="slt-bag-item">
-                                          <div class="card unsalect last-box">
+                                          <div onclick="selectedOpt(this);" id="offer2-opt3" data-value="opt3"
+                                             class="card unsalect offer2-opts">
                                              <div class="badge">SAVE $12</div>
                                              <div class="d-flex text-left">
                                                 <div class="col-4 px-0">
@@ -462,10 +471,11 @@
                                        </div>
                                     </div>
 
+                                    <!-- Option 4 -->
                                     <div class="col-6">
-                                       <!-- Option - 4 -->
                                        <div class="slt-bag-item">
-                                          <div class="card unsalect last-box">
+                                          <div onclick="selectedOpt(this);" id="offer2-opt4" data-value="opt4"
+                                             class="card unsalect offer2-opts">
                                              <div class="badge">SAVE $12</div>
                                              <div class="d-flex text-left">
                                                 <div class="col-4 px-0">
@@ -480,6 +490,7 @@
                                        </div>
                                     </div>
                                  </div>
+
                               </div>
 
                               <div class="frequency">
@@ -551,7 +562,7 @@
 
                   <!-- Third-Steps -->
                   <div id="offer-three" class="third-steps hide">
-                     <!-- <div id="offer-three" class="third-steps"> -->
+                  <!-- <div id="offer-three" class="third-steps"> -->
 
                      <div class="best-value best-value-blue">
 
@@ -2048,6 +2059,7 @@
 
    <!-- import script -->
    <script src="js/index.js"></script>
+   <script src="./js/options.js"></script>
 </body>
 
 </html>
