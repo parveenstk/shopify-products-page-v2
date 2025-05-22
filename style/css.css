@@ -156,7 +156,7 @@ p {
 }
 
 .padding13 {
-  padding: 13px 10px 13px 0px !important;
+  padding: 13px 10px 13px 0px;
 }
 
 /* New Css */
@@ -2714,6 +2714,16 @@ p.people {
 
 @media screen and (max-width: 767px) {
 
+  .tabsbtn .form-check .form-check-input {
+    float: left;
+    margin-left: 0.4em;
+    margin-top: 16px;
+  }
+
+  .padding13 {
+    padding: 8px 4px !important;
+  }
+
   .item-bag .card {
     /* border: 3px solid #00b9f1; */
     padding: 7px 5px;
@@ -3137,13 +3147,6 @@ p.people {
     font-size: 14px;
   }
 
-  .form-check {
-    border: 3px solid #ccc;
-    padding: 8px 4px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-
   .tabsbtn .form-check-label img {
     width: 75px;
   }
@@ -3153,12 +3156,6 @@ p.people {
     display: inline-block;
     margin-left: 7px;
     font-size: 16px;
-  }
-
-  .tabsbtn .form-check .form-check-input {
-    float: left;
-    margin-left: 0.5em;
-    margin-top: 8px;
   }
 
   .form-check-input {
