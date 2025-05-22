@@ -57,18 +57,6 @@ p {
   font-size: 18px;
 }
 
-#faq-yomzOriginal-2 {
-  display: none;
-}
-
-#faq-yomzSours-2 {
-  display: none;
-}
-
-.products-banner .container {
-  max-width: 1100px;
-}
-
 .container {
   max-width: 1200px;
 }
@@ -1535,178 +1523,6 @@ footer .subscribe-form button {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .mobile-break {
-    display: block;
-  }
-
-  .articles h3 {
-    font-size: 33px;
-    margin-bottom: 0px;
-  }
-
-  .supplement {
-    padding: 0px 0px 0px 0px;
-  }
-
-  .articles {
-    padding: 48px 0px 30px 0px;
-  }
-
-  .supplement-details .shopnow-btn a.btn {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .supplement-details p {
-    font-size: 26px;
-    line-height: 36px;
-    margin-top: 9px;
-    margin-bottom: 41px;
-  }
-
-  .beary-deatils p {
-    font-size: 24px;
-  }
-
-  .supplement-details h3 {
-    text-align: center;
-    font-size: 44px;
-    margin-top: 41px;
-  }
-
-  .supplement-images {
-    margin: 27px 23px 22px 27px;
-  }
-
-  .notice-info p {
-    font-size: 9px;
-    line-height: 18px;
-    margin-bottom: 34px;
-  }
-
-  .company-info {
-    text-align: center;
-  }
-
-  .footer-block__heading {
-    margin: 0px 0px 0px 26px;
-  }
-
-  .footer-block__details-content li {
-    margin: 14px 0px 6px 26px;
-  }
-
-  .footer-head {
-    text-align: center;
-    margin: 25px 0px 0px 0px;
-  }
-
-  .company-info p {
-    margin: 25px 0px 0px 0px;
-  }
-
-  .payment img {
-    margin: 0 auto;
-  }
-
-  .supplement2 {
-    display: block;
-  }
-
-  .supplement1 {
-    display: none;
-  }
-
-  .footer2 {
-    display: block;
-    padding-bottom: 44px;
-  }
-
-  .footer1 {
-    display: none;
-  }
-
-  .social-icons {
-    text-align: center;
-  }
-
-  .social-icons li {
-    margin: 0px 8px 0px 8px;
-  }
-
-  .lestshare p {
-    justify-content: center;
-    font-size: 27px;
-    margin-bottom: 45px;
-  }
-
-  .faqs-part .accordion-button {
-    font-size: 20px;
-  }
-
-  .faqs h3 {
-    font-size: 32px;
-  }
-
-  .ctc {
-    margin: 0 auto;
-    display: block;
-    margin-top: 40px;
-  }
-
-  .adresinfogp {
-    margin: 50px 0px 0px 0px;
-  }
-
-  .adresinfo p {
-    text-align: center;
-  }
-
-  .respo {
-    margin-top: 37px;
-  }
-
-  .payment {
-    display: grid;
-    margin-top: 14px;
-    padding: 14px;
-  }
-
-  .payment img1 {
-    width: 301px;
-  }
-
-  .payment img2 {
-    width: 203px;
-  }
-
-  .articles .slick-prev {
-    left: 40% !important;
-  }
-
-  .articles .shopnow-btn a.btn {
-    border: 2px solid #000000
-  }
-
-  .supplement-details .shopnow-btn a.btn {
-    border: 2px solid #000000
-  }
-
-  .happy-beary .shopnow-btn a.btn {
-    border: 2px solid #000000;
-
-  }
-
-  .slick-prev {
-    left: 44%;
-  }
-
-  .slick-next {
-    right: 45%;
-  }
-}
-
 @media (max-width: 1000px) {
   .responsive {
     width: 100%;
@@ -2363,7 +2179,7 @@ p.people {
   border-radius: 6px;
   color: white;
   text-align: center;
-  padding: 0px 0 12px;
+  padding: 0px 0 18px;
   position: relative;
   line-height: normal;
 }
@@ -2390,14 +2206,31 @@ p.people {
   background-color: black;
   color: white;
   text-align: center;
-  padding: 10px 3px;
+  padding: 8px 3px;
   font-size: 12px;
   font-weight: bold;
   border-radius: 5px;
   position: absolute;
   left: 0px;
   position: absolute;
-  bottom: -30px;
+  bottom: -20px;
+  left: -5%;
+  transform: translateX(0%);
+  width: 112%;
+}
+
+.outline-box .price-strip {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 5px 3px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  position: absolute;
+  left: 0px;
+  position: absolute;
+  bottom: -20px;
   left: -5%;
   transform: translateX(0%);
   width: 112%;
@@ -2407,7 +2240,7 @@ p.people {
   border: 3px solid #f54b84;
   border-radius: 6px;
   text-align: center;
-  padding: 0px 0px;
+  padding: 0px 0px 5px;
   background-color: #fff;
   position: relative;
 }
@@ -2444,7 +2277,7 @@ p.people {
   font-size: 18px;
   letter-spacing: 2px;
   color: #555;
-  padding-bottom: 10px;
+  padding-bottom: 4px;
 }
 
 .gray-box .card {
@@ -2493,6 +2326,15 @@ p.people {
 }
 
 /*Newcss*/
+
+#faq-yomzOriginal-2 {
+  display: none;
+}
+
+#faq-yomzSours-2 {
+  display: none;
+}
+
 .form-check-input:checked {
   background-color: #1EB9F0;
   border-color: #1EB9F0;
@@ -2602,7 +2444,6 @@ p.people {
 }
 
 @media screen and (max-width: 1272px) {
-
   .articles .slick-prev {
     left: 47.7% !important;
   }
@@ -2634,22 +2475,191 @@ p.people {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .mobile-break {
+    display: block;
+  }
+
+  .articles h3 {
+    font-size: 33px;
+    margin-bottom: 0px;
+  }
+
+  .supplement {
+    padding: 0px 0px 0px 0px;
+  }
+
+  .articles {
+    padding: 48px 0px 30px 0px;
+  }
+
+  .supplement-details .shopnow-btn a.btn {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .supplement-details p {
+    font-size: 26px;
+    line-height: 36px;
+    margin-top: 9px;
+    margin-bottom: 41px;
+  }
+
+  .beary-deatils p {
+    font-size: 24px;
+  }
+
+  .supplement-details h3 {
+    text-align: center;
+    font-size: 44px;
+    margin-top: 41px;
+  }
+
+  .supplement-images {
+    margin: 27px 23px 22px 27px;
+  }
+
+  .notice-info p {
+    font-size: 9px;
+    line-height: 18px;
+    margin-bottom: 34px;
+  }
+
+  .company-info {
+    text-align: center;
+  }
+
+  .footer-block__heading {
+    margin: 0px 0px 0px 26px;
+  }
+
+  .footer-block__details-content li {
+    margin: 14px 0px 6px 26px;
+  }
+
+  .footer-head {
+    text-align: center;
+    margin: 25px 0px 0px 0px;
+  }
+
+  .company-info p {
+    margin: 25px 0px 0px 0px;
+  }
+
+  .payment img {
+    margin: 0 auto;
+  }
+
+  .supplement2 {
+    display: block;
+  }
+
+  .supplement1 {
+    display: none;
+  }
+
+  .footer2 {
+    display: block;
+    padding-bottom: 44px;
+  }
+
+  .footer1 {
+    display: none;
+  }
+
+  .social-icons {
+    text-align: center;
+  }
+
+  .social-icons li {
+    margin: 0px 8px 0px 8px;
+  }
+
+  .lestshare p {
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 45px;
+  }
+
+  .faqs-part .accordion-button {
+    font-size: 20px;
+  }
+
+  .faqs h3 {
+    font-size: 32px;
+  }
+
+  .ctc {
+    margin: 0 auto;
+    display: block;
+    margin-top: 40px;
+  }
+
+  .adresinfogp {
+    margin: 50px 0px 0px 0px;
+  }
+
+  .adresinfo p {
+    text-align: center;
+  }
+
+  .respo {
+    margin-top: 37px;
+  }
+
+  .payment {
+    display: grid;
+    margin-top: 14px;
+    padding: 14px;
+  }
+
+  .payment img1 {
+    width: 301px;
+  }
+
+  .payment img2 {
+    width: 203px;
+  }
+
+  .articles .slick-prev {
+    left: 40% !important;
+  }
+
+  .articles .shopnow-btn a.btn {
+    border: 2px solid #000000
+  }
+
+  .supplement-details .shopnow-btn a.btn {
+    border: 2px solid #000000
+  }
+
+  .happy-beary .shopnow-btn a.btn {
+    border: 2px solid #000000;
+
+  }
+
+  .slick-prev {
+    left: 44%;
+  }
+
+  .slick-next {
+    right: 45%;
+  }
+
+  .articles .slick-prev {
+    left: 44.5% !important;
+  }
+
+  .articles .slick-next {
+    right: 45.5% !important;
+  }
+}
+
 @media screen and (max-width: 767px) {
 
-  .show2 {
-    display: block !important;
-  }
-
-  .hide2 {
-    display: none !important; 
-  }
-
-  #faq-yomzOriginal-1 {
-    display: none;
-  }
-
-  #faq-yomzSours-1 {
-    display: none;
+  .top-faqs-part h4.accordion-header .accordion-button {
+    font-size: 19px;
+    padding: 12px !important;
   }
 
   .topheader {
@@ -3113,17 +3123,166 @@ p.people {
     font-size: 12px;
   }
 
-}
-
-@media screen and (max-width: 768px) {
-
-  .articles .slick-prev {
-    left: 44.5% !important;
+  .slt-price span.item-title,
+  .slt-price span.tab-price {
+    font-size: 15px;
+    font-weight: 600;
   }
 
-  .articles .slick-next {
-    right: 45.5% !important;
+  .slt-price .form-check .form-check-input {
+    float: left;
+    margin-left: 0.1em;
+    margin-top: 4px;
+    margin-right: 5px;
   }
+
+  .slt-price .form-check {
+    border: 2px solid #ccc;
+    padding: 12px 6px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .head p {
+    margin-bottom: 0px;
+    font-size: 18px;
+    padding-bottom: 0px;
+  }
+
+  .head {
+    text-align: center;
+    background: #1EB9F0;
+    padding: 5px 0px 8px;
+    color: #fff;
+  }
+
+  .products-detials {
+    padding: 0px;
+  }
+
+  .best-value .slt-price .form-check {
+    padding: 0px 0px;
+    border-radius: 8px;
+    margin-bottom: 23px;
+  }
+
+  .item-bag {
+    padding: 10px 0px;
+  }
+
+  .item-bag .col-6 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+
+  .item-bag .badge {
+    top: -17px;
+    padding: 5px 13px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .item-bag .product-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0 0px;
+    font-weight: 600;
+  }
+
+  .item-bag .product-subtitle {
+    font-size: 12px;
+    color: #18b477;
+    font-weight: 600;
+  }
+
+  .item-bag .card {
+    border: 3px solid #00b9f1;
+    padding: 7px 5px;
+    margin-bottom: 25px;
+  }
+
+  .item-bag .unsalect {
+    border: 3px solid #fff !important;
+  }
+
+  p.delvery {
+    font-size: calc(5.9vw - 0px);
+    font-family: 'Century Gothic';
+    gap: 5px;
+  }
+
+  span.number-month {
+    width: 30px;
+    height: 30px;
+    padding: 0px 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  p.frequency-op {
+    font-size: calc(5vw - 0px);
+  }
+
+  .frequency li {
+    font-size: calc(3.7vw - 0px);
+  }
+
+  .frequency li img {
+    width: 19px;
+  }
+
+  .gift-value-title {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .gift-value-title p {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .price-tag {
+    padding: 2px 7px;
+    top: -14px;
+    font-size: 12px;
+  }
+
+  .product-border {
+    padding: 5px;
+    border: 1.8px dashed #d70074;
+  }
+
+  .product-card {
+    background-color: #ffeef6;
+    border: 1.8px dashed black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 17px 11px;
+    position: relative;
+    margin: 20px auto;
+  }
+
+  .managemobilegap .col-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .show2 {
+    display: block !important;
+  }
+
+  .hide2 {
+    display: none !important;
+  }
+
+  #faq-yomzOriginal-1 {
+    display: none;
+  }
+
+  #faq-yomzSours-1 {
+    display: none;
+  }
+
 }
 
 @media screen and (max-width: 500px) {
