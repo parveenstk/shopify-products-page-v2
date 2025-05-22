@@ -8,7 +8,7 @@ const soursButton = document.getElementById('sours-Button');
 const checkOriginal = document.getElementById('checkOriginal');
 const checkSour = document.getElementById('checkSour');
 
-// Next Step Function (showing next & back step)
+// Gummies Buttons (yomz Original & yomz Sour)
 const yomzOriginal = document.getElementById('yomz-original');
 const yomzSours = document.getElementById('yomz-sours');
 
@@ -45,15 +45,15 @@ const handleCheckboxClick = (clicked) => {
 
     if (clicked.value === 'yomzSours') {
         // Show sour
-        nextStep1.classList.add('buttonGreen');
-        nextStep2.classList.add('buttonGreen');
-        nextStep3.classList.add('buttonGreen');
-        boxHeader2.classList.add('buttonGreen');
+        nextStep1.classList.add('bg-Green');
+        nextStep2.classList.add('bg-Green');
+        nextStep3.classList.add('bg-Green');
+        boxHeader2.classList.add('bg-Green');
         console.log(boxHeader2.className);
 
         boxBorder2.classList.add('borderGreenBox');
         saveText2.classList.add('fontGreen');
-        offer2Month.classList.add('buttonGreen');
+        offer2Month.classList.add('bg-Green');
 
         boxBorder3.classList.add('borderGreenBox');
         saveText3.classList.add('fontGreen');
@@ -80,10 +80,10 @@ const handleCheckboxClick = (clicked) => {
         }
     } else if (clicked.value === 'yomzOriginal') {
         // Show original
-        nextStep1.classList.remove('buttonGreen');
-        nextStep2.classList.remove('buttonGreen');
-        nextStep3.classList.remove('buttonGreen');
-        boxHeader2.classList.remove('buttonGreen');
+        nextStep1.classList.remove('bg-Green');
+        nextStep2.classList.remove('bg-Green');
+        nextStep3.classList.remove('bg-Green');
+        boxHeader2.classList.remove('bg-Green');
         boxBorder2.classList.remove('borderGreenBox');
         offer2Opt1.classList.remove('borderGreenBox');
         saveText2.classList.remove('fontGreen');
@@ -96,7 +96,7 @@ const handleCheckboxClick = (clicked) => {
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>'
 
         boxBorder3.classList.remove('borderGreenBox');
-        offer2Month.classList.remove('buttonGreen');
+        offer2Month.classList.remove('bg-Green');
         checkSour.style.accentColor = 'green';
         soursButton.classList.remove('borderGreen');
         originalButton.classList.add('borderBlue');
