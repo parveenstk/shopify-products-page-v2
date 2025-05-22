@@ -49,8 +49,9 @@ const handleCheckboxClick = (clicked) => {
         nextStep2.classList.add('buttonGreen');
         nextStep3.classList.add('buttonGreen');
         boxHeader2.classList.add('buttonGreen');
+        console.log(boxHeader2.className);
+
         boxBorder2.classList.add('borderGreenBox');
-        offer2Opt1.classList.add('borderGreenBox');
         saveText2.classList.add('fontGreen');
         offer2Month.classList.add('buttonGreen');
 
@@ -165,6 +166,7 @@ backStep3.addEventListener('click', () => {
     replaceCls(circle2, 'circleCompleted', 'circleActive');
 })
 
+// Re-usable functions
 const addCls = (element, className) => {
     element.classList.add(`${className}`);
 }
@@ -176,3 +178,38 @@ const remvoeCls = (element, className) => {
 const replaceCls = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`)
 }
+
+// offer - 2 box options changing border
+
+const selectedOpt = (clicked) => {
+    const opts = document.querySelectorAll('.offer2-opts');
+    opts.forEach(opt => {
+        remvoeCls(opt, 'borderBlueOffer2');
+    });
+    clicked.classList.add('borderBlueOffer2');
+}
+
+// [Which frequency is right for me?] Offer-2 functionality
+
+const householdItems = document.querySelectorAll('.household');
+householdItems.length > 0 ? (householdItems[0].classList.add('household-slt')) : '';
+
+householdItems.forEach(item => {
+    item.addEventListener('click', () => {
+        householdItems.forEach(el => el.classList.remove('household-slt'));
+        item.classList.add('household-slt');
+    });
+});
+
+// [Try Once Box] - Offer 3 functionality
+
+const offerBoxes = document.querySelectorAll('.offerBox');
+offerBoxes.length > 0 ? (offerBoxes[0].classList.add('selected-offer')) : '';
+
+// Click handler for each box
+offerBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+        offerBoxes.forEach(b => b.classList.remove('selected-offer'));
+        box.classList.add('selected-offer');
+    });
+});

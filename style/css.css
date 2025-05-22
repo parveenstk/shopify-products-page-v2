@@ -58,6 +58,56 @@ p {
 }
 
 /* New Css */
+/* .selected-offer {
+  color: white !important;
+  background-color: #2DC6F7 !important;
+  border: 3px solid #1EB9F0 !important;
+} */
+
+.selected-offer {
+  color: white !important;
+  background-color: #2DC6F7 !important;
+  border: 3px solid #1EB9F0 !important;
+}
+
+/* Target inner elements of selected boxes */
+.selected-offer #box1-save,
+.selected-offer #box1-qty,
+.selected-offer #box1-pack,
+.selected-offer #box2-save,
+.selected-offer #box2-qty,
+.selected-offer #box2-pack,
+.selected-offer #box3-Save,
+.selected-offer #box3-Qty,
+.selected-offer #box3-pack,
+.selected-offer #box4-save,
+.selected-offer #box4-qty,
+.selected-offer #box4-pack {
+  color: white !important;
+}
+
+.offerBox {
+  cursor: pointer;
+}
+
+.fill-bg .card {
+  /* background-color: #2DC6F7; */
+  border-radius: 6px;
+  /* color: white; */
+  text-align: center;
+  padding: 0px 0 18px;
+  position: relative;
+  line-height: normal;
+}
+
+.mgTp {
+  margin-top: 22px !important;
+}
+
+.oneTimePurchase {
+  padding: 15px 10px 15px 0px;
+  cursor: pointer;
+}
 
 .step {
   display: flex;
@@ -120,7 +170,7 @@ p {
 }
 
 .offer2-opts {
-  border: 1px solid #dee2e6 !important;
+  border: 4px solid #dee2e6 !important;
 }
 
 .borderBlueOffer2 {
@@ -1940,7 +1990,6 @@ p.daily-natu {
 
 .slt-price .form-check {
   border: 2px solid #ccc;
-  padding: 15px 10px;
   border-radius: 8px;
   margin-bottom: 15px;
 }
@@ -2229,16 +2278,6 @@ p.people {
 
 .salect-offers {
   padding-bottom: 30px;
-}
-
-.fill-bg .card {
-  background-color: #2DC6F7;
-  border-radius: 6px;
-  color: white;
-  text-align: center;
-  padding: 0px 0 18px;
-  position: relative;
-  line-height: normal;
 }
 
 .fill-bg .card p {

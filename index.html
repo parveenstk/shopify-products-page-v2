@@ -377,13 +377,13 @@
                   <!-- first-steps -->
 
                   <!-- Second Step -->
-                  <div id="offer-two" class="sec-steps hide">
-                     <!-- <div id="offer-two" class="sec-steps"> -->
+                  <!-- <div id="offer-two" class="sec-steps hide"> -->
+                  <div id="offer-two" class="sec-steps">
 
                      <div class="classbtn1 slt-price">
                         <div class="form-check">
-                           <input class="form-check-input product-red" type="checkbox" value="" id="price">
-                           <label class="form-check-label" for="price">
+                           <input class="form-check-input product-red mgTp" type="checkbox" value="" id="price">
+                           <label class="form-check-label oneTimePurchase" for="price">
                               <span class="item-title">One-Time Purchase</span> <span class="tab-price">$XX.99</span>
                            </label>
                         </div>
@@ -562,8 +562,8 @@
                   <!-- Second Steps -->
 
                   <!-- Third-Steps -->
-                  <div id="offer-three" class="third-steps hide">
-                     <!-- <div id="offer-three" class="third-steps"> -->
+                  <!-- <div id="offer-three" class="third-steps hide"> -->
+                  <div id="offer-three" class="third-steps">
 
                      <div class="best-value best-value-blue">
 
@@ -582,49 +582,53 @@
                               </div>
 
                               <div class="salect-offers">
-
                                  <div class="row">
+
+                                    <!-- box1 - Offer -->
                                     <div class="col-3 fill-bg px-2">
-                                       <div class="card">
-                                          <p>Save 0%</p>
-                                          <div class="pack-number">1</div>
-                                          <div class="pack-label">PACK</div>
+                                       <div class="card offerBox" value="offerBox-1">
+                                          <p id="box1-save">Save 0%</p>
+                                          <div id="box1-qty" class="pack-number">1</div>
+                                          <div id="box1-pack" class="pack-label">PACK</div>
                                           <div class="price-strip">ONLY $X.XX PER DAY</div>
                                        </div>
-
                                     </div>
 
+                                    <!-- box2 - Offer -->
                                     <div class="col-3 outline-box px-2">
-                                       <div class="card">
+                                       <div class="card offerBox" value="offerBox-2">
                                           <div class="badge">MOST POPULAR</div>
-                                          <div class="save">Save 10%</div>
-                                          <div class="quantity">2</div>
-                                          <div class="label">PACK</div>
+                                          <div id="box2-save" class="save">Save 10%</div>
+                                          <div id="box2-qty" class="quantity">2</div>
+                                          <div id="box2-pack" class="label">PACK</div>
                                           <div class="price-strip">ONLY $X.XX PER DAY</div>
                                        </div>
                                     </div>
 
+                                    <!-- box3 - Offer -->
                                     <div class="col-3 outline-box gray-box px-2">
-                                       <div class="card">
-                                          <div class="save">Save 15%</div>
-                                          <div class="quantity">3</div>
-                                          <div class="label">PACK</div>
+                                       <div class="card offerBox" value="offerBox-3">
+                                          <div id="box3-Save" class="save">Save 15%</div>
+                                          <div id="box3-Qty" class="quantity">3</div>
+                                          <div id="box3-pack" class="label">PACK</div>
                                           <div class="price-strip">ONLY $X.XX PER DAY</div>
                                        </div>
                                     </div>
 
+                                    <!-- box4 - Offer -->
                                     <div class="col-3 outline-box gray-blue px-2">
-                                       <div class="card">
+                                       <div class="card offerBox" value="offerBox-4">
                                           <div class="badge">BEST VALUE</div>
-                                          <div class="save">Save 40%</div>
-                                          <div class="quantity">4</div>
-                                          <div class="label">PACK</div>
+                                          <div id="box4-save" class="save">Save 40%</div>
+                                          <div id="box4-qty" class="quantity">4</div>
+                                          <div id="box4-pack" class="label">PACK</div>
                                           <div class="price-strip">ONLY $X.XX PER DAY</div>
                                        </div>
                                     </div>
 
                                  </div>
                               </div>
+
                            </div>
 
                         </div>
@@ -2060,7 +2064,6 @@
 
    <!-- import script -->
    <script src="./js/index.js"></script>
-   <script src="./js/options.js"></script>
 </body>
 
 </html>
