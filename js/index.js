@@ -47,26 +47,24 @@ const checkInput3 = document.getElementById('checkBox-input3');
 const checkInput4 = document.getElementById('checkBox-input4');
 
 const handleCheckboxClick = (clicked) => {
-    // console.log("clicked:", clicked.value);
 
     if (clicked.value === 'yomzSours') {
-        // Show sour
-        nextStep1.classList.add('bg-Green');
-        nextStep2.classList.add('bg-Green');
-        nextStep3.classList.add('bg-Green');
-        boxHeader2.classList.add('bg-Green');
-        console.log(boxHeader2.className);
 
-        boxBorder2.classList.add('borderGreenBox');
-        saveText2.classList.add('fontGreen');
-        offer2Month.classList.add('bg-Green');
+        // change backgrounds
+        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, offer2Month];
+        backgrounds.forEach(el => addCls(el, 'bg-Green'));
 
-        boxBorder3.classList.add('borderGreenBox');
-        saveText3.classList.add('fontGreen');
+        // change borders
+        const borders = [boxBorder2, boxBorder3];
+        borders.forEach(el => addCls(el, 'borderGreenBox'));
+
+        // change fonts 
+        const fonts = [saveText2, saveText3];
+        fonts.forEach(el => addCls(el, 'fontGreen'));
 
         // faq section mobile
-        faqOriginal2.classList.remove('show2');
-        faqSours2.classList.add('show2');
+        remvoeCls(faqOriginal2, 'show2');
+        addCls(faqSours2, 'show2');
 
         // product description
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary</p>'
@@ -89,28 +87,28 @@ const handleCheckboxClick = (clicked) => {
             productThumbs.update();
         }
     } else if (clicked.value === 'yomzOriginal') {
-        // Show original
 
+        // change backgrounds
         const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2];
         backgrounds.forEach(el => remvoeCls(el, 'bg-Green'));
 
+        // change borders
         const borders = [boxBorder2, offer2Opt1, boxBorder3];
         borders.forEach(el => remvoeCls(el, 'borderGreenBox'))
 
         saveText2.classList.remove('fontGreen');
 
-        // Inputs
+        // change Inputs
         const inputs = [checkInput1, checkInput2, checkInput3, checkInput4]
         inputs.forEach(input => remvoeCls(input, 'inputBorderGreen'));
 
         // faq section mobile
-        faqSours2.classList.remove('show2');
-        faqOriginal2.classList.add('show2');
+        remvoeCls(faqSours2, 'show2');
+        addCls(faqOriginal2, 'show2');
 
         // product description
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>'
 
-        // boxBorder3.classList.remove('borderGreenBox');
         offer2Month.classList.remove('bg-Green');
         checkSour.style.accentColor = 'green';
         soursButton.classList.remove('borderGreen');
