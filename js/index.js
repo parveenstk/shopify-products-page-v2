@@ -55,6 +55,8 @@ const handleCheckboxClick = (clicked) => {
 
     if (clicked.value === 'yomzSours') {
 
+        localStorage.setItem('colorSchema', JSON.stringify('Green'));
+
         // change backgrounds
         const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, offer2Month];
         backgrounds.forEach(el => addCls(el, 'bg-Green'));
@@ -92,7 +94,15 @@ const handleCheckboxClick = (clicked) => {
             productSlider.update();
             productThumbs.update();
         }
+
+        // for best value selectors
+        const bestValueSelectors = document.querySelectorAll('.slt-bag-item .card');
+        bestValueSelectors.forEach((selector) => {
+            selector.classList.replace('borderBlueOffer2', 'borderGreenOffer2')
+        })
     } else if (clicked.value === 'yomzOriginal') {
+
+        localStorage.setItem('colorSchema', JSON.stringify('Blue'));
 
         // change backgrounds
         const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2];
@@ -130,6 +140,12 @@ const handleCheckboxClick = (clicked) => {
             productSlider.update();
             productThumbs.update();
         }
+
+        // for best value selectors
+        const bestValueSelectors = document.querySelectorAll('.slt-bag-item .card');
+        bestValueSelectors.forEach((selector) => {
+            selector.classList.replace('borderGreenOffer2', 'borderBlueOffer2')
+        })
     }
 
     // Uncheck other checkboxes
@@ -208,8 +224,11 @@ const selectedOpt = (clicked) => {
     const opts = document.querySelectorAll('.offer2-opts');
     opts.forEach(opt => {
         remvoeCls(opt, 'borderBlueOffer2');
+        remvoeCls(opt, 'borderGreenOffer2');
     });
-    addCls(clicked, 'borderBlueOffer2');
+    const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
+    if (colorSchema === 'Green') addCls(clicked, 'borderGreenOffer2');
+    else addCls(clicked, 'borderBlueOffer2');
     // clicked.classList.add('borderBlueOffer2');
 }
 
