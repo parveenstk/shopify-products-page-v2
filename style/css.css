@@ -38,6 +38,16 @@
 
 }
 
+html,
+body {
+  touch-action: manipulation;
+  /* Disables pinch-zoom and double-tap */
+  -ms-touch-action: manipulation;
+  /* For older IE */
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
+}
+
 h1,
 h2,
 h3 {
@@ -191,6 +201,10 @@ p {
   text-align: left;
   margin-bottom: 40px;
   cursor: pointer;
+}
+
+.mobile-mg-botton .card {
+  margin-bottom: 10px !important;
 }
 
 .classbtn1 {
@@ -961,6 +975,7 @@ table.comparison-table tr th:first-child {
 table.comparison-table thead th {
   font-size: 24px;
   text-transform: inherit;
+  font-family: 'Century Gothic';
 }
 
 table.comparison-table tbody tr:nth-child(odd) td:first-child {
@@ -1179,15 +1194,26 @@ th.new-calistoga-font img {
 /*happy-beauty*/
 
 /*Faqs Section*/
+
 .faqs {
   padding: 80px 0;
 }
 
+.faqs h4 {
+  font-family: 'Century Gothic';
+}
+
 .faqs h3 {
-  font-size: 39px;
+  font-size: 65px;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 50px;
+  background: #fff;
+  border-radius: 26px;
+  border: 1px solid #000;
+  display: inline-block !important;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .box-green {
@@ -1253,7 +1279,7 @@ th.new-calistoga-font img {
 /*supplement*/
 
 .supplement {
-  background: linear-gradient(180deg, #30AF5A 0%, #F8FCF9 100%);
+  background: linear-gradient(180deg, #30AF5A 0%, #ffffff 100%);
   margin-top: -5px;
   padding: 150px 0px;
 }
@@ -1386,8 +1412,7 @@ th.new-calistoga-font img {
 
 .articles {
   /* Section */
-
-  background: linear-gradient(180deg, #F8FCF9 25%, #1EB9F0 100%);
+  background: linear-gradient(180deg, #ffffff 25%, #1EB9F0 100%);
   padding: 100px 0;
 }
 
@@ -1433,12 +1458,12 @@ th.new-calistoga-font img {
 }
 
 .articles .slick-prev .slick-prev-icon:before {
-  content: "←";
+  content: "â†";
   visibility: hidden !important;
 }
 
 .articles .slick-next .slick-next-icon:before {
-  content: "→";
+  content: "â†’";
   visibility: hidden !important;
 }
 
@@ -1463,11 +1488,6 @@ th.new-calistoga-font img {
   text-transform: uppercase;
   margin-bottom: 20px;
   font-family: 'Century Gothic';
-}
-
-.articlesnone-title h3 {
-  background: none;
-  border: none;
 }
 
 .articles .shopnow-btn {
@@ -1675,17 +1695,6 @@ footer .subscribe-form button {
 
 .footer2 {
   display: none;
-}
-
-@media (max-width: 1000px) {
-  .responsive {
-    width: 100%;
-  }
-
-  .meet-founder {
-    margin-bottom: 20px;
-    PADDING: 24PX;
-  }
 }
 
 /* ------about------- */
@@ -2053,6 +2062,7 @@ p.daily-natu {
   font-size: 22px;
   font-weight: 500;
   margin: 10px 0 0px;
+  font-family: 'Century Gothic';
 }
 
 .item-bag .product-subtitle {
@@ -2095,7 +2105,7 @@ span.number-month {
 }
 
 p.frequency-op {
-  font-size: 28px;
+  font-size: 25px;
   color: #12213F;
   font-family: 'century_gothic_paneuropeanRg';
   margin-bottom: 10px;
@@ -2124,8 +2134,8 @@ p.frequency-op {
 
 .head p {
   margin-bottom: 0px;
-  font-size: 24px;
-  padding-bottom: 5px;
+  font-size: 22px;
+  padding-bottom: 2px;
 }
 
 .best-value-item {
@@ -2154,7 +2164,7 @@ p.frequency-op {
   text-align: center;
   padding: 36px 20px;
   position: relative;
-  margin: 20px auto;
+  margin: 10px 0 5px;
 }
 
 .price-tag {
@@ -2194,11 +2204,13 @@ p.frequency-op {
 
 .sticker span {
   color: #02D869;
+  display: block;
 }
 
 .sticker p {
   margin-bottom: 10px;
   font-size: 18px;
+  text-align: center;
 }
 
 .fr {
@@ -2298,38 +2310,20 @@ p.people {
   letter-spacing: 2px;
 }
 
-.fill-bg .price-strip {
+.price-strip {
   background-color: black;
   color: white;
   text-align: center;
-  padding: 8px 3px;
-  font-size: 12px;
+  padding: 7px 3px;
+  font-size: 10.5px;
   font-weight: bold;
   border-radius: 5px;
   position: absolute;
-  left: 0px;
-  position: absolute;
   bottom: -20px;
-  left: -5%;
-  transform: translateX(0%);
+  left: 50%;
+  transform: translateX(-50%);
   width: 112%;
-}
-
-.outline-box .price-strip {
-  background-color: black;
-  color: white;
-  text-align: center;
-  padding: 5px 3px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 5px;
-  position: absolute;
-  left: 0px;
-  position: absolute;
-  bottom: -20px;
-  left: -5%;
-  transform: translateX(0%);
-  width: 112%;
+  line-height: normal;
 }
 
 .outline-box .card {
@@ -2376,8 +2370,28 @@ p.people {
   padding-bottom: 4px;
 }
 
+.fill-bg .card {
+  border: 3px solid #E5E7EB;
+}
+
+.card .pack-label {
+  font-weight: 600;
+}
+
+.card .label {
+  font-weight: 600;
+}
+
 .gray-box .card {
   border: 3px solid #E5E7EB;
+}
+
+.tab-price del {
+  color: #a9a9a9;
+}
+
+.save {
+  font-weight: 600;
 }
 
 .gray-box .save {
@@ -2491,6 +2505,45 @@ p.people {
 
 /*Products*/
 
+/* ------about------- */
+
+.accordion-body h4 {
+  font-size: 21px;
+  margin-bottom: 22px;
+  -webkit-text-stroke: 0.2px black;
+}
+
+.accordion-body h4 span {
+  background: #0AA03C;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 12px 4px 12px;
+  margin: 0px 7px 0px 0px;
+  text-shadow: none;
+}
+
+.accordion-body li {
+  font-size: 18px;
+}
+
+.slick-next:focus .slick-next-icon,
+.slick-next:focus .slick-prev-icon,
+.slick-prev:focus .slick-next-icon,
+.slick-prev:focus .slick-prev-icon {
+  margin-left: 0px !important;
+}
+
+.new-takeansit li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Century Gothic';
+}
+
+.new-takeansit li img {
+  width: 24px;
+}
+
 /* @media (max-width: 1200px) {
 .card-cont{
     
@@ -2532,9 +2585,8 @@ p.people {
 }
 
 @media screen and (max-width: 1398px) {
-
-  .container {
-    max-width: 95%;
+  .item-bag {
+    padding: 0px 0px;
   }
 
 }
@@ -2547,6 +2599,16 @@ p.people {
   .articles .slick-next {
     right: 47.7% !important;
   }
+
+}
+
+@media screen and (max-width: 1314px) {
+
+  .brand-logo {
+    margin-left: 50px;
+    margin-right: -50px;
+  }
+
 }
 
 @media screen and (max-width: 1136px) {
@@ -2560,6 +2622,30 @@ p.people {
   }
 }
 
+@media screen and (max-width: 1110px) {
+  .brand-logo {
+    margin-left: 90px;
+    margin-right: -90px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .pading-rote2,
+  .pading-rote {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+
+  .nastya-faves {
+    padding: 0px 0 30px;
+  }
+
+}
+
 @media screen and (max-width: 974px) {
 
   .articles .slick-prev {
@@ -2571,187 +2657,26 @@ p.people {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .mobile-break {
-    display: block;
-  }
-
-  .articles h3 {
-    font-size: 33px;
-    margin-bottom: 0px;
-  }
-
-  .supplement {
-    padding: 0px 0px 0px 0px;
-  }
-
-  .articles {
-    padding: 48px 0px 30px 0px;
-  }
-
-  .supplement-details .shopnow-btn a.btn {
-    margin: 0 auto;
-    width: 100%;
-  }
-
-  .supplement-details p {
-    font-size: 26px;
-    line-height: 36px;
-    margin-top: 9px;
-    margin-bottom: 41px;
-  }
-
-  .beary-deatils p {
-    font-size: 24px;
-  }
-
-  .supplement-details h3 {
-    text-align: center;
-    font-size: 44px;
-    margin-top: 41px;
-  }
-
-  .supplement-images {
-    margin: 27px 23px 22px 27px;
-  }
-
-  .notice-info p {
-    font-size: 9px;
-    line-height: 18px;
-    margin-bottom: 34px;
-  }
-
-  .company-info {
-    text-align: center;
-  }
-
-  .footer-block__heading {
-    margin: 0px 0px 0px 26px;
-  }
-
-  .footer-block__details-content li {
-    margin: 14px 0px 6px 26px;
-  }
-
-  .footer-head {
-    text-align: center;
-    margin: 25px 0px 0px 0px;
-  }
-
-  .company-info p {
-    margin: 25px 0px 0px 0px;
-  }
-
-  .payment img {
-    margin: 0 auto;
-  }
-
-  .supplement2 {
-    display: block;
-  }
-
-  .supplement1 {
-    display: none;
-  }
-
-  .footer2 {
-    display: block;
-    padding-bottom: 44px;
-  }
-
-  .footer1 {
-    display: none;
-  }
-
-  .social-icons {
-    text-align: center;
-  }
-
-  .social-icons li {
-    margin: 0px 8px 0px 8px;
-  }
-
-  .lestshare p {
-    justify-content: center;
-    font-size: 27px;
-    margin-bottom: 45px;
-  }
-
-  .faqs-part .accordion-button {
-    font-size: 20px;
-  }
-
-  .faqs h3 {
-    font-size: 32px;
-  }
-
-  .ctc {
-    margin: 0 auto;
-    display: block;
-    margin-top: 40px;
-  }
-
-  .adresinfogp {
-    margin: 50px 0px 0px 0px;
-  }
-
-  .adresinfo p {
-    text-align: center;
-  }
-
-  .respo {
-    margin-top: 37px;
-  }
-
-  .payment {
-    display: grid;
-    margin-top: 14px;
-    padding: 14px;
-  }
-
-  .payment img1 {
-    width: 301px;
-  }
-
-  .payment img2 {
-    width: 203px;
-  }
-
-  .articles .slick-prev {
-    left: 40% !important;
-  }
-
-  .articles .shopnow-btn a.btn {
-    border: 2px solid #000000
-  }
-
-  .supplement-details .shopnow-btn a.btn {
-    border: 2px solid #000000
-  }
-
-  .happy-beary .shopnow-btn a.btn {
-    border: 2px solid #000000;
-
-  }
-
-  .slick-prev {
-    left: 44%;
-  }
-
-  .slick-next {
-    right: 45%;
-  }
-
-  .articles .slick-prev {
-    left: 44.5% !important;
-  }
-
-  .articles .slick-next {
-    right: 45.5% !important;
-  }
-}
-
 @media screen and (max-width: 767px) {
+
+  .household-popup h4 {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  .nastya-faves .container {
+    width: 98%;
+  }
+
+  .brand-logo {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .oneTimePurchase {
+    padding: 0px;
+  }
 
   .tabsbtn .form-check .form-check-input {
     float: left;
@@ -2874,9 +2799,72 @@ p.people {
     padding: 0px 0;
   }
 
+  .mobile-font {
+    font-size: calc(9.7vw - 0px) !important
+  }
+
+  .nastya-faves h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .founder-cont {
+    margin-top: 20px;
+    padding: 20px;
+  }
+
+  .founder-cont h3 {
+    font-size: 40px;
+    padding: 10px 0px 10px 0px;
+  }
+
+  .founder-cont p {
+    line-height: normal;
+    font-size: 18px;
+    margin-top: 18px;
+  }
+
+  .articles h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block !important;
+  }
+
+  .card-cont1 h4 {
+    padding: 5px 0px 5px 0px;
+    font-size: 38px;
+  }
+
+  .card-cont {
+    padding: 20px;
+  }
+
+  .hunger {
+    padding: 20px 0 0px;
+  }
+
+  .hunger .mobile-font {
+    margin-bottom: 20px;
+  }
+
+  .hunger .hunger-contact {
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .hunger .hunger-contact p {
+    line-height: normal;
+    font-size: 18px;
+    margin-top: 18px;
+  }
+
   .nastya-faves {
 
-    padding: 40px 0;
+    padding: 0px 0 40px;
     overflow: hidden;
     /* background: linear-gradient(180deg, #FFEB00 0%, #F0A0C3 50%, #FFFFFF 100%); */
   }
@@ -2915,7 +2903,7 @@ p.people {
   }
 
   .slick-slide {
-    margin: 50px 33px 0px 33px;
+    margin: 10px 0px 0px 1px;
   }
 
   .nastya-faves .col-md-7,
@@ -2973,12 +2961,12 @@ p.people {
   }
 
   .nastya-faves .slick-prev .slick-prev-icon:before {
-    content: "â†";
+    content: "Ã¢â€ Â";
     visibility: hidden !important;
   }
 
   .nastya-faves .slick-next .slick-next-icon:before {
-    content: "â†’";
+    content: "Ã¢â€ â€™";
     visibility: hidden !important;
   }
 
@@ -3028,10 +3016,14 @@ p.people {
 
   .table-compaire {
     margin-top: 50px;
-    padding: 30px 15px;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding: 20px 10px;
+    margin-left: 0px;
+    margin-right: 0px;
     border-radius: 15px;
+  }
+
+  .table-com .container {
+    max-width: 100%;
   }
 
   .table-compaire .col-md-5 {
@@ -3051,8 +3043,8 @@ p.people {
   }
 
   table.comparison-table img {
-    width: 44px;
-    padding: 9px;
+    width: 28px;
+    padding: 4px;
   }
 
   table.comparison-table tr td:first-child {
@@ -3060,9 +3052,10 @@ p.people {
     padding-right: 0.2rem;
     text-transform: inherit;
     width: 37% !important;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
     line-height: normal;
+    font-family: 'Century Gothic';
   }
 
   .comparison-table thead tr th:nth-child(2) {
@@ -3085,12 +3078,14 @@ p.people {
   }
 
   table.comparison-table thead th {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 800;
+    font-family: 'Century Gothic';
   }
 
   .heading-compres {
     font-size: calc(7.5vw - 0px);
-    line-height: 48px;
+    line-height: normal;
   }
 
   .table-compaire .shopnow-btn a.btn {
@@ -3118,7 +3113,7 @@ p.people {
   }
 
   .happy-beary {
-    padding: 60px 0 110px;
+    padding: 30px 0 70px;
   }
 
   .happy-beary .shopnow-btn a.btn {
@@ -3135,7 +3130,11 @@ p.people {
   }
 
   .faqs {
-    padding: 50px 0px 66px 0px;
+    padding: 30px 0px;
+  }
+
+  .faqs h3 {
+    margin-bottom: 20px;
   }
 
   .faqs-part {
@@ -3145,6 +3144,13 @@ p.people {
   .product-left {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .results h3 {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .swiper-button-prev,
@@ -3230,6 +3236,8 @@ p.people {
   .slt-price span.tab-price {
     font-size: 15px;
     font-weight: 600;
+    font-family: 'Century Gothic';
+
   }
 
   .slt-price .form-check .form-check-input {
@@ -3288,7 +3296,7 @@ p.people {
   .item-bag .product-title {
     font-size: 18px;
     font-weight: 500;
-    margin: 10px 0 0px;
+    margin: 5px 0 0px;
     font-weight: 600;
   }
 
@@ -3317,7 +3325,7 @@ p.people {
   }
 
   .frequency li {
-    font-size: calc(3.7vw - 0px);
+    font-size: calc(3vw - 0px);
   }
 
   .frequency li img {
@@ -3348,7 +3356,7 @@ p.people {
   .product-card {
     background-color: #ffeef6;
     border: 1.8px dashed black;
-    border-radius: 15px;
+    border-radius: 7px;
     text-align: center;
     padding: 17px 11px;
     position: relative;
@@ -3376,6 +3384,408 @@ p.people {
     display: none;
   }
 
+  .mgTp {
+    margin-top: 3px !important;
+  }
+
+  .household-popup .modal-content {
+    padding: 0px 10px 20px;
+  }
+
+  .household {
+    margin-bottom: 10px;
+  }
+
+  p.month {
+    font-size: 16px;
+  }
+
+  p.people {
+    font-size: 20px;
+  }
+
+  .salect-offers .col-3 {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  .salect-offers {
+    padding-bottom: 10px;
+  }
+
+  .save {
+    font-size: calc(3.7vw - 0px) !important;
+    font-family: 'Century Gothic';
+  }
+
+  .card .label {
+    font-size: 10px;
+  }
+
+  .price-strip {
+    font-size: 6px;
+    padding: 5px 3px;
+    bottom: -13px;
+  }
+
+  .outline-box .quantity {
+    font-size: 30px;
+  }
+
+  .outline-box .badge {
+    font-size: 8px;
+    padding: 6px 5px;
+    border-radius: 4px;
+  }
+
+  .next-prev-btn {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    background: #fff;
+    /* Optional for contrast */
+    padding: 0px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .supplement-details h3 {
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .supplement {
+    padding: 60px 0px 0px;
+  }
+
+  .supplement-images {
+    padding: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .supplement-images img {
+    width: 70%;
+    margin: 0px auto;
+    display: block;
+  }
+
+  .supplement-details p {
+    font-size: 18px;
+    margin: 20px 0px;
+    text-align: center;
+  }
+
+  .table-com {
+    padding: 0px 0 40px !important;
+  }
+
+  .articles2 {
+    padding: 40px 0;
+    background: none;
+  }
+
+  .wellness {
+    padding: 20px 0;
+  }
+
+  .wellness h3 {
+    margin-bottom: 0px;
+  }
+
+  .promise-block-one {
+    padding: 20px;
+  }
+
+  .promise-block-one .d-flex {
+    display: block !important;
+    align-items: center !important;
+  }
+
+  .promise-block-one .icon-square {
+    width: 60%;
+    margin: 0px auto !important;
+    display: block;
+  }
+
+  .promise-block-one h4 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .promise-block-one p {
+    text-align: center;
+  }
+
+  .promise {
+    background-size: 0%;
+    padding: 20px 0 40px;
+  }
+
+  .bottom-faqs {
+    padding: 40px 0;
+  }
+
+  .notice-info p {
+    font-size: 9px;
+    line-height: normal;
+    margin-bottom: 34px;
+  }
+
+  .company-info {
+    text-align: center;
+  }
+
+  .notice-info p {
+    font-size: 9px;
+    line-height: 18px;
+    margin-bottom: 34px;
+  }
+
+  .company-info {
+    text-align: center;
+  }
+
+  .footer-block__heading {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .footer-block__details-content li {
+    margin: 14px 0px 6px 0px;
+  }
+
+  .footer-head {
+    text-align: center;
+    margin: 25px 0px 0px 0px;
+  }
+
+  .company-info p {
+    margin: 25px 0px 0px 0px;
+  }
+
+  .payment img {
+    margin: 0 auto;
+  }
+
+  .supplement2 {
+    display: block;
+  }
+
+  .supplement1 {
+    display: none;
+  }
+
+  .footer2 {
+    display: block;
+    padding-bottom: 44px;
+  }
+
+  .footer1 {
+    display: none;
+  }
+
+  .social-icons {
+    text-align: center;
+  }
+
+  .social-icons li {
+    margin: 0px 8px 0px 8px;
+  }
+
+  .lestshare p {
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 45px;
+  }
+
+  .ctc {
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .adresinfogp {
+    margin: 10px 0px 0px 0px;
+  }
+
+  .adresinfo p {
+    text-align: center;
+  }
+
+  .respo {
+    margin-top: 37px;
+  }
+
+  .payment {
+    display: grid;
+    margin-top: 14px;
+    padding: 14px;
+  }
+
+  .payment img1 {
+    width: 301px;
+  }
+
+  .payment img2 {
+    width: 203px;
+  }
+
+  .articles .slick-prev {
+    left: 40% !important;
+  }
+
+  .articles .shopnow-btn a.btn {
+    border: 2px solid #000000
+  }
+
+  .supplement-details .shopnow-btn a.btn {
+    border: 2px solid #000000
+  }
+
+  .happy-beary .shopnow-btn a.btn {
+    border: 2px solid #000000;
+
+  }
+
+  .slick-prev {
+    left: 44%;
+  }
+
+  .slick-next {
+    right: 45%;
+  }
+
+  .footer .container {
+    max-width: 100%;
+  }
+
+  .social-icons {
+    text-align: center;
+    margin-top: 0px;
+  }
+
+  .adresinfogp {
+    margin: 50px 0px 0px 0px;
+  }
+
+  .bottom-faqs h4.accordion-header .accordion-button {
+    font-size: 20px;
+  }
+
+  .faqs h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .products-banner .container {
+    width: 100%;
+  }
+
+  .product-card {
+    margin: 20px auto 10px !important;
+  }
+
+  .price-strip {
+    width: 100%;
+    font-family: 'Century Gothic';
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .item-bag .product-title {
+    font-size: 16px !important;
+    margin: 3px 0 0px;
+  }
+
+  .item-bag .product-subtitle {
+    font-size: 10px !important;
+  }
+
+  .product-card {
+    margin: 20px auto 10px !important;
+  }
+
+  .item-bag .badge {
+    top: -14px;
+    padding: 5px 13px;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+
+  .articles .slick-prev {
+    left: 40% !important;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .item-bag {
+    padding: 0px 0px;
+  }
+
+  .box-padding {
+    padding: 10px;
+  }
+
+  .slt-price span.item-title,
+  .slt-price span.tab-price {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .slt-price .form-check .form-check-input {
+    float: left;
+    margin-left: 0.1em;
+    margin-top: 2px;
+    margin-right: 5px;
+  }
+
+  .form-check-input {
+    width: 0.9em;
+    height: 0.9em;
+  }
+
+  .mgTp {
+    margin-top: 1px !important;
+  }
+
+  .pading-rote {
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+  }
+
+  .mobile-font {
+    font-size: 28px !important;
+  }
+
+  .faqs-part .accordion-button {
+    font-size: 20px;
+  }
+
+  p.daily-natu {
+    font-size: 18px;
+  }
+
+  .pr-logopart img {
+    width: 110px;
+  }
+
+  .product-left {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .topheader p {
+    font-size: 11px;
+  }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -3387,42 +3797,4 @@ p.people {
   .articles .slick-next {
     right: 43% !important;
   }
-}
-
-/* ------about------- */
-
-.accordion-body h4 {
-  font-size: 21px;
-  margin-bottom: 22px;
-  -webkit-text-stroke: 0.2px black;
-}
-
-.accordion-body h4 span {
-  background: #0AA03C;
-  color: white;
-  border-radius: 50%;
-  padding: 4px 12px 4px 12px;
-  margin: 0px 7px 0px 0px;
-  text-shadow: none;
-}
-
-.accordion-body li {
-  font-size: 18px;
-}
-
-.slick-next:focus .slick-next-icon,
-.slick-next:focus .slick-prev-icon,
-.slick-prev:focus .slick-next-icon,
-.slick-prev:focus .slick-prev-icon {
-  margin-left: 0px !important;
-}
-
-.new-takeansit li {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.new-takeansit li img {
-  width: 24px;
 }
