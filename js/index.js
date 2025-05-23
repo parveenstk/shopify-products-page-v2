@@ -40,6 +40,12 @@ const faqOriginal2 = document.getElementById('faq-yomzOriginal-2');
 const faqSours1 = document.getElementById('faq-yomzSours-1');
 const faqSours2 = document.getElementById('faq-yomzSours-2');
 
+// inputs of all offer pages
+const checkInput1 = document.getElementById('checkBox-input1');
+const checkInput2 = document.getElementById('checkBox-input2');
+const checkInput3 = document.getElementById('checkBox-input3');
+const checkInput4 = document.getElementById('checkBox-input4');
+
 const handleCheckboxClick = (clicked) => {
     // console.log("clicked:", clicked.value);
 
@@ -65,6 +71,10 @@ const handleCheckboxClick = (clicked) => {
         // product description
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary</p>'
 
+        // Inputs
+        const inputs = [checkInput1, checkInput2, checkInput3, checkInput4]
+        inputs.forEach(input => addCls(input, 'inputBorderGreen'));
+
         checkOriginal.style.accentColor = 'black';
         originalButton.classList.remove('borderBlue');
         soursButton.classList.add('borderGreen');
@@ -80,13 +90,18 @@ const handleCheckboxClick = (clicked) => {
         }
     } else if (clicked.value === 'yomzOriginal') {
         // Show original
-        nextStep1.classList.remove('bg-Green');
-        nextStep2.classList.remove('bg-Green');
-        nextStep3.classList.remove('bg-Green');
-        boxHeader2.classList.remove('bg-Green');
-        boxBorder2.classList.remove('borderGreenBox');
-        offer2Opt1.classList.remove('borderGreenBox');
+
+        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2];
+        backgrounds.forEach(el => remvoeCls(el, 'bg-Green'));
+
+        const borders = [boxBorder2, offer2Opt1, boxBorder3];
+        borders.forEach(el => remvoeCls(el, 'borderGreenBox'))
+
         saveText2.classList.remove('fontGreen');
+
+        // Inputs
+        const inputs = [checkInput1, checkInput2, checkInput3, checkInput4]
+        inputs.forEach(input => remvoeCls(input, 'inputBorderGreen'));
 
         // faq section mobile
         faqSours2.classList.remove('show2');
@@ -95,7 +110,7 @@ const handleCheckboxClick = (clicked) => {
         // product description
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>'
 
-        boxBorder3.classList.remove('borderGreenBox');
+        // boxBorder3.classList.remove('borderGreenBox');
         offer2Month.classList.remove('bg-Green');
         checkSour.style.accentColor = 'green';
         soursButton.classList.remove('borderGreen');
