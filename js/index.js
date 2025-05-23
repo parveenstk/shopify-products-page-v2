@@ -46,6 +46,11 @@ const checkInput2 = document.getElementById('checkBox-input2');
 const checkInput3 = document.getElementById('checkBox-input3');
 const checkInput4 = document.getElementById('checkBox-input4');
 
+// console.log("checkInput4:", checkInput4);
+
+// product price 
+const productPrice = document.getElementById('product-price');
+
 const handleCheckboxClick = (clicked) => {
 
     if (clicked.value === 'yomzSours') {
@@ -66,8 +71,9 @@ const handleCheckboxClick = (clicked) => {
         remvoeCls(faqOriginal2, 'show2');
         addCls(faqSours2, 'show2');
 
-        // product description
+        // products
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary</p>'
+        productPrice.innerHTML = '<span id="product-price" class="tab-price">$XX.22</span>'
 
         // Inputs
         const inputs = [checkInput1, checkInput2, checkInput3, checkInput4]
@@ -108,6 +114,7 @@ const handleCheckboxClick = (clicked) => {
 
         // product description
         productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>'
+        productPrice.innerHTML = '<span id="product-price" class="tab-price">$XX.99</span>'
 
         offer2Month.classList.remove('bg-Green');
         checkSour.style.accentColor = 'green';
@@ -192,18 +199,21 @@ const replaceCls = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`)
 }
 
-// offer - 2 box options changing border
+const optPrice = document.getElementById('options-price');
 
+// offer - 2 box options changing border
 const selectedOpt = (clicked) => {
+    console.log("clicked", clicked);
+
     const opts = document.querySelectorAll('.offer2-opts');
     opts.forEach(opt => {
         remvoeCls(opt, 'borderBlueOffer2');
     });
-    clicked.classList.add('borderBlueOffer2');
+    addCls(clicked, 'borderBlueOffer2');
+    // clicked.classList.add('borderBlueOffer2');
 }
 
 // [Which frequency is right for me?] Offer-2 functionality
-
 const householdItems = document.querySelectorAll('.household');
 householdItems.length > 0 ? (householdItems[0].classList.add('household-slt')) : '';
 
@@ -215,7 +225,6 @@ householdItems.forEach(item => {
 });
 
 // [Try Once Box] - Offer 3 functionality
-
 const offerBoxes = document.querySelectorAll('.offerBox');
 offerBoxes.length > 0 ? (offerBoxes[0].classList.add('selected-offer')) : '';
 
