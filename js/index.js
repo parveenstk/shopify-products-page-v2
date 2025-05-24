@@ -278,9 +278,20 @@ offerBoxes.forEach(box => {
         const tryOncePrice = document.getElementById('tryOnce-price');
         const tryPrice = tryOncePrice.dataset.price
         const value = box.dataset.price
-        const finalValue = value * tryPric
+        const finalValue = value * tryPrice
         tryOncePrice.innerText = `$${finalValue.toFixed(2)}`
 
+        // to change value & save% of [bestValueBox offer-3]
+        const bestValuePrice = document.getElementById('Offer3-bestValue-Price');
+        const bestValue = bestValuePrice.dataset.price
+        const UpdatedBestValue = value * bestValue
+        bestValuePrice.innerHTML = `$${UpdatedBestValue.toFixed(2)}`
+        
+
+        // saveText3
+        // console.log("bestValue:", bestValue);
+
+        // to fill the color according to the gummy selected
         const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
         colorSchema === 'Green' ? addCls(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
     });
@@ -291,6 +302,7 @@ const checkbox = document.getElementById('checkBox-input4');
 const bestValueBox = document.getElementById('offer3-bv-box');
 const bestValueHeader = document.getElementById('offer3-bv-box-header');
 
+// show border color & header color when input is checked 
 const updateBoxBorder = () => {
     const colorSchema = JSON.parse(localStorage.getItem('colorSchema')) || 'Blue';
 
