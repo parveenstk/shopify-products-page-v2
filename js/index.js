@@ -284,48 +284,6 @@ const checkbox = document.getElementById('checkBox-input4');
 const bestValueBox = document.getElementById('offer3-bv-box');
 const bestValueHeader = document.getElementById('offer3-bv-box-header');
 
-// checkbox.addEventListener('change', function () {
-//     const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
-
-//     // Remove both borders first to avoid stacking
-//     bestValueBox.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
-// bestValueHeader.classList.remove('bg-Green', 'bg-Blue');
-
-//     if (checkbox.checked) {
-//         if (colorSchema === 'Green') {
-//             bestValueBox.classList.add('borderGreenOffer2');
-//             bestValueHeader.classList.add('bg-Green');
-//         } else if (colorSchema === 'Blue') {
-//             bestValueBox.classList.add('borderBlueOffer2');
-//             bestValueHeader.classList.add('bg-Blue');
-//         }
-
-//         console.log('Checkbox is checked');
-//     } else {
-//         console.log('Checkbox is NOT checked');
-//     }
-// });
-
-// const updateBoxBorder = () => {
-//     const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
-//     console.log(colorSchema);
-
-//     bestValueBox.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
-//     bestValueHeader.classList.remove('bg-Green', 'bg-Blue');
-
-//     if (checkbox.checked) {
-//         bestValueBox.classList.add(
-//             colorSchema === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2'
-//         );
-
-//         bestValueHeader.classList.add(
-//             colorSchema === 'Green' ? 'bg-Green' : 'bg-Blue'
-//         );
-//     }
-// };
-
-// checkbox.addEventListener('change', updateBoxBorder);
-
 const updateBoxBorder = () => {
     const colorSchema = JSON.parse(localStorage.getItem('colorSchema')) || 'Blue';
 
