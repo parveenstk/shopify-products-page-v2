@@ -110,7 +110,7 @@ const handleCheckboxClick = (clicked) => {
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
         const savePack = document.querySelectorAll('.offerBox');
         savePack.forEach(element => {
-            replaceCls(element, 'selected-offer', 'selected-offer2')
+            replaceCls(element, 'selected-offer-blue', 'selected-offer-Green')
         })
 
     } else if (clicked.value === 'yomzOriginal') {
@@ -165,7 +165,7 @@ const handleCheckboxClick = (clicked) => {
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
         const savePack = document.querySelectorAll('.offerBox');
         savePack.forEach(element => {
-            replaceCls(element, 'selected-offer2', 'selected-offer')
+            replaceCls(element, 'selected-offer-Green', 'selected-offer-blue')
         })
 
     };
@@ -212,7 +212,7 @@ backStep2.addEventListener('click', () => {
     replaceCls(circle1, 'completed', 'active');
 })
 
-// to backward backButton - 3 to backButton - 2
+// to backward backButton-3 to backButton-2
 backStep3.addEventListener('click', () => {
     offerThree.classList.add('hide');
     offerTwo.classList.add('show');
@@ -267,16 +267,24 @@ householdItems.forEach(item => {
 
 // [Try Once Box] - Offer 3 functionality
 const offerBoxes = document.querySelectorAll('.offerBox');
-offerBoxes.length > 0 ? (offerBoxes[0].classList.add('selected-offer')) : '';
+offerBoxes.length > 0 ? (offerBoxes[0].classList.add('selected-offer-blue')) : '';
 
 offerBoxes.forEach(box => {
     box.addEventListener('click', () => {
-        offerBoxes.forEach(b => b.classList.remove('selected-offer'));
-        offerBoxes.forEach(b => b.classList.remove('selected-offer2'));
+        offerBoxes.forEach(b => b.classList.remove('selected-offer-blue'));
+        offerBoxes.forEach(b => b.classList.remove('selected-offer-Green'));
+
+        const tryOncePrice = document.getElementById('tryOnce-price');
+        const tryPrice = tryOncePrice.dataset.price
+        const value = box.dataset.price
+        const toInnerText = tryOncePrice.innerText;
+
+        const finalValue = value * tryPrice
+
+        console.log("clickBox", finalValue);
 
         const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
-        if (colorSchema === 'Green') addCls(box, 'selected-offer2')
-        else box.classList.add('selected-offer');
+        colorSchema === 'Green' ? addCls(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
     });
 });
 

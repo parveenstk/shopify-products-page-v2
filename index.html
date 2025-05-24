@@ -376,6 +376,8 @@
                         </div>
                      </div>
                      <div class="best-value best-value-blue">
+
+                        <!-- Offer-two : Best Value Box -->
                         <div id="offer2-boxBorder" class="best-value-item">
                            <div id="offer2-boxHeader" class="head">
                               <p>BEST VALUE</p>
@@ -551,7 +553,9 @@
                                        id="checkBox-input3" checked>
                                     <label class="form-check-label cursor" for="checkBox-input3">
                                        <span class="item-title">Try Once</span> <span class="tab-price">
-                                          <del>$18.99</del> $12.00</span>
+                                          <span><del>$18.99</del></span>
+                                          <span data-price="12" id="tryOnce-price">$12.00</span>
+                                       </span>
                                     </label>
                                  </div>
                               </div>
@@ -560,7 +564,7 @@
                                  <div class="row">
                                     <!-- box1 - Offer -->
                                     <div class="col-3 outline-box gray-box px-2">
-                                       <div class="card offerBox" value="offerBox-1">
+                                       <div class="card offerBox" id="offerBox-1" data-price="1">
                                           <div id="box1-save" class="save">Save 0%</div>
                                           <div id="box1-qty" class="quantity">1</div>
                                           <div id="box1-pack" class="label">PACK</div>
@@ -570,7 +574,7 @@
 
                                     <!-- box2 - Offer -->
                                     <div class="col-3 outline-box px-2">
-                                       <div class="card offerBox" value="offerBox-2">
+                                       <div class="card offerBox" id="offerBox-2" data-price="2">
                                           <div id="badge-box2" class="badge">MOST POPULAR</div>
                                           <div id="box2-save" class="save">Save 10%</div>
                                           <div id="box2-qty" class="quantity">2</div>
@@ -581,7 +585,7 @@
 
                                     <!-- box3 - Offer -->
                                     <div class="col-3 outline-box gray-box px-2">
-                                       <div class="card offerBox" value="offerBox-3">
+                                       <div class="card offerBox" id="offerBox-3" data-price="3">
                                           <div id="box3-Save" class="save">Save 15%</div>
                                           <div id="box3-Qty" class="quantity">3</div>
                                           <div id="box3-pack" class="label">PACK</div>
@@ -591,7 +595,7 @@
 
                                     <!-- box4 - Offer -->
                                     <div class="col-3 outline-box gray-blue px-2">
-                                       <div id="offerBox-4" class="card offerBox" value="offerBox-4">
+                                       <div id="offerBox-4" class="card offerBox" id="offerBox-4" data-price="4">
                                           <div id="badge-box4" class="badge">BEST VALUE</div>
                                           <div id="box4-save" class="save">Save 40%</div>
                                           <div id="box4-qty" class="quantity">4</div>
@@ -623,7 +627,8 @@
                                           <span id="offer3-saveText" class="save-color">Save 40%</span>
                                        </span>
                                        <span class="tab-price">
-                                          <del>$18.99</del> $12.00
+                                          <span><del>$18.99</del></span>
+                                          <span>$12.00</span>
                                        </span>
                                     </label>
                                  </div>

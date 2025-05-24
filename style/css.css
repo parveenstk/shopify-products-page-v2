@@ -83,47 +83,47 @@ p {
   border-color: #4CAF50 !important;
 }
 
-.selected-offer {
+.selected-offer-blue {
   color: white !important;
   background-color: #2DC6F7 !important;
   border: 3px solid #1EB9F0 !important;
 }
 
-.selected-offer2 {
+.selected-offer-Green {
   color: white !important;
   background-color: #4CAF50 !important;
   border: 3px solid #4CAF50 !important;
 }
 
 /* Target inner elements of selected boxes */
-.selected-offer #box1-save,
-.selected-offer #box1-qty,
-.selected-offer #box1-pack,
-.selected-offer #box2-save,
-.selected-offer #box2-qty,
-.selected-offer #box2-pack,
-.selected-offer #box3-Save,
-.selected-offer #box3-Qty,
-.selected-offer #box3-pack,
-.selected-offer #box4-save,
-.selected-offer #box4-qty,
-.selected-offer #box4-pack {
+.selected-offer-Green #box1-save,
+.selected-offer-Green #box1-qty,
+.selected-offer-Green #box1-pack,
+.selected-offer-Green #box2-save,
+.selected-offer-Green #box2-qty,
+.selected-offer-Green #box2-pack,
+.selected-offer-Green #box3-Save,
+.selected-offer-Green #box3-Qty,
+.selected-offer-Green #box3-pack,
+.selected-offer-Green #box4-save,
+.selected-offer-Green #box4-qty,
+.selected-offer-Green #box4-pack {
   color: white !important;
 }
 
 /* Target inner elements of selected boxes */
-.selected-offer2 #box1-save,
-.selected-offer2 #box1-qty,
-.selected-offer2 #box1-pack,
-.selected-offer2 #box2-save,
-.selected-offer2 #box2-qty,
-.selected-offer2 #box2-pack,
-.selected-offer2 #box3-Save,
-.selected-offer2 #box3-Qty,
-.selected-offer2 #box3-pack,
-.selected-offer2 #box4-save,
-.selected-offer2 #box4-qty,
-.selected-offer2 #box4-pack {
+.selected-offer-blue #box1-save,
+.selected-offer-blue #box1-qty,
+.selected-offer-blue #box1-pack,
+.selected-offer-blue #box2-save,
+.selected-offer-blue #box2-qty,
+.selected-offer-blue #box2-pack,
+.selected-offer-blue #box3-Save,
+.selected-offer-blue #box3-Qty,
+.selected-offer-blue #box3-pack,
+.selected-offer-blue #box4-save,
+.selected-offer-blue #box4-qty,
+.selected-offer-blue #box4-pack {
   color: white !important;
 }
 
