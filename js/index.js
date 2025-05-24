@@ -33,6 +33,8 @@ const backStep3 = document.getElementById('backStep3');
 const offerThree = document.getElementById('offer-three');
 const boxBorder3 = document.getElementById('offer3-boxBorder');
 const saveText3 = document.getElementById('offer3-saveText');
+const offerBox4 = document.getElementById('offerBox-4');
+const badgeBox4 = document.getElementById('badge-box4');
 
 // faqs ( yomz original & yomz sours )
 const faqOriginal1 = document.getElementById('faq-yomzOriginal-1');
@@ -45,8 +47,6 @@ const checkInput1 = document.getElementById('checkBox-input1');
 const checkInput2 = document.getElementById('checkBox-input2');
 const checkInput3 = document.getElementById('checkBox-input3');
 const checkInput4 = document.getElementById('checkBox-input4');
-
-// console.log("checkInput4:", checkInput4);
 
 // Clear localStorage on page reload
 window.addEventListener('load', function () {
@@ -64,12 +64,12 @@ const handleCheckboxClick = (clicked) => {
         localStorage.setItem('colorSchema', JSON.stringify('Green'));
 
         // change backgrounds
-        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, offer2Month];
+        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, offer2Month, badgeBox4];
         backgrounds.forEach(el => addCls(el, 'bg-Green'));
 
         // change borders
-        const borders = [boxBorder2, boxBorder3];
-        borders.forEach(el => addCls(el, 'borderGreenBox'));
+        const borders = [boxBorder2, boxBorder3, offerBox4];
+        borders.forEach(el => addCls(el, 'borderGreen'));
 
         // change fonts 
         const fonts = [saveText2, saveText3];
@@ -101,22 +101,29 @@ const handleCheckboxClick = (clicked) => {
             productThumbs.update();
         }
 
-        // for best value selectors
+        // for best value selectors ( offer - 2 box options changing border )
         const bestValueSelectors = document.querySelectorAll('.slt-bag-item .card');
         bestValueSelectors.forEach((selector) => {
             selector.classList.replace('borderBlueOffer2', 'borderGreenOffer2')
         })
+
+        // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
+        const savePack = document.querySelectorAll('.offerBox');
+        savePack.forEach(element => {
+            replaceCls(element, 'selected-offer', 'selected-offer2')
+        })
+
     } else if (clicked.value === 'yomzOriginal') {
         // for yomzOriginal 
         localStorage.setItem('colorSchema', JSON.stringify('Blue'));
 
         // change backgrounds
-        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2];
+        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, badgeBox4];
         backgrounds.forEach(el => remvoeCls(el, 'bg-Green'));
 
         // change borders
-        const borders = [boxBorder2, offer2Opt1, boxBorder3];
-        borders.forEach(el => remvoeCls(el, 'borderGreenBox'))
+        const borders = [boxBorder2, offer2Opt1, boxBorder3, offerBox4];
+        borders.forEach(el => remvoeCls(el, 'borderGreen'))
 
         saveText2.classList.remove('fontGreen');
 
@@ -147,12 +154,19 @@ const handleCheckboxClick = (clicked) => {
             productThumbs.update();
         }
 
-        // for best value selectors
+        // for best value selectors ( offer - 2 box options changing border )
         const bestValueSelectors = document.querySelectorAll('.slt-bag-item .card');
         bestValueSelectors.forEach((selector) => {
             selector.classList.replace('borderGreenOffer2', 'borderBlueOffer2')
         })
-    }
+
+        // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
+        const savePack = document.querySelectorAll('.offerBox');
+        savePack.forEach(element => {
+            replaceCls(element, 'selected-offer2', 'selected-offer')
+        })
+
+    };
 
     // Uncheck other checkboxes
     const checkboxes = document.querySelectorAll('input[name="productType"]');
@@ -160,8 +174,6 @@ const handleCheckboxClick = (clicked) => {
         if (cb !== clicked) cb.checked = false;
     });
 };
-
-// console.log(offerTwo);
 
 // Stepper ( bar & circle )
 const circle1 = document.getElementById('step1-circle');
@@ -225,7 +237,7 @@ const optPrice = document.getElementById('options-price');
 
 // offer - 2 box options changing border
 const selectedOpt = (clicked) => {
-    console.log("clicked", clicked);
+    // console.log("clicked", clicked);
 
     const opts = document.querySelectorAll('.offer2-opts');
     opts.forEach(opt => {
@@ -256,6 +268,10 @@ offerBoxes.length > 0 ? (offerBoxes[0].classList.add('selected-offer')) : '';
 offerBoxes.forEach(box => {
     box.addEventListener('click', () => {
         offerBoxes.forEach(b => b.classList.remove('selected-offer'));
-        box.classList.add('selected-offer');
+        offerBoxes.forEach(b => b.classList.remove('selected-offer2'));
+
+        const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
+        if (colorSchema === 'Green') addCls(box, 'selected-offer2')
+        else box.classList.add('selected-offer');
     });
 });

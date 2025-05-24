@@ -85,6 +85,12 @@ p {
   border: 3px solid #1EB9F0 !important;
 }
 
+.selected-offer2 {
+  color: white !important;
+  background-color: #4CAF50 !important;
+  border: 3px solid #4CAF50 !important;
+}
+
 /* Target inner elements of selected boxes */
 .selected-offer #box1-save,
 .selected-offer #box1-qty,
@@ -98,6 +104,22 @@ p {
 .selected-offer #box4-save,
 .selected-offer #box4-qty,
 .selected-offer #box4-pack {
+  color: white !important;
+}
+
+/* Target inner elements of selected boxes */
+.selected-offer2 #box1-save,
+.selected-offer2 #box1-qty,
+.selected-offer2 #box1-pack,
+.selected-offer2 #box2-save,
+.selected-offer2 #box2-qty,
+.selected-offer2 #box2-pack,
+.selected-offer2 #box3-Save,
+.selected-offer2 #box3-Qty,
+.selected-offer2 #box3-pack,
+.selected-offer2 #box4-save,
+.selected-offer2 #box4-qty,
+.selected-offer2 #box4-pack {
   color: white !important;
 }
 
@@ -2525,7 +2547,7 @@ p.people {
 }
 
 .gray-blue .save {
-  color: #30709B;
+  color: #565656;
 }
 
 .insalect {
@@ -2583,10 +2605,6 @@ p.people {
 
 .fontGreen {
   color: #0AA03C !important;
-}
-
-.borderGreenBox {
-  border: 3px solid #0AA03C !important;
 }
 
 .borderBlue {
