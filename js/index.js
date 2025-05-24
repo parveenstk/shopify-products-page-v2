@@ -278,15 +278,21 @@ offerBoxes.forEach(box => {
         const tryOncePrice = document.getElementById('tryOnce-price');
         const tryPrice = tryOncePrice.dataset.price
         const value = box.dataset.price
+        const percentage = box.dataset.percentage
+
+        // Updated Value ( Try Offer Box )
         const finalValue = value * tryPrice
         tryOncePrice.innerText = `$${finalValue.toFixed(2)}`
+
+        // Updated Best Value Box ( offer-3 )
+        saveText3.innerText = `Save ${percentage}%`;
 
         // to change value & save% of [bestValueBox offer-3]
         const bestValuePrice = document.getElementById('Offer3-bestValue-Price');
         const bestValue = bestValuePrice.dataset.price
         const UpdatedBestValue = value * bestValue
         bestValuePrice.innerHTML = `$${UpdatedBestValue.toFixed(2)}`
-        
+
         // saveText3
         // console.log("bestValue:", bestValue);
 
