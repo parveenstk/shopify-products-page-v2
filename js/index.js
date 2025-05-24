@@ -287,7 +287,6 @@ offerBoxes.forEach(box => {
         const UpdatedBestValue = value * bestValue
         bestValuePrice.innerHTML = `$${UpdatedBestValue.toFixed(2)}`
         
-
         // saveText3
         // console.log("bestValue:", bestValue);
 
