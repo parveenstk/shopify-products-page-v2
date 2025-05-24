@@ -125,7 +125,9 @@ const handleCheckboxClick = (clicked) => {
         const borders = [boxBorder2, offer2Opt1, boxBorder3, offerBox4];
         borders.forEach(el => remvoeCls(el, 'borderGreen'))
 
-        saveText2.classList.remove('fontGreen');
+        // change fonts 
+        const fonts = [saveText2, saveText3];
+        fonts.forEach(el => remvoeCls(el, 'fontGreen'));
 
         // change Inputs
         const inputs = [checkInput1, checkInput2, checkInput3, checkInput4]
@@ -275,3 +277,68 @@ offerBoxes.forEach(box => {
         else box.classList.add('selected-offer');
     });
 });
+
+// offer - 3 ( Best Value Box )
+
+const checkbox = document.getElementById('checkBox-input4');
+const bestValueBox = document.getElementById('offer3-bv-box');
+const bestValueHeader = document.getElementById('offer3-bv-box-header');
+
+// checkbox.addEventListener('change', function () {
+//     const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
+
+//     // Remove both borders first to avoid stacking
+//     bestValueBox.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
+// bestValueHeader.classList.remove('bg-Green', 'bg-Blue');
+
+//     if (checkbox.checked) {
+//         if (colorSchema === 'Green') {
+//             bestValueBox.classList.add('borderGreenOffer2');
+//             bestValueHeader.classList.add('bg-Green');
+//         } else if (colorSchema === 'Blue') {
+//             bestValueBox.classList.add('borderBlueOffer2');
+//             bestValueHeader.classList.add('bg-Blue');
+//         }
+
+//         console.log('Checkbox is checked');
+//     } else {
+//         console.log('Checkbox is NOT checked');
+//     }
+// });
+
+// const updateBoxBorder = () => {
+//     const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
+//     console.log(colorSchema);
+
+//     bestValueBox.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
+//     bestValueHeader.classList.remove('bg-Green', 'bg-Blue');
+
+//     if (checkbox.checked) {
+//         bestValueBox.classList.add(
+//             colorSchema === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2'
+//         );
+
+//         bestValueHeader.classList.add(
+//             colorSchema === 'Green' ? 'bg-Green' : 'bg-Blue'
+//         );
+//     }
+// };
+
+// checkbox.addEventListener('change', updateBoxBorder);
+
+const updateBoxBorder = () => {
+    const colorSchema = JSON.parse(localStorage.getItem('colorSchema')) || 'Blue';
+
+    bestValueBox.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
+    bestValueHeader.classList.remove('bg-Green', 'bg-Blue');
+
+    if (checkbox.checked) {
+        const borderClass = colorSchema === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2';
+        const bgClass = colorSchema === 'Green' ? 'bg-Green' : 'bg-Blue';
+
+        bestValueBox.classList.add(borderClass);
+        bestValueHeader.classList.add(bgClass);
+    }
+};
+
+checkbox.addEventListener('change', updateBoxBorder);
