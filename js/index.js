@@ -274,14 +274,12 @@ offerBoxes.forEach(box => {
         offerBoxes.forEach(b => b.classList.remove('selected-offer-blue'));
         offerBoxes.forEach(b => b.classList.remove('selected-offer-Green'));
 
+        // to change/update the "offer3 - tryOnce Value"
         const tryOncePrice = document.getElementById('tryOnce-price');
         const tryPrice = tryOncePrice.dataset.price
         const value = box.dataset.price
-        const toInnerText = tryOncePrice.innerText;
-
-        const finalValue = value * tryPrice
-
-        console.log("clickBox", finalValue);
+        const finalValue = value * tryPric
+        tryOncePrice.innerText = `$${finalValue.toFixed(2)}`
 
         const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
         colorSchema === 'Green' ? addCls(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
