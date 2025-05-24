@@ -48,12 +48,18 @@ const checkInput4 = document.getElementById('checkBox-input4');
 
 // console.log("checkInput4:", checkInput4);
 
+// Clear localStorage on page reload
+window.addEventListener('load', function () {
+    localStorage.clear();
+});
+
 // product price 
 const productPrice = document.getElementById('product-price');
 
 const handleCheckboxClick = (clicked) => {
 
     if (clicked.value === 'yomzSours') {
+        // for yomz Sours
 
         localStorage.setItem('colorSchema', JSON.stringify('Green'));
 
@@ -101,7 +107,7 @@ const handleCheckboxClick = (clicked) => {
             selector.classList.replace('borderBlueOffer2', 'borderGreenOffer2')
         })
     } else if (clicked.value === 'yomzOriginal') {
-
+        // for yomzOriginal 
         localStorage.setItem('colorSchema', JSON.stringify('Blue'));
 
         // change backgrounds
@@ -247,7 +253,6 @@ householdItems.forEach(item => {
 const offerBoxes = document.querySelectorAll('.offerBox');
 offerBoxes.length > 0 ? (offerBoxes[0].classList.add('selected-offer')) : '';
 
-// Click handler for each box
 offerBoxes.forEach(box => {
     box.addEventListener('click', () => {
         offerBoxes.forEach(b => b.classList.remove('selected-offer'));
