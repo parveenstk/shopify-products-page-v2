@@ -235,21 +235,23 @@ const replaceCls = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`)
 }
 
-const optPrice = document.getElementById('options-price');
-
-// offer - 2 box options changing border
+// offer - 2 box options changing border [Best Value Box]
 const selectedOpt = (clicked) => {
-    // console.log("clicked", clicked);
-
+    const optPrice = document.getElementById('options-price');
     const opts = document.querySelectorAll('.offer2-opts');
     opts.forEach(opt => {
         remvoeCls(opt, 'borderBlueOffer2');
         remvoeCls(opt, 'borderGreenOffer2');
     });
     const colorSchema = JSON.parse(localStorage.getItem('colorSchema'));
-    if (colorSchema === 'Green') addCls(clicked, 'borderGreenOffer2');
-    else addCls(clicked, 'borderBlueOffer2');
-    // clicked.classList.add('borderBlueOffer2');
+    colorSchema === 'Green' ? addCls(clicked, 'borderGreenOffer2') : addCls(clicked, 'borderBlueOffer2')
+
+    // to change the ( options-price )
+    const value = clicked.dataset.price;
+    const optPriceValue = optPrice.dataset.price;
+    const finalValue = value * optPriceValue;
+
+    optPrice.innerText = `$${finalValue.toFixed(2)}`
 }
 
 // [Which frequency is right for me?] Offer-2 functionality
@@ -279,7 +281,6 @@ offerBoxes.forEach(box => {
 });
 
 // offer - 3 ( Best Value Box )
-
 const checkbox = document.getElementById('checkBox-input4');
 const bestValueBox = document.getElementById('offer3-bv-box');
 const bestValueHeader = document.getElementById('offer3-bv-box-header');
