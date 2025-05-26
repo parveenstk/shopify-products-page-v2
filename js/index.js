@@ -8,10 +8,6 @@ const soursButton = document.getElementById('sours-Button');
 const checkOriginal = document.getElementById('checkOriginal');
 const checkSour = document.getElementById('checkSour');
 
-// Gummies Buttons (yomz Original & yomz Sour)
-const yomzOriginal = document.getElementById('yomz-original');
-const yomzSours = document.getElementById('yomz-sours');
-
 // offer - 01
 const nextStep1 = document.getElementById('nextStep1');
 const offerOne = document.getElementById('offer-one');
