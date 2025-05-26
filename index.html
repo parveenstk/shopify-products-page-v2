@@ -44,7 +44,7 @@
                <div class="usefull-checkout text-end">
                   <ul class="list-unstyled">
                      <li>
-                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                        <a id="cartImage" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                            aria-controls="offcanvasRight"> <img src="images/cart.svg" class="img-fluid">
                            <a>
                      </li>
@@ -1596,7 +1596,7 @@
 
                   <!-- Second Step -->
                   <div id="offer-two2" class="sec-steps start-botton-show hide">
-                  <!-- <div id="offer-two2" class="sec-steps start-botton-show"> -->
+                     <!-- <div id="offer-two2" class="sec-steps start-botton-show"> -->
                      <div class="classbtn1 slt-price">
                         <div class="form-check">
                            <input class="form-check-input product-red mgTp" type="checkbox" value=""
@@ -1775,7 +1775,7 @@
 
                   <!-- Third-Steps -->
                   <div id="offer-three2" class="third-steps start-botton-show hide">
-                  <!-- <div id="offer-three2" class="third-steps start-botton-show"> -->
+                     <!-- <div id="offer-three2" class="third-steps start-botton-show"> -->
                      <div class="best-value best-value-blue">
                         <div id="offer3-boxBorder2" class="best-value-item">
                            <div class="box-padding">
@@ -1805,7 +1805,8 @@
 
                                     <!-- box2 - Offer -->
                                     <div class="col-3 outline-box px-2">
-                                       <div class="card offerBox2" id="offerBox-2-2" data-price="2" data-percentage="10">
+                                       <div class="card offerBox2" id="offerBox-2-2" data-price="2"
+                                          data-percentage="10">
                                           <div id="badge-box2-2" class="badge">MOST POPULAR</div>
                                           <div id="box2-save2" class="save">Save 10%</div>
                                           <div id="box2-qty2" class="quantity">2</div>
@@ -1816,7 +1817,8 @@
 
                                     <!-- box3 - Offer -->
                                     <div class="col-3 outline-box gray-box px-2">
-                                       <div class="card offerBox2" id="offerBox-3-2" data-price="3" data-percentage="15">
+                                       <div class="card offerBox2" id="offerBox-3-2" data-price="3"
+                                          data-percentage="15">
                                           <div id="box3-Save2" class="save">Save 15%</div>
                                           <div id="box3-Qty2" class="quantity">3</div>
                                           <div id="box3-pack2" class="label">PACK</div>
@@ -1826,7 +1828,8 @@
 
                                     <!-- box4 - Offer -->
                                     <div class="col-3 outline-box gray-blue px-2">
-                                       <div id="offerBox-4-2" class="card offerBox2" data-price="4" data-percentage="40">
+                                       <div id="offerBox-4-2" class="card offerBox2" data-price="4"
+                                          data-percentage="40">
                                           <div id="badge-box4-2" class="badge">BEST VALUE</div>
                                           <div id="box4-save2" class="save">Save 40%</div>
                                           <div id="box4-qty2" class="quantity">4</div>
@@ -2565,11 +2568,14 @@
    <!-- How Large is Your Household? popup-->
 
    <!-- Added Right Side Products-->
-   <div class="offcanvas cart-products offcanvas-end" tabindex="-1" id="offcanvasRight"
+   <div id="cart-section" class="offcanvas cart-products offcanvas-end hide" tabindex="-1" id="offcanvasRight"
       aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-         <h4>Your Cart: <span>1 Item</span></h4>
-         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         <h4>Your Cart:
+            <span>1 Item</span>
+         </h4>
+         <button id="cartCross-btn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
          <div class="cart-products">
@@ -2700,19 +2706,19 @@
    </script>
 
    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-         const stickyBtn = document.querySelector(".next-prev-btn");
-         const flavorPart = document.querySelector(".flavor-part");
-         function handleScroll() {
-            const flavorRect = flavorPart.getBoundingClientRect();
-            if (flavorRect.top <= 0 && flavorRect.bottom >= stickyBtn.offsetHeight) {
-               stickyBtn.classList.add("sticky");
-            } else {
-               stickyBtn.classList.remove("sticky");
-            }
-         }
-         window.addEventListener("scroll", handleScroll);
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //    const stickyBtn = document.querySelector(".next-prev-btn");
+      //    const flavorPart = document.querySelector(".flavor-part");
+      //    function handleScroll() {
+      //       const flavorRect = flavorPart.getBoundingClientRect();
+      //       if (flavorRect.top <= 0 && flavorRect.bottom >= stickyBtn.offsetHeight) {
+      //          stickyBtn.classList.add("sticky");
+      //       } else {
+      //          stickyBtn.classList.remove("sticky");
+      //       }
+      //    }
+      //    window.addEventListener("scroll", handleScroll);
+      // });
    </script>
 
    <script>
