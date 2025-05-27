@@ -1039,7 +1039,7 @@
                   <!-- Third-Steps -->
 
                   <!-- <div id="offer-three" class="third-steps start-botton-show hide"> -->
-                     <div id="offer-three" class="third-steps">
+                  <div id="offer-three" class="third-steps">
 
                      <div class="best-value best-value-blue">
                         <div id="offer3-boxBorder" class="best-value-item">
@@ -1107,7 +1107,7 @@
                            </div>
                         </div>
                      </div>
-                     
+
                      <div class="best-value best-value-blue insalect">
                         <!-- BEST VALUE BOX -->
                         <div id="offer3-bv-box" class="best-value-item">
@@ -4915,152 +4915,84 @@
          <button class="btn btn-primary w-100 btn-pay-yellow"><img src="images/paypal.png" class="img-fluid"> </button>
       </div>
    </div>
+
    <!-- Added Right Side Products-->
-
    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
-
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
    <script src='https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js'></script>
-
    <script src="js/script.js"></script>
-
    <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
-
    <script src='https://unpkg.com/swiper@6.5.4/swiper-bundle.min.js'></script>
 
    <!-- import script -->
-
    <script type="text/javascript" src="js/carousel.js"></script>
-
    <script src="./js/index.js"></script>
-
    <script src="./js/index2.js"></script>
 
    <script>
-
       (function () {
-
          "use strict";
-
          var initCarousels = function () {
-
             $(".owl-carousel1").owlCarousel({
-
                loop: true,
-
                center: true,
-
                nav: true,
-
                margin: 0,
-
                responsiveClass: true,
-
                responsive: {
-
                   0: {
-
                      items: 2,
-
                      nav: true
-
                   },
-
                   680: {
-
                      items: 2,
-
                      nav: true,
-
                      loop: false
-
                   },
-
                   1000: {
-
                      items: 5,
-
                      nav: true
-
                   }
-
                }
-
             });
-
          };
-
          // Call the function to initialize the carousel
-
          initCarousels();
-
       })();
-
    </script>
 
    <script>
-
       document.addEventListener("DOMContentLoaded", function () {
-
          const stickyBtn = document.querySelector(".next-prev-btn");
-
          const flavorPart = document.querySelector(".flavor-part");
-
          function handleScroll() {
-
             const flavorRect = flavorPart.getBoundingClientRect();
-
             if (flavorRect.top <= 0 && flavorRect.bottom >= stickyBtn.offsetHeight) {
-
                stickyBtn.classList.add("sticky");
-
             } else {
-
                stickyBtn.classList.remove("sticky");
-
             }
-
          }
-
          window.addEventListener("scroll", handleScroll);
-
       });
-
    </script>
 
    <script>
-
       const minusBtn = document.getElementById('minus');
-
       const plusBtn = document.getElementById('plus');
-
       const quantityInput = document.getElementById('quantity');
-
       minusBtn.addEventListener('click', () => {
-
          let current = parseInt(quantityInput.value);
-
          if (current > parseInt(quantityInput.min)) {
-
             quantityInput.value = current - 1;
-
          }
-
       });
-
       plusBtn.addEventListener('click', () => {
-
          let current = parseInt(quantityInput.value);
-
          if (current < parseInt(quantityInput.max)) {
-
             quantityInput.value = current + 1;
-
          }
-
       });
-
    </script>
 
 </body>

@@ -309,11 +309,13 @@ const updateBoxBorder = () => {
 checkbox.addEventListener('change', updateBoxBorder);
 
 // Cart Section
-// const cart = document.getElementById('cart-section');
-// const cartCrossBtn = document.getElementById('cartCross-btn');
-// nextStep3.addEventListener('click', () => {
-//     replaceCls(cart, 'hide', 'show');
-// });
-// cartCrossBtn.addEventListener('click', () => {
-//     replaceCls(cart, 'show', 'hide');
-// });
+const cart = document.getElementById('cart-section');
+const cartCrossBtn = document.getElementById('cartCross-btn');
+
+nextStep3.addEventListener('click', () => {
+    replaceCls(cart, 'hide', 'show');
+});
+
+cartCrossBtn.addEventListener('click', () => {
+    replaceCls(cart, 'show', 'hide');
+});
