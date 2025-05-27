@@ -66,6 +66,11 @@ p {
 }
 
 /* New Css */
+
+.show2 {
+  display: block;
+}
+
 .bg-Blue {
   background-color: #1EB9F0 !important;
 }
