@@ -315,6 +315,10 @@ const cartIcon = document.getElementById('cartIcon');
 const cartIconMobile = document.getElementById('cartIcon-mobile');
 const cartOverlay = document.getElementById('cart-overlay');
 
+// cart items
+const cartItem1 = document.getElementById('cartItem-1');
+const cartCross = document.getElementById('cartCross');
+
 // 3NextStep Button of 2nd product banner 
 const nextStep3_3 = document.getElementById('nextStep3-2');
 
@@ -337,3 +341,7 @@ cartIcon?.addEventListener('click', showCart);
 cartIconMobile?.addEventListener('click', showCart);
 cartCrossBtn?.addEventListener('click', hideCart);
 cartOverlay?.addEventListener('click', hideCart); // Click outside to close
+
+cartCross.addEventListener('click', () => {
+    addCls(cartItem1, 'hide')
+});
