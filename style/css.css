@@ -67,6 +67,37 @@ p {
 
 /* New Css */
 
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* semi-transparent black */
+  z-index: 1040;
+
+  /* just below Bootstrap offcanvas default (1045) */
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cart-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cart-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cartIcon-2 {
+  display: none;
+}
+
 .show2 {
   display: block;
 }
@@ -2849,6 +2880,10 @@ p.people {
 }
 
 @media screen and (max-width: 767px) {
+
+  .cartIcon-2 {
+    display: none;
+  }
 
   /*cart*/
   .cart-products .offcanvas-header {

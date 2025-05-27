@@ -311,11 +311,29 @@ checkbox.addEventListener('change', updateBoxBorder);
 // Cart Section
 const cart = document.getElementById('cart-section');
 const cartCrossBtn = document.getElementById('cartCross-btn');
+const cartIcon = document.getElementById('cartIcon');
+const cartIconMobile = document.getElementById('cartIcon-mobile');
+const cartOverlay = document.getElementById('cart-overlay');
 
-nextStep3.addEventListener('click', () => {
+// 3NextStep Button of 2nd product banner 
+const nextStep3_3 = document.getElementById('nextStep3-2');
+
+// Helper function to show cart and overlay
+function showCart() {
     replaceCls(cart, 'hide', 'show');
-});
+    replaceCls(cartOverlay, 'hide', 'show');
+}
 
-cartCrossBtn.addEventListener('click', () => {
+// Helper function to hide cart and overlay
+function hideCart() {
     replaceCls(cart, 'show', 'hide');
-});
+    replaceCls(cartOverlay, 'show', 'hide');
+}
+
+// Hook into events
+nextStep3?.addEventListener('click', showCart);
+nextStep3_3?.addEventListener('click', showCart);
+cartIcon?.addEventListener('click', showCart);
+cartIconMobile?.addEventListener('click', showCart);
+cartCrossBtn?.addEventListener('click', hideCart);
+cartOverlay?.addEventListener('click', hideCart); // Click outside to close

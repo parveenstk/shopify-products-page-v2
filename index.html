@@ -32,6 +32,7 @@
 </head>
 
 <body>
+   <div id="cart-overlay" class="cart-overlay hide"></div>
 
    <!--Top-header-->
 
@@ -50,55 +51,36 @@
    <!--Header and banner-->
 
    <header class="desktop-header">
-
       <a class="btn btn-primary offcanvasbtn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
          aria-controls="offcanvasExample">
-
          <img src="images/toggle.svg" class="img-fluid">
-
       </a>
-
       <div class="container">
-
          <div class="row justify-content-between">
-
             <div class="col-2">
-
                <div class="brand-logo">
-
                   <img src="images/logo.svg" class="img-fluid">
-
                </div>
-
             </div>
 
+            <!-- Mobile Cart -->
             <div class="col-3">
-
                <div class="usefull-checkout text-end">
-
                   <ul class="list-unstyled">
-
                      <li>
-
+                        <img id="cartIcon" src="images/cart.svg" class="img-fluid cursor">
                         <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                           aria-controls="offcanvasRight"> <img src="images/cart.svg" class="img-fluid">
-
-                           <a>
-
+                           aria-controls="offcanvasRight">
+                           <img src="images/cart.svg" class="img-fluid hide">
+                        </a>
                      </li>
-
                      <li><a href="#"> <img src="images/user.svg" class="img-fluid"><a></li>
-
                   </ul>
-
                </div>
-
             </div>
 
          </div>
-
       </div>
-
    </header>
 
    <header class="mobile-header">
@@ -133,9 +115,13 @@
                <div class="usefull-checkout text-end">
 
                   <ul class="list-unstyled">
-
-                     <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                           aria-controls="offcanvasRight"> <img src="images/cart.svg" class="img-fluid"><a></li>
+                     <li>
+                        <img id="cartIcon-mobile" src="images/cart.svg" class="img-fluid cursor">
+                        <a href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                           aria-controls="offcanvasRight">
+                           <img src="images/cart.svg" class="img-fluid hide">
+                        </a>
+                     </li>
 
                      <li><a href="#"> <img src="images/user.svg" class="img-fluid"><a></li>
 
@@ -4812,92 +4798,101 @@
    <!-- How Large is Your Household? popup-->
 
    <!-- Added Right Side Products-->
-   <div class="offcanvas cart-products offcanvas-end d-flex flex-column" tabindex="-1" id="offcanvasRight"
-      aria-labelledby="offcanvasRightLabel">
+   <div id="cart-section" class="offcanvas cart-products offcanvas-end d-flex flex-column hide" tabindex="-1"
+      id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
          <h4>Your Cart: <span>1 Item</span></h4>
-         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         <button id="cartCross-btn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+            aria-label="Close">
+         </button>
       </div>
       <div class="offcanvas-body flex-grow-1 overflow-auto">
          <div class="cart-products">
-            <div class="card-item">
-               <img src="images/cross.svg" class="img-fluid crossiocns">
-               <div class="row">
-                  <div class="col-3 px-0">
-                     <div class="card-products-images">
-                        <img src="images/slider/4.png" class="img-fluid">
-                     </div>
-                     <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
-                              class="fas fa-minus"></i></button>
-                        <input type="number" class="form-control no-arrow" id="quantity" value="1" min="1" max="100">
-                        <button class="btn btn-outline-secondary" type="button" id="plus"><i
-                              class="fas fa-plus"></i></button>
-                     </div>
-                  </div>
-                  <div class="col-9 px-0">
-                     <div class="card-products-titles">
-                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
-                        <h4>YOMZ Original / 1 Case</h4>
-                        <p class="card-products-price-">$26.00</p>
-                        <p class="daily-items">($3.85 per daily dose)</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <hr>
-            <div class="card-item">
-               <img src="images/cross.svg" class="img-fluid crossiocns">
-               <div class="row">
-                  <div class="col-3 px-0">
-                     <div class="card-products-images">
-                        <img src="images/slider/4.png" class="img-fluid">
-                     </div>
-                     <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
-                              class="fas fa-minus"></i></button>
-                        <input type="number" class="form-control no-arrow" id="quantity" value="1" min="1" max="100">
-                        <button class="btn btn-outline-secondary" type="button" id="plus"><i
-                              class="fas fa-plus"></i></button>
-                     </div>
-                  </div>
-                  <div class="col-9 px-0">
-                     <div class="card-products-titles">
-                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
-                        <h4>YOMZ Original / 1 Case</h4>
-                        <p class="card-products-price-">$26.00</p>
-                        <p class="daily-items">($3.85 per daily dose)</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <hr>
-            <div class="card-item">
-               <img src="images/cross.svg" class="img-fluid crossiocns">
-               <div class="row">
-                  <div class="col-3 px-0">
-                     <div class="card-products-images">
-                        <img src="images/slider/4.png" class="img-fluid">
-                     </div>
-                     <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
-                              class="fas fa-minus"></i></button>
-                        <input type="number" class="form-control no-arrow" id="quantity" value="1" min="1" max="100">
-                        <button class="btn btn-outline-secondary" type="button" id="plus"><i
-                              class="fas fa-plus"></i></button>
-                     </div>
-                  </div>
-                  <div class="col-9 px-0">
-                     <div class="card-products-titles">
-                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
-                        <h4>YOMZ Original / 1 Case</h4>
-                        <p class="card-products-price-">$26.00</p>
-                        <p class="daily-items">($3.85 per daily dose)</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
 
+            <!-- cart item 1 -->
+            <div class="card-item">
+               <img src="images/cross.svg" class="img-fluid crossiocns">
+               <div class="row">
+                  <div class="col-3 px-0">
+                     <div class="card-products-images">
+                        <img src="images/slider/4.png" class="img-fluid">
+                     </div>
+                     <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
+                              class="fas fa-minus"></i></button>
+                        <input type="number" class="form-control no-arrow" id="quantity" value="1" min="1" max="100">
+                        <button class="btn btn-outline-secondary" type="button" id="plus"><i
+                              class="fas fa-plus"></i></button>
+                     </div>
+                  </div>
+                  <div class="col-9 px-0">
+                     <div class="card-products-titles">
+                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
+                        <h4>YOMZ Original / 1 Case</h4>
+                        <p class="card-products-price-">$26.00</p>
+                        <p class="daily-items">($3.85 per daily dose)</p>
+                     </div>
+                  </div>
+               </div>
+               <hr>
+            </div>
+            <!-- cart item 1 -->
+            <!-- cart item 2 -->
+            <div class="card-item">
+               <img src="images/cross.svg" class="img-fluid crossiocns">
+               <div class="row">
+                  <div class="col-3 px-0">
+                     <div class="card-products-images">
+                        <img src="images/slider/4.png" class="img-fluid">
+                     </div>
+                     <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
+                              class="fas fa-minus"></i></button>
+                        <input type="number" class="form-control no-arrow" id="quantity2" value="1" min="1" max="100">
+                        <button class="btn btn-outline-secondary" type="button" id="plus"><i
+                              class="fas fa-plus"></i></button>
+                     </div>
+                  </div>
+                  <div class="col-9 px-0">
+                     <div class="card-products-titles">
+                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
+                        <h4>YOMZ Original / 1 Case</h4>
+                        <p class="card-products-price-">$26.00</p>
+                        <p class="daily-items">($3.85 per daily dose)</p>
+                     </div>
+                  </div>
+               </div>
+               <hr>
+            </div>
+            <!-- cart item 2 -->
+
+            <!-- cart item 3 -->
+            <div class="card-item">
+               <img src="images/cross.svg" class="img-fluid crossiocns">
+               <div class="row">
+                  <div class="col-3 px-0">
+                     <div class="card-products-images">
+                        <img src="images/slider/4.png" class="img-fluid">
+                     </div>
+                     <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
+                              class="fas fa-minus"></i></button>
+                        <input type="number" class="form-control no-arrow" id="quantity3" value="1" min="1" max="100">
+                        <button class="btn btn-outline-secondary" type="button" id="plus"><i
+                              class="fas fa-plus"></i></button>
+                     </div>
+                  </div>
+                  <div class="col-9 px-0">
+                     <div class="card-products-titles">
+                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
+                        <h4>YOMZ Original / 1 Case</h4>
+                        <p class="card-products-price-">$26.00</p>
+                        <p class="daily-items">($3.85 per daily dose)</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- cart item 3 -->
          </div>
       </div>
 
