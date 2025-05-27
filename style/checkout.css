@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+ @font-face {
+     font-family: "Super Caramel";
+     src: url("../font/SuperCaramel.woff2") format("woff2"), url("../font/SuperCaramel.woff") format("woff");
+     font-weight: normal;
+     font-style: normal;
+     font-display: swap;
+}
+ @font-face {
+     font-family: 'Century Gothic';
+     src: url('../font/CenturyGothic-Bold.woff2') format('woff2'), url('../font/CenturyGothic-Bold.woff') format('woff');
+     font-weight: bold;
+     font-style: normal;
+     font-display: swap;
+}
+ @font-face {
+     font-family: 'century_gothic_paneuropeanRg';
+     src: url('../font/centurygothicpaneuropeanregular-webfont.woff2') format('woff2'), url('../font/centurygothicpaneuropeanregular-webfont.woff') format('woff'), url('../font/centurygothicpaneuropeanregular-webfont.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+}
+ @font-face {
+     font-family: 'century_gothic_paneuropeanLt';
+     src: url('../font/centurygothicpaneuropeanlight-webfont.woff2') format('woff2'), url('../font/centurygothicpaneuropeanlight-webfont.woff') format('woff'), url('../font/centurygothicpaneuropeanlight-webfont.ttf') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+}
+ html, body {
+     touch-action: manipulation;
+    /* Disables pinch-zoom and double-tap */
+     -ms-touch-action: manipulation;
+    /* For older IE */
+     overflow-x: hidden;
+    /* Prevents horizontal scrolling */
+}
+ h1, h2 {
+    /* font-family: 'Super Caramel';
+    */
+     font-family: "Super Caramel";
+}
+ body {
+     font-family: 'century_gothic_paneuropeanRg';
+     font-style: normal;
+}
+ p {
+     font-family: 'Century Gothic';
+     line-height: normal;
+     font-style: normal;
+     font-size: 18px;
+}
+
+
+/*new*/
+
+
+.leftside-bg{background: #fff;
+  padding-right: 50px;
+    padding-top: 20px;
+    padding-left: 18%;}
+.rightside-bg {
+    background: #d6ffe4;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-right: 22%;
+}
+
+.shippingmethod p {
+    background: #F5F5F5;
+    border-radius: 8px;
+    margin-bottom: 0px;
+    padding: 20px 10px;
+    text-align: center;
+    font-family: 'century_gothic_paneuropeanRg';
+}
+
+.controlform-accordion .form-check{width: 100%;}
+
+.controlform-accordion .accordion-button:not(.collapsed)::after{display: none;}
+.controlform-accordion  .accordion-button::after{display: none;}
+
+.controlform-accordion label {
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center!important;
+}
+
+.controlform-accordion label .btn {
+    padding: 0px 10px;
+    background: #fff;
+    color: #000;
+    font-family: 'Century Gothic';
+    border: none;
+}
+
+
+.express-checkout button.btn {
+    padding: 11px 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px !important;
+}
+
+.btn-pay-blue{background: #5433EB;}
+.btn-pay-blue:hover{background: #4224c8;}
+.btn-pay-yellow{background: #FFC439;}
+.btn-pay-yellow:hover{background: #e8b130;}
+
+.express-checkout button.btn img {
+    height: 25px;
+}
+
+    .divider-container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .divider-container::before,
+    .divider-container::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid #e7e6e6;
+    }
+
+    .divider-text {
+      padding: 0 10px;
+      color: #999;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .express-checkout .logo-hd{width: 150px; display: block; margin: 0px auto;}
+
+    .left-side-form h3{font-family: 'Century Gothic'; font-size: 25px; text-transform: uppercase;}
+    .login-text {font-size: 14px; text-transform: capitalize !important;}
+
+    .controlform input[type="text"] {
+    height: 55px;
+    font-size: 14px;
+}
+
+.controlform input[type="number"]{ height: 55px;
+    font-size: 14px;}
+
+.checkoutpart-body-ponts {
+    background: #fff;
+    padding: 0px;
+}
+
+.last-payment-btn span{text-align: left; color: #ccc; font-size: 14px;}
+
+
+
+.header-checkout img{width: 50%;}
+.brascap a{color: #000;}
+
+.transactions{ font-family: 'century_gothic_paneuropeanRg';}
+.div-1 h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.controlform input[type="text"]{height: 55px; font-size: 14px; border: 1px solid #c1c8d1; border-radius: 4px;}
+.controlform select {
+    height: 55px;
+    font-size: 14px;
+    width: 100%;
+        border: 1px solid #c1c8d1;
+        border-radius: 4px;
+}
+
+
+.left-check-padding{padding-left: 40px;}
+
+
+.controlform-accordion .accordion-body {
+    background: #f5f5f5;
+    padding: 25px;
+}
+
+
+.controlform-accordion .accordion-button:not(.collapsed) {
+    background: #c5f0ff;
+        border: 1px solid #c5f0ff;
+}
+
+.controlform-accordion  .accordion-item {
+    margin-bottom: 20px;
+}
+
+.controlform-accordion  .accordion-button {
+    border: 1px solid #c1c8d1;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+}
+
+.controlform-accordion .accordion-item{border:none;}
+.controlform-accordion .accordion{padding-left: 0px; padding-right: 0px;}
+
+.paypal-box img{width: 200px; margin-bottom: 20px;}
+
+.paypal-box {
+    text-align: center;
+}
+
+
+
+
+
+.last-payment-btn .pay {
+    background: #0AA03C;
+    color: #fff;
+    display: block;
+    width: 100%;
+    font-family: 'Century Gothic';
+    padding: 12px 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.last-payment-btn .pay:hover{background: #087e30;}
+
+
+.product-card {
+padding: 6px 0px;
+    }
+
+    .product-image{position: relative; margin-right:10px;}
+    .number-joit{position: absolute; right: 0px; top: 0px;}
+
+    .product-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .product-info {
+      flex-grow: 1;
+      
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2a2a2a;
+    }
+
+    .product-subtitle {
+      font-size: 13px;
+      color: #777;
+      margin-top: 3px;
+    }
+
+    .product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #E6193C;
+    margin-left: auto;
+    font-family: 'Century Gothic';
+}
+
+
+    .number-joit {
+    position: absolute;
+    right: 0px;
+    top: -10px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    background: #694191;
+    font-family: 'Century Gothic';
+    line-height: normal !important;
+    color: #fff;
+        padding-top: 2px;
+}
+
+.apply-form{margin-top: 15px; margin-bottom: 15px;}
+.apply-form .role-btn .btn {
+    background: #0AA03C;
+    width: 100%;
+    height: 55px;
+    border: none;
+    font-size: 20px;
+     font-family: 'Century Gothic';
+}
+
+.product-image {
+    position: relative;
+    padding: 5px;
+    background: #fff;
+}
+
+.total-price{font-size: 28px; font-family: 'Century Gothic';}
+.total-price sub{font-size: 14px;}
+
+
+
+
+ @media (max-width: 767px) {
+
+    .leftside-bg {
+    background: #fff;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.rightside-bg {
+    background: #d6ffe4;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.product-title
+ {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2a2a2a;
+    line-height: normal;
+}
+
+.number-joit{font-size: 12px;    width: 20px;
+    height: 20px;}
+
+    .product-info {
+    flex-grow: 1;
+    padding-left: 3px;
+}
+
+.product-price{font-size: 16px;    padding-left: 0px;}
+
+.controlform-accordion .accordion-button{padding: 15px 5px !important;}
+
+.controlform-accordion .accordion-body {
+    background: #f5f5f5;
+    padding: 10px;
+}
+
+
+
+ }

@@ -321,7 +321,7 @@ const updateBoxBorder = () => {
 
 checkbox.addEventListener('change', updateBoxBorder);
 
-// Cart Section 
+// Cart Section
 // const cart = document.getElementById('cart-section');
 // const cartCrossBtn = document.getElementById('cartCross-btn');
 

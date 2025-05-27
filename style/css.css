@@ -25,7 +25,6 @@
     url('../font/centurygothicpaneuropeanregular-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 @font-face {
@@ -35,7 +34,6 @@
     url('../font/centurygothicpaneuropeanlight-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-
 }
 
 html,
@@ -68,7 +66,6 @@ p {
 }
 
 /* New Css */
-
 .bg-Blue {
   background-color: #1EB9F0 !important;
 }
@@ -275,7 +272,6 @@ p {
 }
 
 .classbtn1 {
-
   #original-Button {
     cursor: pointer;
   }
@@ -283,7 +279,6 @@ p {
   #sours-Button {
     cursor: pointer;
   }
-
 }
 
 .padding13 {
@@ -291,7 +286,6 @@ p {
 }
 
 /* New Css */
-
 .container {
   max-width: 1200px;
 }
@@ -378,9 +372,7 @@ header {
 }
 
 /*header*/
-
 /*banner*/
-
 .banner {
   background: linear-gradient(180deg, #FFFFFF 0%, #3cc2f2 100%);
   padding: 50px 0px 80px;
@@ -436,7 +428,6 @@ header {
 }
 
 /*banner*/
-
 /*marquee_section*/
 .marquee_section {
   background: #30af5a;
@@ -555,9 +546,7 @@ header {
 }
 
 /*marquee_section*/
-
 /*Meet Founder*/
-
 .nastya-faves {
   padding: 100px 0;
   background: linear-gradient(270deg, #FFFFFF 0%, #26bcf1 50.02%, #2fb066 100%);
@@ -708,9 +697,7 @@ header {
 }
 
 /*Meet Founder*/
-
 /*testimonial*/
-
 .bg-bl {
   background: #000;
   padding: 12px;
@@ -842,7 +829,6 @@ header {
   padding: 0px 0px !important;
   margin: -25px 0 -60px !important;
   transform: scale(1.0);
-
   pointer-events: fill;
   cursor: pointer;
 }
@@ -975,9 +961,7 @@ header {
 
 /*********************************** Testimonial ************************************/
 /*testimonial*/
-
 /*Table*/
-
 .table-com {
   padding: 40px 0 80px !important;
 }
@@ -1175,7 +1159,6 @@ table.comparison-table thead tr th {
     margin: auto;
     border-radius: 28px;
 } */
-
 table.comparison-table img {
   width: 50px;
   padding: 9px;
@@ -1190,9 +1173,7 @@ th.new-calistoga-font img {
 }
 
 /*Table*/
-
 /*results*/
-
 .results {
   background: #1EB9F0 url(../images/line.png);
   background-repeat: no-repeat;
@@ -1215,9 +1196,7 @@ th.new-calistoga-font img {
 }
 
 /*results*/
-
 /*happy-beauty*/
-
 .happy-beary {
   background: url(../images/happy-beauty.png);
   background-size: cover;
@@ -1259,9 +1238,7 @@ th.new-calistoga-font img {
 }
 
 /*happy-beauty*/
-
 /*Faqs Section*/
-
 .faqs {
   padding: 80px 0;
 }
@@ -1342,9 +1319,7 @@ th.new-calistoga-font img {
 }
 
 /*Faqs Section*/
-
 /*supplement*/
-
 .supplement {
   background: linear-gradient(180deg, #30AF5A 0%, #ffffff 100%);
   margin-top: -5px;
@@ -1389,9 +1364,7 @@ th.new-calistoga-font img {
 }
 
 /*supplement*/
-
 /*promise*/
-
 .promise {
   background: #1EB9F0 url(../images/bry-icons.png);
   padding: 20px 0 90px;
@@ -1443,9 +1416,7 @@ th.new-calistoga-font img {
 }
 
 /*promise*/
-
 /*supplement*/
-
 .bottom-faqs {
   padding: 80px 0;
 }
@@ -1476,7 +1447,6 @@ th.new-calistoga-font img {
 }
 
 /*ARTICLES*/
-
 .articles {
   /* Section */
   background: linear-gradient(180deg, #ffffff 25%, #1EB9F0 100%);
@@ -1494,7 +1464,6 @@ th.new-calistoga-font img {
   display: inline-block !important;
   padding-left: 50px;
   padding-right: 50px;
-
 }
 
 .articles .slick-list {
@@ -1567,7 +1536,6 @@ th.new-calistoga-font img {
   color: #000;
   border: 4px solid white;
   margin-top: 20px;
-
 }
 
 .article-items a.btn {
@@ -1575,9 +1543,7 @@ th.new-calistoga-font img {
 }
 
 /*ARTICLES*/
-
 /*Fotoer*/
-
 .footer1 .container {
   max-width: 1320px;
 }
@@ -1653,7 +1619,6 @@ footer .subscribe-form input[type="email"] {
   color: #000000 !important;
   border: 2 !important;
   padding: 10px 20px !important;
-
   text-transform: uppercase;
 }
 
@@ -1745,7 +1710,6 @@ footer .subscribe-form button {
 }
 
 /*Footer*/
-
 .desktop-header {
   display: inherit !important;
 }
@@ -1755,7 +1719,6 @@ footer .subscribe-form button {
 }
 
 /* -----16/5/2025----- */
-
 .supplement2 {
   display: none;
 }
@@ -1765,7 +1728,6 @@ footer .subscribe-form button {
 }
 
 /* ------about------- */
-
 .banner-info h4 {
   font-size: 32px;
 }
@@ -1835,7 +1797,6 @@ footer .subscribe-form button {
 }
 
 /*hunger*/
-
 .hunger {
   padding: 50px 0 0px;
 }
@@ -1855,14 +1816,31 @@ footer .subscribe-form button {
 }
 
 /*hunger*/
-
 /*Cart*/
 .card-item .input-group .btn {
   min-width: 40px;
 }
 
+.cart-products .offcanvas-body hr {
+  margin: 0.5rem 0;
+}
+
 .card-item input[type="number"] {
   text-align: center;
+}
+
+.footer-btn strong.text-title {
+  font-size: 14px;
+}
+
+.footer-btn strong.text-free {
+  font-size: 20px;
+  color: #1EB9F0;
+}
+
+.footer-btn strong.text-price {
+  font-size: 20px;
+  color: #E6193C;
 }
 
 .card-products-titles {
@@ -1876,23 +1854,25 @@ footer .subscribe-form button {
 
 .card-products-titles h3 {
   font-family: 'Century Gothic';
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .card-products-titles h4 {
-  font-family: 'century_gothic_paneuropeanRg';
-  font-size: 16px;
+  font-family: 'Century Gothic';
+  font-size: 14px;
   line-height: normal;
+  margin-bottom: 5px;
 }
 
 p.card-products-price- {
   font-size: 26px;
-  margin-top: 10px;
+  margin-top: 8px;
   margin-bottom: 0px;
+  color: #E6193C;
 }
 
 p.daily-items {
-  font-size: 13px;
+  font-size: 11px;
   text-decoration: underline;
   margin-bottom: 0px;
 }
@@ -1902,7 +1882,7 @@ p.daily-items {
   border-radius: 6px;
   text-align: center !important;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .cart-products {
@@ -1916,11 +1896,10 @@ p.daily-items {
   text-align: center;
   border-left: 1px solid #000;
   border-right: 1px solid #000;
-
 }
 
 .card-item .input-group .btn:hover {
-  background: #bfdce7;
+  background: #f0df09;
 }
 
 .no-arrow::-webkit-inner-spin-button,
@@ -1930,14 +1909,14 @@ p.daily-items {
 }
 
 /* .no-arrow {
-  -moz-appearance: textfield;
-} */
-
+     -moz-appearance: textfield;
+}
+ */
 .card-item .input-group .btn {
-  min-width: 40px;
+  min-width: 30px;
   color: #000;
   padding: 6px 7px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .card-item .btn {
@@ -1947,18 +1926,18 @@ p.daily-items {
 .crossiocns {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 10px;
   cursor: pointer;
 }
 
 .cart-products .offcanvas-header {
   border-bottom: 1px solid #e4e4e4;
-  padding: 15px 20px;
+  padding: 22px 20px 15px;
 }
 
 .cart-products .offcanvas-header h4 {
   margin-bottom: 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'century_gothic_paneuropeanRg';
   font-weight: 600;
 }
@@ -1967,10 +1946,45 @@ p.daily-items {
   font-family: 'Century Gothic';
 }
 
+.footer-btn button.btn {
+  padding: 11px 15px;
+  margin-bottom: 5px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+}
+
+.footer-btn button.btn img {
+  height: 25px;
+}
+
+.btn-pay-green {
+  background: #5DB73A;
+}
+
+.btn-pay-green:hover {
+  background: #479628;
+}
+
+.btn-pay-blue {
+  background: #5433EB;
+}
+
+.btn-pay-blue:hover {
+  background: #4224c8;
+}
+
+.btn-pay-yellow {
+  background: #FFC439;
+}
+
+.btn-pay-yellow:hover {
+  background: #e8b130;
+}
+
 /*Cart*/
-
 /*Products*/
-
 .top-faqs-part .accordion-button:not(.collapsed) {
   background: #FFEB00;
 }
@@ -2131,7 +2145,6 @@ p.daily-items {
   font-size: 27px;
   font-weight: 900;
   font-family: 'Century Gothic';
-
 }
 
 .next-prev-btn .next-btn {
@@ -2616,7 +2629,6 @@ p.people {
 }
 
 /*Newcss*/
-
 #faq-yomzOriginal-2 {
   display: none;
 }
@@ -2691,11 +2703,8 @@ p.people {
 }
 
 /*Newcss*/
-
 /*Products*/
-
 /* ------about------- */
-
 .accordion-body h4 {
   font-size: 21px;
   margin-bottom: 22px;
@@ -2735,14 +2744,11 @@ p.people {
 
 /* @media (max-width: 1200px) {
 .card-cont{
-    
     height:41vh;
 }
 } */
-
 @media (max-width: 799px) {
   .card-cont {
-
     height: fit-content;
   }
 }
@@ -2777,7 +2783,6 @@ p.people {
   .item-bag {
     padding: 0px 0px;
   }
-
 }
 
 @media screen and (max-width: 1272px) {
@@ -2788,20 +2793,16 @@ p.people {
   .articles .slick-next {
     right: 47.7% !important;
   }
-
 }
 
 @media screen and (max-width: 1314px) {
-
   .brand-logo {
     margin-left: 50px;
     margin-right: -50px;
   }
-
 }
 
 @media screen and (max-width: 1136px) {
-
   .articles .slick-prev {
     left: 47% !important;
   }
@@ -2824,19 +2825,15 @@ p.people {
   .pading-rote {
     width: 100%;
   }
-
 }
 
 @media screen and (max-width: 991px) {
-
   .nastya-faves {
     padding: 0px 0 30px;
   }
-
 }
 
 @media screen and (max-width: 974px) {
-
   .articles .slick-prev {
     left: 45.5% !important;
   }
@@ -2848,6 +2845,26 @@ p.people {
 
 @media screen and (max-width: 767px) {
 
+  /*cart*/
+  .cart-products .offcanvas-header {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 15px 20px 10px;
+  }
+
+  .cart-products .footer-btn button.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  .cart-products .footer-btn button.btn img {
+    height: 20px;
+  }
+
+  p.card-products-price- {
+    font-size: 22px;
+  }
+
+  /*cart*/
   .household-popup h4 {
     text-align: center;
     font-weight: 800;
@@ -2886,7 +2903,6 @@ p.people {
   /* .item-bag .unsalect {
     border: 3px solid #fff !important;
   } */
-
   .top-faqs-part h4.accordion-header .accordion-button {
     font-size: 19px;
     padding: 12px !important;
@@ -3052,7 +3068,6 @@ p.people {
   }
 
   .nastya-faves {
-
     padding: 0px 0 40px;
     overflow: hidden;
     /* background: linear-gradient(180deg, #FFEB00 0%, #F0A0C3 50%, #FFFFFF 100%); */
@@ -3426,7 +3441,6 @@ p.people {
     font-size: 15px;
     font-weight: 600;
     font-family: 'Century Gothic';
-
   }
 
   .slt-price .form-check .form-check-input {
@@ -3839,7 +3853,6 @@ p.people {
 
   .happy-beary .shopnow-btn a.btn {
     border: 2px solid #000000;
-
   }
 
   .slick-prev {
@@ -3970,11 +3983,9 @@ p.people {
   .topheader p {
     font-size: 11px;
   }
-
 }
 
 @media screen and (max-width: 500px) {
-
   .articles .slick-prev {
     left: 43% !important;
   }
