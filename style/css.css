@@ -2957,6 +2957,45 @@ p.people {
     top: unset;
   }
 
+  #step2-wrapper {
+    position: relative;
+  }
+
+  #sticky-btn2 {
+    position: fixed;
+    left: 4px;
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  #sticky-btn2.stopped {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #sticky-btn3 {
+    position: fixed;
+    left: 0;
+    width: 98%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
+
+  #sticky-btn3.stopped {
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+  }
+
   .web-title img {
     background: #fff;
     border-radius: 26px;
@@ -3803,7 +3842,7 @@ p.people {
     position: sticky;
     bottom: 0;
     z-index: 1000;
-    background: #fff;
+    /* background: #fff; */
     /* Optional for contrast */
     padding: 0px;
     text-align: center;

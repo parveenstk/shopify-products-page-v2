@@ -428,6 +428,7 @@
                      </div>
                      <p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary
                         Berry</p>
+                     <!-- nextStep1 button -->
                      <div id="stop-point" style="height: 20px; margin-top: 40px;"></div>
                      <div class="next-prev-btn" id="sticky-btn">
                         <button class="btn next-btn buttonBlue" id="nextStep1">NEXT</button>
@@ -599,10 +600,16 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="next-prev-btn next-prev-btn-new d-flex">
-                              <button id="backStep2" class="btn prev-btn"><img src="images/prev.svg" class="img-fluid">
-                              </button>
-                              <button id="nextStep2" class="btn next-btn buttonBlue">NEXT STEP</button>
+                           <!-- nextStep2 button -->
+                           <!-- Wrapping Container -->
+                           <div id="step2-wrapper" style="position: relative;">
+                              <div id="stop-point2" style="height: 0px; margin-top: 64px;"></div>
+                              <div id="sticky-btn2" class="next-prev-btn next-prev-btn-new d-flex">
+                                 <button id="backStep2" class="btn prev-btn">
+                                    <img src="images/prev.svg" class="img-fluid">
+                                 </button>
+                                 <button id="nextStep2" class="btn next-btn buttonBlue">NEXT STEP</button>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -706,11 +713,27 @@
                               </div>
                            </div>
                         </div>
-                        <div class="next-prev-btn next-prev-btn-new d-flex mgTp">
+                        <!-- <div class="next-prev-btn next-prev-btn-new d-flex mgTp">
                            <button id="backStep3" class="btn prev-btn"><img src="images/prev.svg" class="img-fluid">
                            </button>
                            <button id="nextStep3" class="btn next-btn buttonBlue">NEXT STEP</button>
+                        </div> -->
+
+                        <div id="step3-wrapper" style="position: relative;">
+
+                           <!-- Stop Point (place where button should stop being sticky) -->
+                           <div id="stop-point3" style="height: 18px; margin-top: 56px;"></div>
+
+                           <!-- Sticky Button Container -->
+                           <div id="sticky-btn3" class="next-prev-btn next-prev-btn-new d-flex mgTp">
+                              <button id="backStep3" class="btn prev-btn">
+                                 <img src="images/prev.svg" class="img-fluid">
+                              </button>
+                              <button id="nextStep3" class="btn next-btn buttonBlue">NEXT STEP</button>
+                           </div>
+
                         </div>
+
                      </div>
                   </div>
                   <!-- Third-Steps -->
