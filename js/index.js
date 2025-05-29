@@ -29,9 +29,6 @@ const opt2Img = document.getElementById('opt1-img2');
 const opt3Img = document.getElementById('opt1-img3');
 const opt4Img = document.getElementById('opt1-img4');
 
-// console.log(opt1Img.src);
-// opt1Img.src = './images/yomzSours/pack-1.png'
-
 // offer - 03
 const nextStep3 = document.getElementById("nextStep3");
 const backStep3 = document.getElementById("backStep3");

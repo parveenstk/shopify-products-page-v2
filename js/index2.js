@@ -23,6 +23,12 @@ const saveText2_2 = document.getElementById('offer2-saveText2');
 const offer2Opt1_2 = document.getElementById('offer2-opt1-2');
 const offer2Month2 = document.getElementById('offer2-month2');
 
+// offer - 02 ( package images )
+const opt1Img_2 = document.getElementById('banner2-opt1-img1');
+const opt2Img_2 = document.getElementById('banner2-opt2-img2');
+const opt3Img_2 = document.getElementById('banner2-opt3-img3');
+const opt4Img_2 = document.getElementById('banner2-opt4-img4');
+
 // offer - 03
 const nextStep3_2 = document.getElementById('nextStep3-2');
 const backStep3_2 = document.getElementById('backStep3-2');
@@ -87,6 +93,13 @@ const handleCheckboxClick2 = (clicked) => {
         soursProduct2.classList.add('show');
         yomzProduct2.classList.add('hide');
 
+        // for changing pack images
+        const imgs = [opt1Img_2, opt2Img_2, opt3Img_2, opt4Img_2];
+        const paths = ['./images/yomzSours/pack-1.png', './images/yomzSours/pack-2.jpg', './images/yomzSours/pack-3.jpg', './images/yomzSours/pack-4.jpg'];
+        imgs.forEach((img, index) => {
+            img ? (img.src = paths[index]) : console.log("imgs are not found.");
+        });
+
         // Refresh Swiper instance
         if (swiperInstances['yomz-sours-carousel2']) {
             const { productSlider, productThumbs } = swiperInstances['yomz-sours-carousel2'];
@@ -141,6 +154,13 @@ const handleCheckboxClick2 = (clicked) => {
         yomzProduct2.classList.remove('hide');
         yomzProduct2.classList.add('show');
         soursProduct2.classList.add('hide');
+
+        // for changing pack images
+        const imgs = [opt1Img_2, opt2Img_2, opt3Img_2, opt4Img_2];
+        const paths = ['./images/yomzOriginal/pack-1.jpg', './images/yomzOriginal/pack-2.jpg', './images/yomzOriginal/pack-3.jpg', './images/yomzOriginal/pack-4.jpg'];
+        imgs.forEach((img, index) => {
+            img ? (img.src = paths[index]) : console.log("imgs are not found.");
+        });
 
         // Refresh Swiper instance
         if (swiperInstances['yomz-original-carousel2']) {
