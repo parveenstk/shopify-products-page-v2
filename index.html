@@ -322,12 +322,12 @@
                                                 </label> </div>
                                         </div>
                                         <div class="item-bag">
-                                            <div class="row"> <!-- Option 1 -->
+                                            <div class="row">
+                                                <!-- Option 1 -->
                                                 <div class="col-6">
                                                     <div class="slt-bag-item">
-                                                        <div onclick="selectedOpt(this);" id="offer2-opt1"
-                                                            data-price="1" data-value="opt1"
-                                                            class="card borderBlueOffer2 offer2-opts">
+                                                        <div onclick="selectedOpt(this);" id="offer2-opt1" data-id="1"
+                                                            data-value="opt1" class="card borderBlueOffer2 offer2-opts">
                                                             <div class="badge">SAVE $12</div>
                                                             <div class="d-flex text-left">
                                                                 <div class="col-4 px-0"> <img src="images/pack-1.jpg"
@@ -342,9 +342,8 @@
                                                 </div> <!-- Option 2 -->
                                                 <div class="col-6">
                                                     <div class="slt-bag-item">
-                                                        <div onclick="selectedOpt(this);" id="offer2-opt2"
-                                                            data-price="2" data-value="opt2"
-                                                            class="card unsalect offer2-opts">
+                                                        <div onclick="selectedOpt(this);" id="offer2-opt2" data-id="2"
+                                                            data-value="opt2" class="card unsalect offer2-opts">
                                                             <div class="badge">SAVE $12</div>
                                                             <div class="d-flex text-left">
                                                                 <div class="col-4 px-0"> <img src="images/pack-2.jpg"
@@ -359,9 +358,8 @@
                                                 </div> <!-- Option 3 -->
                                                 <div class="col-6 mobile-mg-botton">
                                                     <div class="slt-bag-item">
-                                                        <div onclick="selectedOpt(this);" id="offer2-opt3"
-                                                            data-price="3" data-value="opt3"
-                                                            class="card unsalect offer2-opts">
+                                                        <div onclick="selectedOpt(this);" id="offer2-opt3" data-id="3"
+                                                            data-value="opt3" class="card unsalect offer2-opts">
                                                             <div class="badge">SAVE $12</div>
                                                             <div class="d-flex text-left">
                                                                 <div class="col-4 px-0"> <img src="images/pack-3.jpg"
@@ -376,9 +374,8 @@
                                                 </div> <!-- Option 4 -->
                                                 <div class="col-6 mobile-mg-botton">
                                                     <div class="slt-bag-item">
-                                                        <div onclick="selectedOpt(this);" id="offer2-opt4"
-                                                            data-price="4" data-value="opt4"
-                                                            class="card unsalect offer2-opts">
+                                                        <div onclick="selectedOpt(this);" id="offer2-opt4" data-id="4"
+                                                            data-value="opt4" class="card unsalect offer2-opts">
                                                             <div class="badge">SAVE $12</div>
                                                             <div class="d-flex text-left">
                                                                 <div class="col-4 px-0"> <img src="images/pack-4.jpg"
@@ -2223,55 +2220,78 @@
                 </div>
             </div>
         </div>
-    </div> <!-- How Large is Your Household? popup--> <!-- Added Right Side Products-->
+    </div>
+    <!-- How Large is Your Household? popup-->
+
+    <!-- Added Right Side Products-->
     <div id="cart-section" class="offcanvas cart-products offcanvas-end d-flex flex-column hide" tabindex="-1"
         id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h4>Your Cart: <span>1 Item</span></h4> <button id="cartCross-btn" type="button"
-                class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"> </button>
+            <h4>Your Cart: <span>1 Item</span></h4>
+            <button id="cartCross-btn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                aria-label="Close">
+            </button>
         </div>
         <div class="offcanvas-body flex-grow-1 overflow-auto">
-            <div class="cart-products"> <!-- cart item 1 -->
-                <div id="cartItem-1" class="card-item"> <img id="cartCross" src="images/cross.svg"
-                        class="img-fluid crossiocns">
+            <div id="cartContainer" class="cart-products">
+
+                <!-- cart item 1 -->
+                <div id="cartItem-1" class="card-item">
+                    <img id="cartCross" src="images/cross.svg" class="img-fluid crossiocns">
                     <div class="row">
                         <div class="col-3 px-0">
-                            <div class="card-products-images"> <img src="images/slider/4.png" class="img-fluid"> </div>
-                            <div class="input-group mb-3"> <button class="btn btn-outline-secondary" type="button"
-                                    id="minus"><i class="fas fa-minus"></i></button> <input type="number"
-                                    class="form-control no-arrow" id="quantity" value="1" min="1" max="100"> <button
-                                    class="btn btn-outline-secondary" type="button" id="plus"><i
-                                        class="fas fa-plus"></i></button> </div>
+                            <!-- product image -->
+                            <div class="card-products-images">
+                                <img src="images/slider/4.png" class="img-fluid">
+                            </div>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-outline-secondary" type="button" id="minus"><i
+                                        class="fas fa-minus"></i></button>
+                                <input type="number" class="form-control no-arrow" id="quantity" value="1" min="1"
+                                    max="100">
+                                <button class="btn btn-outline-secondary" type="button" id="plus"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
                         </div>
+                        <!-- product descriptions -->
                         <div class="col-9 px-0">
+                            <!-- <div class="card-products-titles">
+                        <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
+                        <h4>YOMZ Original / 1 Case</h4>
+                        <p class="card-products-price-">$26.00</p>
+                        <p class="daily-items">($3.85 per daily dose)</p>
+                     </div> -->
                             <div class="card-products-titles">
-                                <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>
-                                <h4>YOMZ Original / 1 Case</h4>
-                                <p class="card-products-price-">$26.00</p>
-                                <p class="daily-items">($3.85 per daily dose)</p>
+                                <h3></h3>
+                                <h4></h4>
+                                <p class="card-products-price-"></p>
+                                <p class="daily-items"></p>
                             </div>
                         </div>
                     </div>
                     <hr>
-                </div> <!-- cart item 1 --> <!-- cart item 2 -->
-                <!-- <div class="card-item">                  <img src="images/cross.svg" class="img-fluid crossiocns">                                    <div class="row">                                       <div class="col-3 px-0">                                          <div class="card-products-images">                                             <img src="images/slider/4.png" class="img-fluid">                                          </div>                                          <div class="input-group mb-3">                                             <button class="btn btn-outline-secondary" type="button" id="minus"><i                                                   class="fas fa-minus"></i></button>                                             <input type="number" class="form-control no-arrow" id="quantity2" value="1" min="1" max="100">                                             <button class="btn btn-outline-secondary" type="button" id="plus"><i                                                   class="fas fa-plus"></i></button>                                          </div>                                       </div>                                       <div class="col-9 px-0">                                          <div class="card-products-titles">                                             <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>                                             <h4>YOMZ Original / 1 Case</h4>                                             <p class="card-products-price-">$26.00</p>                                             <p class="daily-items">($3.85 per daily dose)</p>                                          </div>                                       </div>                                    </div>                                    <hr>                                    </div> -->
-                <!-- cart item 2 --> <!-- cart item 3 -->
-                <!-- <div class="card-item">                  <img src="images/cross.svg" class="img-fluid crossiocns">                                    <div class="row">                                       <div class="col-3 px-0">                                          <div class="card-products-images">                                             <img src="images/slider/4.png" class="img-fluid">                                          </div>                                          <div class="input-group mb-3">                                             <button class="btn btn-outline-secondary" type="button" id="minus"><i                                                   class="fas fa-minus"></i></button>                                             <input type="number" class="form-control no-arrow" id="quantity3" value="1" min="1" max="100">                                             <button class="btn btn-outline-secondary" type="button" id="plus"><i                                                   class="fas fa-plus"></i></button>                                          </div>                                       </div>                                       <div class="col-9 px-0">                                          <div class="card-products-titles">                                             <h3>YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</h3>                                             <h4>YOMZ Original / 1 Case</h4>                                             <p class="card-products-price-">$26.00</p>                                             <p class="daily-items">($3.85 per daily dose)</p>                                          </div>                                       </div>                                    </div>                                    </div> -->
-                <!-- cart item 3 -->
+                </div>
+                <!-- cart item 1 -->
             </div>
         </div>
         <div class="border-top p-3 bg-white footer-btn">
-            <div class="d-flex justify-content-between mb-0"> <strong class="text-title">Carbon Offset Shipping</strong>
+            <div class="d-flex justify-content-between mb-0">
+                <strong class="text-title">Carbon Offset Shipping</strong>
                 <strong class="text-free">FREE</strong>
             </div>
-            <div class="d-flex justify-content-between mb-2"> <strong class="text-title">Total:</strong> <strong
-                    class="text-price">$82.00</strong> </div> <button
-                class="btn btn-primary w-100 btn-pay-green">Checkout</button> <button
-                class="btn btn-primary w-100 btn-pay-blue"><img src="images/ShopPay.png" class="img-fluid"> </button>
+            <div class="d-flex justify-content-between mb-2">
+                <strong class="text-title">Total:</strong>
+                <strong class="text-price">$12.00</strong>
+            </div>
+            <button class="btn btn-primary w-100 btn-pay-green">Checkout</button>
+            <button class="btn btn-primary w-100 btn-pay-blue"><img src="images/ShopPay.png" class="img-fluid">
+            </button>
             <button class="btn btn-primary w-100 btn-pay-yellow"><img src="images/paypal.png" class="img-fluid">
             </button>
         </div>
-    </div> <!-- Added Right Side Products-->
+    </div>
+    <!-- Added Right Side Products-->
+
     <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js'></script>
@@ -2306,7 +2326,7 @@
             }
 
             // === 4. Video Play/Pause Toggle ===
-            const video = document.getElementById("myVideo");
+            const video = document.getElementById("myVideo")
             const icon = document.getElementById("playPauseIcon");
 
             function togglePlayPause() {
