@@ -74,7 +74,7 @@ const handleCheckboxClick2 = (clicked) => {
         addCls2(faqSours2_2, 'show2');
 
         // products
-        productDesc2.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Sour Flavor:<br>Sour Peachy, Strawbeary, Beary Berry</p>';
+        productDesc2.innerHTML = '<p id="prod-Description2" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary</p>';
         productPrice2.innerHTML = '<span id="product-price2" class="tab-price">$XX.22</span>';
 
         // Inputs
@@ -105,6 +105,7 @@ const handleCheckboxClick2 = (clicked) => {
         savePack.forEach(element => {
             replaceCls2(element, 'selected-offer-blue', 'selected-offer-Green');
         });
+
     } else if (clicked.value === 'yomzOriginal') {
         // for yomzOriginal 
 
@@ -308,6 +309,7 @@ checkbox2.addEventListener('change', updateBoxBorder2);
 
 // Cart Section
 const cart2 = document.getElementById('cart-section');
+
 nextStep3_2.addEventListener('click', () => {
     replaceCls2(cart2, 'hide', 'show')
 })
