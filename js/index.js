@@ -23,6 +23,15 @@ const saveText2 = document.getElementById("offer2-saveText");
 const offer2Opt1 = document.getElementById("offer2-opt1");
 const offer2Month = document.getElementById("offer2-month");
 
+// offer - 02 ( package images )
+const opt1Img = document.getElementById('opt1-img1');
+const opt2Img = document.getElementById('opt1-img2');
+const opt3Img = document.getElementById('opt1-img3');
+const opt4Img = document.getElementById('opt1-img4');
+
+// console.log(opt1Img.src);
+// opt1Img.src = '../images/yomzSours/pack-1.png'
+
 // offer - 03
 const nextStep3 = document.getElementById("nextStep3");
 const backStep3 = document.getElementById("backStep3");
@@ -58,15 +67,7 @@ const handleCheckboxClick = (clicked) => {
         localStorage.setItem("colorSchema", JSON.stringify("Green"));
 
         // change backgrounds
-        const backgrounds = [
-            nextStep1,
-            nextStep2,
-            nextStep3,
-            boxHeader2,
-            offer2Month,
-            badgeBox4,
-        ];
-
+        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, offer2Month, badgeBox4,];
         backgrounds.forEach((el) => addCls(el, "bg-Green"));
 
         // change borders
@@ -97,6 +98,13 @@ const handleCheckboxClick = (clicked) => {
         soursProduct.classList.add("show");
         yomzProduct.classList.add("hide");
 
+        // for changing pack images
+        const imgs = [opt1Img, opt2Img, opt3Img, opt4Img];
+        const paths = ['../images/yomzSours/pack-1.png', '../images/yomzSours/pack-2.jpg', '../images/yomzSours/pack-3.jpg', '../images/yomzSours/pack-4.jpg'];
+        imgs.forEach((img, index) => {
+            img ? (img.src = paths[index]) : console.log("imgs are not found.");
+        });
+
         // Refresh Swiper instance
         if (swiperInstances["yomz-sours-carousel"]) {
             const { productSlider, productThumbs } =
@@ -123,13 +131,7 @@ const handleCheckboxClick = (clicked) => {
         localStorage.setItem("colorSchema", JSON.stringify("Blue"));
 
         // change backgrounds
-        const backgrounds = [
-            nextStep1,
-            nextStep2,
-            nextStep3,
-            boxHeader2,
-            badgeBox4,
-        ];
+        const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, badgeBox4];
         backgrounds.forEach((el) => remvoeCls(el, "bg-Green"));
 
         // change borders
@@ -160,6 +162,13 @@ const handleCheckboxClick = (clicked) => {
         yomzProduct.classList.remove("hide");
         yomzProduct.classList.add("show");
         soursProduct.classList.add("hide");
+
+        // for changing pack images
+        const imgs = [opt1Img, opt2Img, opt3Img, opt4Img];
+        const paths = ['../images/yomzOriginal/pack-1.jpg', '../images/yomzOriginal/pack-2.jpg', '../images/yomzOriginal/pack-3.jpg', '../images/yomzOriginal/pack-4.jpg'];
+        imgs.forEach((img, index) => {
+            img ? (img.src = paths[index]) : console.log("imgs are not found.");
+        });
 
         // Refresh Swiper instance
         if (swiperInstances["yomz-original-carousel"]) {
