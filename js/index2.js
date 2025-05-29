@@ -101,7 +101,7 @@ const handleCheckboxClick2 = (clicked) => {
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
-        const savePack = document.querySelectorAll('.offerBox2');
+        const savePack = document.querySelectorAll('.offerBox');
         savePack.forEach(element => {
             replaceCls2(element, 'selected-offer-blue', 'selected-offer-Green');
         });
@@ -156,7 +156,7 @@ const handleCheckboxClick2 = (clicked) => {
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
-        const savePack = document.querySelectorAll('.offerBox2');
+        const savePack = document.querySelectorAll('.offerBox');
         savePack.forEach(element => {
             replaceCls2(element, 'selected-offer-Green', 'selected-offer-blue');
         });

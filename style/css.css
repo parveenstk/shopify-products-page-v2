@@ -2177,7 +2177,7 @@ p.daily-items {
 
 .form-check-input[type=checkbox] {
     border-radius: .25em;
-    /* border: 2px solid #1EB9F0; */
+    border: 2px solid #1EB9F0;
 }
 
 .flavor-part p {
