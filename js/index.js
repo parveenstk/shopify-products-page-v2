@@ -54,12 +54,10 @@ const productPrice = document.getElementById('product-price');
 const handleCheckboxClick = (clicked) => {
     if (clicked.value === 'yomzSours') {
         // for yomz Sours
-
         localStorage.setItem('colorSchema', JSON.stringify('Green'));
 
         // change backgrounds
         const backgrounds = [nextStep1, nextStep2, nextStep3, boxHeader2, offer2Month, badgeBox4];
-
         backgrounds.forEach(el => addCls(el, 'bg-Green'));
 
         // change borders
@@ -106,10 +104,9 @@ const handleCheckboxClick = (clicked) => {
         savePack.forEach(element => {
             replaceCls(element, 'selected-offer-blue', 'selected-offer-Green')
         })
+
     } else if (clicked.value === 'yomzOriginal') {
-
         // for yomzOriginal 
-
         localStorage.setItem('colorSchema', JSON.stringify('Blue'));
 
         // change backgrounds
