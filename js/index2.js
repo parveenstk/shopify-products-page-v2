@@ -259,7 +259,9 @@ const selectedOpt2 = (clicked) => {
     colorSchema === 'Green' ? addCls2(clicked, 'borderGreenOffer2') : addCls2(clicked, 'borderBlueOffer2');
 
     // to change the ( options-price )
-    const value = clicked.dataset.price;
+    const value = clicked.dataset.qty;
+    console.log("value:", value);
+    
     const optPriceValue = optPrice.dataset.price;
     const finalValue = value * optPriceValue;
     optPrice.innerText = `$${finalValue.toFixed(2)}`;
