@@ -30,7 +30,7 @@ const opt3Img = document.getElementById('opt1-img3');
 const opt4Img = document.getElementById('opt1-img4');
 
 // console.log(opt1Img.src);
-// opt1Img.src = '../images/yomzSours/pack-1.png'
+// opt1Img.src = './images/yomzSours/pack-1.png'
 
 // offer - 03
 const nextStep3 = document.getElementById("nextStep3");
@@ -100,7 +100,7 @@ const handleCheckboxClick = (clicked) => {
 
         // for changing pack images
         const imgs = [opt1Img, opt2Img, opt3Img, opt4Img];
-        const paths = ['../images/yomzSours/pack-1.png', '../images/yomzSours/pack-2.jpg', '../images/yomzSours/pack-3.jpg', '../images/yomzSours/pack-4.jpg'];
+        const paths = ['./images/yomzSours/pack-1.png', './images/yomzSours/pack-2.jpg', './images/yomzSours/pack-3.jpg', './images/yomzSours/pack-4.jpg'];
         imgs.forEach((img, index) => {
             img ? (img.src = paths[index]) : console.log("imgs are not found.");
         });
@@ -165,7 +165,7 @@ const handleCheckboxClick = (clicked) => {
 
         // for changing pack images
         const imgs = [opt1Img, opt2Img, opt3Img, opt4Img];
-        const paths = ['../images/yomzOriginal/pack-1.jpg', '../images/yomzOriginal/pack-2.jpg', '../images/yomzOriginal/pack-3.jpg', '../images/yomzOriginal/pack-4.jpg'];
+        const paths = ['./images/yomzOriginal/pack-1.jpg', './images/yomzOriginal/pack-2.jpg', './images/yomzOriginal/pack-3.jpg', './images/yomzOriginal/pack-4.jpg'];
         imgs.forEach((img, index) => {
             img ? (img.src = paths[index]) : console.log("imgs are not found.");
         });
