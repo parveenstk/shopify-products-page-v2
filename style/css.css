@@ -54,6 +54,10 @@ p {
     font-size: 18px;
 }
 
+#stop-point2 {
+    margin-top: 10px;
+}
+
 /*heading*/
 .web-title {
     margin-bottom: 40px;
@@ -2903,6 +2907,21 @@ p.people {
 }
 
 @media screen and (max-width: 767px) {
+
+    #stop-point {
+        height: 20px;
+        margin-top: 40px;
+    }
+
+    #stop-point2 {
+        margin-top: 16px;
+    }
+
+    #stop-point3 {
+        height: 10px;
+        margin-top: 56px;
+    }
+
     #sticky-btn {
         position: fixed;
         left: 50%;
