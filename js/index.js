@@ -361,9 +361,9 @@ cartIcon?.addEventListener("click", showCart);
 cartIconMobile?.addEventListener("click", showCart);
 cartCrossBtn?.addEventListener("click", hideCart);
 cartOverlay?.addEventListener("click", hideCart); // Click outside to close
-cartCross.addEventListener("click", () => {
-    addCls(cartItem1, "hide");
-});
+// cartCross.addEventListener("click", () => {
+//     addCls(cartItem1, "hide");
+// });
 
 // Product Details
 const products = [
