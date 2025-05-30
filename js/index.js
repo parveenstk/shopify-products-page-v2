@@ -269,7 +269,7 @@ const selectedOpt = (clicked) => {
     optPrice.innerText = `$${finalValue.toFixed(2)}`;
 
     // Run SelectProduct for cart updation
-    selectProduct(clicked.dataset.id);
+    colorSchema === 'Green' ? selectProduct(Number(clicked.dataset.id) + 4) : selectProduct(clicked.dataset.id);
 };
 
 // [Which frequency is right for me?] Offer-2 functionality
@@ -419,6 +419,49 @@ const products = [
         },
         quantity: 1,
         price: 48
+    },
+    {
+        id: 5,
+        title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-1.jpg",
+            Green: "./images/yomzSours/pack-1.png"
+        },
+        quantity: 1,
+        price: 12
+    },
+
+    {
+        id: 6,
+        title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-2.jpg",
+            Green: "./images/yomzSours/pack-2.jpg"
+        },
+        quantity: 1,
+        price: 24
+    },
+
+    {
+        id: 7,
+        title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-3.jpg",
+            Green: "./images/yomzSours/pack-3.jpg"
+        },
+        quantity: 1,
+        price: 36
+    },
+
+    {
+        id: 8,
+        title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-4.jpg",
+            Green: "./images/yomzSours/pack-4.jpg"
+        },
+        quantity: 1,
+        price: 48
     }
 ];
 
@@ -438,12 +481,8 @@ const selectProduct = (id) => {
         const data = products.find(product => product.id === Number(id));
         const colorSchema = JSON.parse(localStorage.getItem("colorSchema"));
         // console.log('colorSchema', colorSchema);
-
+        // console.log('id', id);
         const image = colorSchema === "Blue" ? data.image.Blue : data.image.Green;
-        // console.log('image', image)
-        // console.log('imageBlue', data.image.Blue)
-        // console.log('imageGreen', data.image.Green)
-
         const updatedData = {
             id: data.id,
             title: data.title,
@@ -483,7 +522,7 @@ const updateCart = () => {
     const newHtml = existingCart.map(product => {
         const html = `
         <div id="cartItem-${product.id}" class="card-item">
-               <img id="cartCross" src="images/cross.svg" class="img-fluid crossiocns">
+               <img id="cartCross" data-id="${product.id}" src="images/cross.svg" class="img-fluid crossiocns">
                <div class="row">
                   <div class="col-3 px-0">
                      <!-- product image -->
@@ -491,10 +530,10 @@ const updateCart = () => {
                      <img src="${product.image}" class="img-fluid"></img>
                      </div>
                      <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="minus">
+                        <button class="btn btn-outline-secondary" type="button" data-id="${product.id}" id="minus">
                          <i class="fas fa-minus"></i></button>
                         <input type="number" class="form-control no-arrow" id="quantity" value="${product.quantity}" min="1" max="100">
-                        <button class="btn btn-outline-secondary" type="button" id="plus">
+                        <button class="btn btn-outline-secondary" type="button" data-id="${product.id}" id="plus">
                         <i class="fas fa-plus"></i></button>
                      </div>
                   </div>
@@ -515,4 +554,94 @@ const updateCart = () => {
     })
     const adjustedHtmlString = newHtml.join('');
     container.innerHTML = adjustedHtmlString;
+    cartItem();
+    cartTotal();
+    clickListner();
 }
+
+// Product Cross functionality
+const clickListner = () => {
+    const allCross = document.querySelectorAll('#cartCross')
+    const allMinus = document.querySelectorAll('#minus')
+    const allPlus = document.querySelectorAll('#plus')
+    allCross.forEach(cross => {
+        cross.addEventListener('click', (e) => onProductCross(e.target.dataset.id))
+    })
+    allMinus.forEach(minus => {
+        minus.addEventListener('click', (e) => handleQuantity(e, 'minus'));
+    })
+    allPlus.forEach(plus => {
+        plus.addEventListener('click', (e) => handleQuantity(e, 'plus'));
+    });
+}
+setTimeout(() => {
+    clickListner();
+}, 700)
+
+const onProductCross = (id) => {
+    const existingCartData = JSON.parse(localStorage.getItem("cartData")) || [];
+    const updatedCartData = existingCartData.filter(product => product.id !== Number(id));
+    localStorage.setItem("cartData", JSON.stringify(updatedCartData));
+    updateCart();
+}
+
+// Calulate total item in Cart
+const cartItem = () => {
+    const paymentMethods = document.getElementById('payment-methods');
+    const cartItemCount = document.getElementById('cartItemCount');
+    const existingCartData = JSON.parse(localStorage.getItem("cartData")) || [];
+    const totalItems = existingCartData.length;
+    if (totalItems > 0) {
+        cartItemCount.innerHTML = `Your Cart: ${totalItems} Item`;
+        paymentMethods.innerHTML = `
+                <button class="btn btn-primary w-100 btn-pay-green">Checkout</button>
+                <button class="btn btn-primary w-100 btn-pay-blue"><img src="images/ShopPay.png" class="img-fluid"></button>
+                <button class="btn btn-primary w-100 btn-pay-yellow"><img src="images/paypal.png" class="img-fluid"></button>
+                `
+    } else {
+        cartItemCount.innerHTML = 'Your Cart is Empty';
+        paymentMethods.innerHTML = ''
+    }
+}
+
+// Calculate all cart items price
+const cartTotal = () => {
+    const cartTotalPrice = document.getElementById("cart-total");
+    const existingCartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    if (existingCartData.length > 0) {
+        const totalPrice = existingCartData.reduce((acc, product) => {
+            return acc + (product.price * product.quantity);
+        }, 0);
+        cartTotalPrice.textContent = `$${totalPrice.toFixed(2)}`;
+    } else {
+        cartTotalPrice.textContent = "$0.00";
+    }
+};
+
+// Quantity Increase / Decrease in cart
+const handleQuantity = (e, type) => {
+    if (e.target.dataset.id === undefined) return;
+    const existingCartData = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    const updatedCartData = existingCartData.map(product => {
+        if (product.id === Number(e.target.dataset.id)) {
+            if (type === 'plus') {
+                return { ...product, quantity: product.quantity + 1 };
+            } else if (type === 'minus') {
+                if (product.quantity > 1) {
+                    return { ...product, quantity: product.quantity - 1 };
+                } else {
+                    // quantity would drop to 0 — remove the item
+                    onProductCross(e.target.dataset.id);
+                    return null; // mark for removal
+                }
+            }
+        }
+        return product;
+    }).filter(Boolean); // remove any null entries
+
+    localStorage.setItem("cartData", JSON.stringify(updatedCartData));
+    updateCart();     // refresh cart UI
+    // cartTotal();      // recalculate total
+};
