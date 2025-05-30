@@ -52,7 +52,10 @@ const checkInput4 = document.getElementById("checkBox-input4");
 
 // Clear localStorage on page reload
 window.addEventListener("load", function () {
-    localStorage.clear();
+
+    // localStorage.clear(); // clearing LocalStorage
+    localStorage.setItem("colorSchema", JSON.stringify("Blue")) // Setting "Blue" to localStorage
+    updateCart();
 });
 
 // product price
@@ -80,10 +83,8 @@ const handleCheckboxClick = (clicked) => {
         addCls(faqSours2, "show2");
 
         // products
-        productDesc.innerHTML =
-            '<p id="prod-Description" class="text-center mt-3 simp-font">Sour Flavor:<br>Sour Peachy, Strawbeary, Beary Berry</p>';
-        productPrice.innerHTML =
-            '<span id="product-price" class="tab-price">$XX.22</span>';
+        productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Sour Flavor:<br>Sour Peachy, Strawbeary, Beary Berry</p>';
+        productPrice.innerHTML = '<span id="product-price" class="tab-price">$XX.22</span>';
 
         // Inputs
         const inputs = [checkInput1, checkInput2, checkInput3, checkInput4];
@@ -148,10 +149,8 @@ const handleCheckboxClick = (clicked) => {
         addCls(faqOriginal2, "show2");
 
         // product description
-        productDesc.innerHTML =
-            '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>';
-        productPrice.innerHTML =
-            '<span id="product-price" class="tab-price">$XX.99</span>';
+        productDesc.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary, Beary Berry</p>';
+        productPrice.innerHTML = '<span id="product-price" class="tab-price">$XX.99</span>';
         offer2Month.classList.remove("bg-Green");
         checkSour.style.accentColor = "green";
         soursButton.classList.remove("borderGreen");
@@ -236,16 +235,20 @@ backStep3.addEventListener("click", () => {
     replaceCls(bar2, "compltedBar", "bar");
     replaceCls(circle2, "circleCompleted", "circleActive");
 });
+
 // Re-usable functions
 const addCls = (element, className) => {
     element.classList.add(`${className}`);
 };
+
 const remvoeCls = (element, className) => {
     element.classList.remove(`${className}`);
 };
+
 const replaceCls = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`);
 };
+
 // offer - 2 box options changing border [Best Value Box]
 const selectedOpt = (clicked) => {
     const optPrice = document.getElementById("options-price");
@@ -258,6 +261,7 @@ const selectedOpt = (clicked) => {
     colorSchema === "Green"
         ? addCls(clicked, "borderGreenOffer2")
         : addCls(clicked, "borderBlueOffer2");
+
     // to change the ( options-price )
     const value = clicked.dataset.id;
     const optPriceValue = optPrice.dataset.price;
@@ -267,6 +271,7 @@ const selectedOpt = (clicked) => {
     // Run SelectProduct for cart updation
     selectProduct(clicked.dataset.id);
 };
+
 // [Which frequency is right for me?] Offer-2 functionality
 const householdItems = document.querySelectorAll(".household");
 householdItems.length > 0
@@ -278,6 +283,7 @@ householdItems.forEach((item) => {
         item.classList.add("household-slt");
     });
 });
+
 // [Try Once Box] - Offer 3 functionality
 const offerBoxes = document.querySelectorAll(".offerBox");
 offerBoxes.length > 0 ? offerBoxes[0].classList.add("selected-offer-blue") : "";
@@ -285,23 +291,26 @@ offerBoxes.forEach((box) => {
     box.addEventListener("click", () => {
         offerBoxes.forEach((b) => b.classList.remove("selected-offer-blue"));
         offerBoxes.forEach((b) => b.classList.remove("selected-offer-Green"));
+
         // to change/update the "offer3 - tryOnce Value"
         const tryOncePrice = document.getElementById("tryOnce-price");
         const tryPrice = tryOncePrice.dataset.price;
         const value = box.dataset.price;
         const percentage = box.dataset.percentage;
+
         // Updated Value ( Try Offer Box )
         const finalValue = value * tryPrice;
         tryOncePrice.innerText = `$${finalValue.toFixed(2)}`;
+
         // Updated Best Value Box ( offer-3 )
         saveText3.innerText = `Save ${percentage}%`;
+
         // to change value & save% of [bestValueBox offer-3]
         const bestValuePrice = document.getElementById("Offer3-bestValue-Price");
         const bestValue = bestValuePrice.dataset.price;
         const UpdatedBestValue = value * bestValue;
         bestValuePrice.innerHTML = `$${UpdatedBestValue.toFixed(2)}`;
-        // saveText3
-        // console.log("bestValue:", bestValue);
+
         // to fill the color according to the gummy selected
         const colorSchema = JSON.parse(localStorage.getItem("colorSchema"));
         colorSchema === "Green"
@@ -309,18 +318,19 @@ offerBoxes.forEach((box) => {
             : box.classList.add("selected-offer-blue");
     });
 });
+
 // offer - 3 ( Best Value Box )
 const checkbox = document.getElementById("checkBox-input4");
 const bestValueBox = document.getElementById("offer3-bv-box");
 const bestValueHeader = document.getElementById("offer3-bv-box-header");
-// show border color & header color when input is checked
+
+// show border color & header color when checkBox is checked
 const updateBoxBorder = () => {
     const colorSchema = JSON.parse(localStorage.getItem("colorSchema")) || "Blue";
     bestValueBox.classList.remove("borderGreenOffer2", "borderBlueOffer2");
     bestValueHeader.classList.remove("bg-Green", "bg-Blue");
     if (checkbox.checked) {
-        const borderClass =
-            colorSchema === "Green" ? "borderGreenOffer2" : "borderBlueOffer2";
+        const borderClass = colorSchema === "Green" ? "borderGreenOffer2" : "borderBlueOffer2";
         const bgClass = colorSchema === "Green" ? "bg-Green" : "bg-Blue";
         bestValueBox.classList.add(borderClass);
         bestValueHeader.classList.add(bgClass);
@@ -370,28 +380,43 @@ const products = [
     {
         id: 1,
         title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
-        image: "images/slider/4.png",
+        image: {
+            Blue: "./images/yomzOriginal/pack-1.jpg",
+            Green: "./images/yomzSours/pack-1.png"
+        },
         quantity: 1,
         price: 12
     },
+
     {
         id: 2,
         title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
-        image: "images/slider/4.png",
+        image: {
+            Blue: "./images/yomzOriginal/pack-2.jpg",
+            Green: "./images/yomzSours/pack-2.jpg"
+        },
         quantity: 1,
         price: 24
     },
+
     {
         id: 3,
         title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
-        image: "images/slider/4.png",
+        image: {
+            Blue: "./images/yomzOriginal/pack-3.jpg",
+            Green: "./images/yomzSours/pack-3.jpg"
+        },
         quantity: 1,
         price: 36
     },
+
     {
         id: 4,
         title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
-        image: "images/slider/4.png",
+        image: {
+            Blue: "./images/yomzOriginal/pack-4.jpg",
+            Green: "./images/yomzSours/pack-4.jpg"
+        },
         quantity: 1,
         price: 48
     }
@@ -400,14 +425,34 @@ const products = [
 // Select product (offer2)
 const selectProduct = (id) => {
     const existingCartData = JSON.parse(localStorage.getItem("cartData")) ? JSON.parse(localStorage.getItem("cartData")) : [];
+    console.log("existingCartData", existingCartData)
+
     const existingProduct = existingCartData.filter(product => product.id === Number(id));
+    // console.log("existingProduct", existingProduct);
 
     // check if product already exist in cart
     if (existingProduct.length > 0) {
         handleExistingProduct(existingProduct[0].id);
+
     } else {
         const data = products.find(product => product.id === Number(id));
-        localStorage.setItem("cartData", JSON.stringify([...existingCartData, data]));
+        const colorSchema = JSON.parse(localStorage.getItem("colorSchema"));
+        // console.log('colorSchema', colorSchema);
+
+        const image = colorSchema === "Blue" ? data.image.Blue : data.image.Green;
+        // console.log('image', image)
+        // console.log('imageBlue', data.image.Blue)
+        // console.log('imageGreen', data.image.Green)
+
+        const updatedData = {
+            id: data.id,
+            title: data.title,
+            image,
+            quantity: data.quantity,
+            price: data.price
+        }
+        // console.log("updatedData", updatedData, colorSchema)
+        localStorage.setItem("cartData", JSON.stringify([...existingCartData, updatedData]));
     }
     updateCart();
 }
@@ -429,6 +474,11 @@ const handleExistingProduct = (id) => {
 // udpate cart data
 const updateCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    // existingCart.forEach((item, index) => {
+    //     console.log(`Item ${index} image:`, item.image);
+    // });
+
     const container = document.getElementById('cartContainer');
     const newHtml = existingCart.map(product => {
         const html = `
@@ -438,11 +488,11 @@ const updateCart = () => {
                   <div class="col-3 px-0">
                      <!-- product image -->
                      <div class="card-products-images">
-                        <img src="${product.image}" class="img-fluid">
+                     <img src="${product.image}" class="img-fluid"></img>
                      </div>
                      <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" id="minus"><i
-                              class="fas fa-minus"></i></button>
+                        <button class="btn btn-outline-secondary" type="button" id="minus">
+                         <i class="fas fa-minus"></i></button>
                         <input type="number" class="form-control no-arrow" id="quantity" value="${product.quantity}" min="1" max="100">
                         <button class="btn btn-outline-secondary" type="button" id="plus">
                         <i class="fas fa-plus"></i></button>
@@ -463,5 +513,6 @@ const updateCart = () => {
         `
         return html;
     })
-    container.innerHTML = newHtml;
+    const adjustedHtmlString = newHtml.join('');
+    container.innerHTML = adjustedHtmlString;
 }

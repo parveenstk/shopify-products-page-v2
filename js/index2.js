@@ -52,7 +52,7 @@ const checkInput4_2 = document.getElementById('checkBox-input4-2');
 
 // Clear localStorage on page reload
 window.addEventListener('load', function () {
-    localStorage.clear();
+    // localStorage.clear();
 });
 
 // product price 
@@ -80,8 +80,8 @@ const handleCheckboxClick2 = (clicked) => {
         addCls2(faqSours2_2, 'show2');
 
         // products
-        productDesc2.innerHTML = '<p id="prod-Description2" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary</p>';
-        productPrice2.innerHTML = '<span id="product-price2" class="tab-price">$XX.22</span>';
+        productDesc2.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Sour Flavor:<br>Sour Peachy, Strawbeary, Beary Berry</p>';
+        productPrice2.innerHTML = '<span id="product-price" class="tab-price">$XX.22</span>';
 
         // Inputs
         const inputs = [checkInput1_2, checkInput2_2, checkInput3_2, checkInput4_2];
@@ -261,7 +261,7 @@ const selectedOpt2 = (clicked) => {
     // to change the ( options-price )
     const value = clicked.dataset.qty;
     console.log("value:", value);
-    
+
     const optPriceValue = optPrice.dataset.price;
     const finalValue = value * optPriceValue;
     optPrice.innerText = `$${finalValue.toFixed(2)}`;
