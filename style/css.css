@@ -362,6 +362,42 @@ header {
     position: relative;
 }
 
+/*Next-Menu-baar*/
+.menu-dask-top {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-dask-top li {
+    display: inline-block;
+}
+
+.menu-dask-top {
+    margin-bottom: 0px;
+}
+
+.menu-dask-top li a {
+    text-transform: uppercase !important;
+    border-radius: 50px;
+    font-size: 20px !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    color: #000;
+    padding: 10px 25px;
+}
+
+.menu-dask-top li a:hover {
+    background: #FFEB00;
+}
+
+.menu-dask-top {
+    padding-left: 0px;
+}
+
+/*Next-Menu-baar*/
+
 .usefull-checkout li {
     display: inline-block;
     margin-right: 10px;
