@@ -573,6 +573,13 @@ const clickListner = () => {
     allPlus.forEach(plus => {
         plus.addEventListener('click', (e) => handleQuantity(e, 'plus'));
     });
+
+    // Re-direct to checkout page
+    const checkOutButton = document.getElementById("checkout-btn");
+    checkOutButton.addEventListener("click", () => {
+        window.location.href = "https://suretekinfosoft.com/demo106/products/yomz-pdp/v2/checkout.html";
+    });
+
 }
 setTimeout(() => {
     clickListner();
@@ -594,7 +601,7 @@ const cartItem = () => {
     if (totalItems > 0) {
         cartItemCount.innerHTML = `Your Cart: ${totalItems} Item`;
         paymentMethods.innerHTML = `
-                <button class="btn btn-primary w-100 btn-pay-green">Checkout</button>
+                <button id="checkout-btn" class="btn btn-primary w-100 btn-pay-green">Checkout</button>
                 <button class="btn btn-primary w-100 btn-pay-blue"><img src="images/ShopPay.png" class="img-fluid"></button>
                 <button class="btn btn-primary w-100 btn-pay-yellow"><img src="images/paypal.png" class="img-fluid"></button>
                 `
