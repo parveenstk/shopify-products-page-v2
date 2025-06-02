@@ -362,7 +362,7 @@
                               <!-- Credit Card -->
                               <div class="accordion-item">
                                  <h4 class="accordion-header cursor">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button button-spacing" type="button" data-bs-toggle="collapse"
                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
@@ -431,7 +431,7 @@
                                              </div>
 
                                              <div class="form-check col-md-12 mb-2 py-3 left-check-padding width-fit">
-                                                <input class="form-check-input " id="shipping-checkbox"
+                                                <input class="form-check-input cursor" id="shipping-checkbox"
                                                    name="billShipSame" type="checkbox" checked>
                                                 <label class="form-check-label cursor" for="shipping-checkbox">
                                                    Use shipping address as billing address
@@ -439,10 +439,10 @@
                                              </div>
 
                                           </div>
-                                          <div class="row">
+                                          <div class="row hide" id="billing-address-text">
                                              <h3 class="d-flex justify-content-between">Billing address</h3>
                                           </div>
-                                          <div class="row">
+                                          <div class="row hide" id="billing-address-feilds">
                                              <div class="form-group col-md-12 mb-2">
                                                 <select name="countryCode" required="" autocomplete="shipping country"
                                                    class="">
@@ -653,9 +653,9 @@
                               <!-- PayPal -->
                               <div class="accordion-item">
                                  <h4 class="accordion-header cursor">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    <button class="accordion-button collapsed remove-spacing" type="button" data-bs-toggle="collapse"
                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                       <div class="form-check">
+                                       <div class="form-check button-spacing">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
                                              id="flexRadioDefault2">
                                           <div class="d-flex justify-content-between">
@@ -994,7 +994,11 @@
                   <div class="col-md-6 rightside-bg">
                      <div class="stickyform">
                         <div class="right-side-form">
+
+                           <!-- Products -->
                            <div class="controlform  side-baar item">
+
+                              <!-- Product - 1 -->
                               <div class="product-card row">
                                  <div class="col-2 px-0">
                                     <div class="product-image">
@@ -1009,6 +1013,8 @@
                                  </div>
                                  <div class="product-price col-2">$26.00</div>
                               </div>
+
+                              <!-- Product - 2 -->
                               <div class="product-card row">
                                  <div class="col-2 px-0">
                                     <div class="product-image">
@@ -1023,6 +1029,8 @@
                                  </div>
                                  <div class="product-price col-2">$26.00</div>
                               </div>
+
+                              <!-- Product - 3 -->
                               <div class="product-card row">
                                  <div class="col-2 px-0">
                                     <div class="product-image">
@@ -1035,6 +1043,8 @@
                                  </div>
                                  <div class="product-price col-2">FREE</div>
                               </div>
+
+                              <!-- Product - 4 -->
                               <div class="product-card row">
                                  <div class="col-2 px-0">
                                     <div class="product-image">
@@ -1047,6 +1057,8 @@
                                  </div>
                                  <div class="product-price col-2">FREE</div>
                               </div>
+
+                              <!-- Product - 5 -->
                               <div class="product-card row">
                                  <div class="col-2 px-0">
                                     <div class="product-image">
@@ -1060,6 +1072,7 @@
                                  <div class="product-price col-2">FREE</div>
                               </div>
                            </div>
+
                            <div class="row controlform apply-form">
                               <div class="form-group col-9 px-1 mb-2">
                                  <input name="couponCode" id="couponCode" type="text" class="secss form-control"
@@ -1298,6 +1311,9 @@
          </div>
       </div>
    </div>
+
+   <!-- import scripts -->
+    <script src="./js/checkOut.js"></script>
    <script>
       document.addEventListener("DOMContentLoaded", function () {
          var tooltipTrigger = document.getElementById('tooltip-trigger');
