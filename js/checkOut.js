@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const updateTotal = () => {
     const subTotal = document.getElementById("sut-total");
     const finalTotal = document.getElementById('final-total');
+    const totalItem = document.getElementById('total-items');
     const existingCartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
     if (existingCartData.length > 0) {
@@ -71,4 +72,7 @@ const updateTotal = () => {
     } else {
         finalTotal.textContent = "$0.00";
     }
+
+    totalItem.innerHTML = `<span id="total-items">Subtotal · ${existingCartData.length} items</span>`
+
 };
