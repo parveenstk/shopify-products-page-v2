@@ -385,7 +385,8 @@ const products = [
             Green: "./images/yomzSours/pack-1.png"
         },
         quantity: 1,
-        price: 12
+        price: 12,
+        gummyType: 'YOMZ Original',
     },
 
     {
@@ -396,7 +397,8 @@ const products = [
             Green: "./images/yomzSours/pack-2.jpg"
         },
         quantity: 1,
-        price: 24
+        price: 24,
+        gummyType: 'YOMZ Original',
     },
 
     {
@@ -407,7 +409,8 @@ const products = [
             Green: "./images/yomzSours/pack-3.jpg"
         },
         quantity: 1,
-        price: 36
+        price: 36,
+        gummyType: 'YOMZ Original',
     },
 
     {
@@ -418,7 +421,8 @@ const products = [
             Green: "./images/yomzSours/pack-4.jpg"
         },
         quantity: 1,
-        price: 48
+        price: 48,
+        gummyType: 'YOMZ Original',
     },
     {
         id: 5,
@@ -428,7 +432,8 @@ const products = [
             Green: "./images/yomzSours/pack-1.png"
         },
         quantity: 1,
-        price: 12
+        price: 12,
+        gummyType: 'YOMZ Sours',
     },
 
     {
@@ -439,7 +444,8 @@ const products = [
             Green: "./images/yomzSours/pack-2.jpg"
         },
         quantity: 1,
-        price: 24
+        price: 24,
+        gummyType: 'YOMZ Sours',
     },
 
     {
@@ -450,7 +456,8 @@ const products = [
             Green: "./images/yomzSours/pack-3.jpg"
         },
         quantity: 1,
-        price: 36
+        price: 36,
+        gummyType: 'YOMZ Sours',
     },
 
     {
@@ -461,7 +468,8 @@ const products = [
             Green: "./images/yomzSours/pack-4.jpg"
         },
         quantity: 1,
-        price: 48
+        price: 48,
+        gummyType: 'YOMZ Sours',
     }
 ];
 
@@ -488,7 +496,8 @@ const selectProduct = (id) => {
             title: data.title,
             image,
             quantity: data.quantity,
-            price: data.price
+            price: data.price,
+            gummyType: data.gummyType,
         }
         // console.log("updatedData", updatedData, colorSchema)
         localStorage.setItem("cartData", JSON.stringify([...existingCartData, updatedData]));
@@ -541,7 +550,7 @@ const updateCart = () => {
                   <div class="col-9 px-0">
                      <div class="card-products-titles">
                         <h3>${product.title}</h3>
-                        <h4>YOMZ Original / 1 Case</h4>
+                        <h4>${product.gummyType}/ 1 Case</h4>
                         <p class="card-products-price-">$${product.price * product.quantity}</p>
                         <p class="daily-items">($3.85 per daily dose)</p>
                      </div>
