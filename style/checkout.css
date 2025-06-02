@@ -66,6 +66,18 @@ p {
     font-size: 18px;
 }
 
+/* developer's CSS */
+
+.cursor {
+    cursor: pointer !important;
+}
+
+.width-fit {
+    width: fit-content !important;
+}
+
+/* developer's CSS */
+
 /*new*/
 
 .stickyform {

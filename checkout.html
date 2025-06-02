@@ -151,8 +151,9 @@
                                     required>
                               </div>
                               <div class="form-check col-md-12 mb-2">
-                                 <label class="form-check-label" for="checkbox-sh">
-                                    <input class="form-check-input" name="billShipSame" type="checkbox"> Email me with
+                                 <label class="form-check-label cursor" for="email-checkbox">
+                                    <input class="form-check-input" id="email-checkbox" name="billShipSame"
+                                       type="checkbox"> Email me with
                                     news and offers
                                  </label>
                               </div>
@@ -263,7 +264,7 @@
 
                            <div class="row">
                               <div class="form-group col-md-4 px-1 mb-2">
-                                 <input type="text" placeholder="City" class="shipzip form-control">
+                                 <input type="text" name="City" placeholder="City" class="shipzip form-control">
                               </div>
                               <div class="form-group col-md-4 px-1 mb-2">
                                  <select name="zone" required="" autocomplete="address-level1" class="">
@@ -342,7 +343,8 @@
                                  </select>
                               </div>
                               <div class="form-group col-md-4 px-1 mb-2">
-                                 <input type="text" placeholder="Postal Code" class="shipzip form-control">
+                                 <input type="text" name="Postal Code" placeholder="Postal Code"
+                                    class="shipzip form-control">
                               </div>
                            </div>
                         </div>
@@ -353,16 +355,20 @@
                         <div class="controlform-accordion mt-4 row">
                            <h3 class="d-flex px-0">Payment</h3>
                            <p class="transactions d-flex px-0">All transactions are secure and encrypted.</p>
+
+                           <!-- Credit Card & Paypal Options -->
                            <div class="accordion" id="accordionExample">
+
+                              <!-- Credit Card -->
                               <div class="accordion-item">
-                                 <h4 class="accordion-header">
+                                 <h4 class="accordion-header cursor">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                             id="flexRadioDefault1">
+                                             id="flexRadioDefault">
                                           <div class="d-flex justify-content-between">
-                                             <label class="form-check-label" for="flexRadioDefault1">
+                                             <label class="form-check-label cursor" for="flexRadioDefault">
                                                 Credit card
                                                 <span class="images">
                                                    <img src="images/checkout/visa.svg">
@@ -397,7 +403,7 @@
                                           <div class="row">
                                              <div class="form-group col-md-12 mb-2">
                                                 <div class="icons-col-set">
-                                                   <input type="text" name="" placeholder="Card number"
+                                                   <input type="number" name="Card number" placeholder="Card number"
                                                       class="form-control">
                                                    <div class="icons-col-mgrole">
                                                       <img src="images/padlock.svg">
@@ -405,12 +411,12 @@
                                                 </div>
                                              </div>
                                              <div class="form-group col-6 mb-2">
-                                                <input type="text" name="" placeholder="Expiration date (MM / YY)"
+                                                <input type="text" name="Expiration date (MM / YY)" placeholder="Expiration date (MM / YY)"
                                                    class="form-control">
                                              </div>
                                              <div class="form-group col-6  mb-2">
                                                 <div class="icons-col-set">
-                                                   <input type="text" name="" placeholder="Security code"
+                                                   <input type="text" name="Security code" placeholder="Security code"
                                                       class="form-control">
                                                    <div class="icons-col-mgrole">
                                                       <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -420,17 +426,18 @@
                                                 </div>
                                              </div>
                                              <div class="form-group col-md-12 mb-2">
-                                                <input type="text" name="" placeholder="Name on card"
+                                                <input type="text" name="Name on card" placeholder="Name on card"
                                                    class="form-control">
                                              </div>
-                                             <div class="form-check col-md-12 mb-2 py-3 left-check-padding">
-                                                <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> -->
-                                                <input class="form-check-input" name="billShipSame" type="checkbox"
-                                                   checked="">
-                                                <label class="form-check-label" for="checkbox-sh">
+
+                                             <div class="form-check col-md-12 mb-2 py-3 left-check-padding width-fit">
+                                                <input class="form-check-input " id="shipping-checkbox"
+                                                   name="billShipSame" type="checkbox" checked>
+                                                <label class="form-check-label cursor" for="shipping-checkbox">
                                                    Use shipping address as billing address
                                                 </label>
                                              </div>
+
                                           </div>
                                           <div class="row">
                                              <h3 class="d-flex justify-content-between">Billing address</h3>
@@ -532,7 +539,7 @@
                                                    class="form-control secss">
                                              </div>
                                              <div class="form-group col-md-4 mb-2">
-                                                <input type="text" placeholder="City" class="shipzip form-control">
+                                                <input type="text" name="City" placeholder="City" class="shipzip form-control">
                                              </div>
                                              <div class="form-group col-md-4 mb-2">
                                                 <select name="zone" required="" autocomplete="shipping address-level1">
@@ -634,7 +641,7 @@
                                                 </select>
                                              </div>
                                              <div class="form-group col-md-4  mb-2">
-                                                <input type="text" placeholder="Postal Code"
+                                                <input type="text" name="Postal Code" placeholder="Postal Code"
                                                    class="shipzip form-control">
                                              </div>
                                           </div>
@@ -642,20 +649,26 @@
                                     </div>
                                  </div>
                               </div>
+
+                              <!-- PayPal -->
                               <div class="accordion-item">
-                                 <h4 class="accordion-header">
+                                 <h4 class="accordion-header cursor">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                             id="flexRadioDefault1">
+                                             id="flexRadioDefault2">
                                           <div class="d-flex justify-content-between">
-                                             <label class="form-check-label" for="flexRadioDefault1">
+                                             <!-- Proper association using 'for' -->
+                                             <label class="form-check-label cursor" for="flexRadioDefault2">
                                                 PayPal
                                                 <span class="images">
-                                                   <img src="images/checkout/paypal-3.png" class="img-fluid"></span>
+                                                   <img src="images/checkout/paypal-3.png" class="img-fluid">
+                                                </span>
                                              </label>
                                           </div>
+                                       </div>
+                                    </button>
                                  </h4>
                                  <div id="collapseTwo" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample">
@@ -668,8 +681,12 @@
                                     </div>
                                  </div>
                               </div>
+
                            </div>
+
                         </div>
+
+                        <!-- Remember me -->
                         <div class="controlform-accordion controlform   mt-4 row">
                            <h3 class="d-flex px-0 mb-3">Remember me</h3>
                            <div class="accordion" id="accordionExample">
@@ -680,9 +697,9 @@
                                        aria-controls="collapsefour">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                             id="flexRadioDefault1">
+                                             id="flexRadioDefault3">
                                           <div class="d-flex justify-content-between">
-                                             <label class="form-check-label" for="flexRadioDefault1">
+                                             <label class="form-check-label cursor" for="flexRadioDefault3">
                                                 Save my information for a faster checkout
                                              </label>
                                           </div>
@@ -693,7 +710,7 @@
                                        <div class="mobile-number">
                                           <div class="form-group col-md-12 mb-2 ">
                                              <div class="icons-col-set icons-col-set-mobile">
-                                                <input type="number" placeholder="Mobile phone number"
+                                                <input type="number" name="Mobile phone number" placeholder="Mobile phone number"
                                                    class="form-control">
                                                 <div class="icons-col-mgrole">
                                                    <img src="images/smartphone.svg">
@@ -715,9 +732,9 @@
                                        data-bs-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                             id="flexRadioDefault1">
+                                             id="flexRadioDefault4">
                                           <div class="d-flex justify-content-between">
-                                             <label class="form-check-label" for="flexRadioDefault1">
+                                             <label class="form-check-label" for="flexRadioDefault4">
                                                 Same as shipping address
                                              </label>
                                           </div>
@@ -731,9 +748,9 @@
                                        data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                             id="flexRadioDefault1">
+                                             id="flexRadioDefault5">
                                           <div class="d-flex justify-content-between">
-                                             <label class="form-check-label" for="flexRadioDefault1">
+                                             <label class="form-check-label cursor" for="flexRadioDefault5">
                                                 Use a different billing address
                                              </label>
                                           </div>
@@ -842,7 +859,7 @@
                                                 class="form-control secss">
                                           </div>
                                           <div class="form-group col-md-4  mb-2">
-                                             <input type="text" placeholder="City" class="shipzip form-control">
+                                             <input type="text" name="City" placeholder="City" class="shipzip form-control">
                                           </div>
                                           <div class="form-group col-md-4  mb-2">
                                              <select name="zone" id="Select1" required=""
@@ -942,7 +959,7 @@
                                              </select>
                                           </div>
                                           <div class="form-group col-md-4  mb-2">
-                                             <input type="text" placeholder="Postal Code" class="shipzip form-control">
+                                             <input type="text" name="Postal Code" placeholder="Postal Code" class="shipzip form-control">
                                           </div>
                                        </div>
                                     </div>
