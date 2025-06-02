@@ -73,6 +73,6 @@ const updateTotal = () => {
         finalTotal.textContent = "$0.00";
     }
 
-    totalItem.innerHTML = `<span id="total-items">Subtotal · ${existingCartData.length} items</span>`
+    totalItem.innerHTML = `<span id="total-items">Subtotal · ${existingCartData.length + 3} items</span>`
 
 };
