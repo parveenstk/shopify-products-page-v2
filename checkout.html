@@ -14,46 +14,28 @@
 
 <body>
    <div class="checkoutpart">
+      <!-- Mobile order summary -->
       <div class="total-price d-sm-block d-lg-none">
          <div class="accordion">
             <div class="accordion-item">
                <h4 class="accordion-header">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse"
                      data-bs-target="#collapsetrep" aria-expanded="true" aria-controls="collapsetrep">
-                     <span class="arrowsummy">Order summary <img class="arrow-icon" src="images/down.svg"> </span> <span
-                        class="price-accordion">$68.00</span>
+                     <span class="arrowsummy">Order summary
+                        <img class="arrow-icon" src="images/down.svg">
+                     </span>
+                     <span id="ordersummary-header-total" class="price-accordion">$0.00</span>
                   </button>
                </h4>
                <div id="collapsetrep" class="accordion-collapse collapse" aria-labelledby="headingOne"
                   data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                      <div class="controlform  side-baar item">
-                        <div class="product-card row">
-                           <div class="col-2 px-0">
-                              <div class="product-image">
-                                 <img src="images/slider/green/4.png" alt="">
-                                 <div class="number-joit">1</div>
-                              </div>
-                           </div>
-                           <div class="product-info col-8">
-                              <div class="product-title">YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</div>
-                              <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                           </div>
-                           <div class="product-price col-2">$26.00</div>
-                        </div>
-                        <div class="product-card row">
-                           <div class="col-2 px-0">
-                              <div class="product-image">
-                                 <img src="images/slider/4.png" alt="">
-                                 <div class="number-joit">1</div>
-                              </div>
-                           </div>
-                           <div class="product-info col-8">
-                              <div class="product-title">YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</div>
-                              <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                           </div>
-                           <div class="product-price col-2">$26.00</div>
-                        </div>
+
+                        <!-- Order summary Product - 1 -->
+                        <div id="ordersummary-products-container"></div>
+
+                        <!-- Order summary Free Gifts - 1 -->
                         <div class="product-card row">
                            <div class="col-2 px-0">
                               <div class="product-image">
@@ -66,6 +48,8 @@
                            </div>
                            <div class="product-price col-2">FREE</div>
                         </div>
+
+                        <!-- Order summary Free Gifts - 2 -->
                         <div class="product-card row">
                            <div class="col-2 px-0">
                               <div class="product-image">
@@ -78,6 +62,8 @@
                            </div>
                            <div class="product-price col-2">FREE</div>
                         </div>
+
+                        <!-- Order summary Free Gifts - 3 -->
                         <div class="product-card row">
                            <div class="col-2 px-0">
                               <div class="product-image">
@@ -104,8 +90,8 @@
                      </div>
                      <div class="price-count">
                         <div class="d-flex justify-content-between mb-2">
-                           <span>Subtotal · 3 items</span>
-                           <strong>$44.00</strong>
+                           <span id="ordersummary-quantity">Subtotal · 3 items</span>
+                           <strong id="ordersummary-subtotal"></strong>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                            <span>Shipping</span>
@@ -113,7 +99,7 @@
                         </div>
                         <div class="d-flex justify-content-between total-price">
                            <span>Total</span>
-                           <strong><sub>USD</sub> $44.00</strong>
+                           <strong id="oredersummary-total"><sub>USD</sub> $44.00</strong>
                         </div>
                      </div>
                      <hr>
@@ -123,9 +109,11 @@
             </div>
          </div>
       </div>
+      <!-- Mobile order summary -->
+
       <div class="container-fluid">
          <div class="checkoutpart-body-ponts">
-            <form>
+            <form id="checkout-form">
                <div class="row">
                   <div class="col-md-6 leftside-bg">
                      <div class="left-side-form">
@@ -147,8 +135,8 @@
                               <h3 class="d-flex justify-content-between px-0 mb-3"><span>Customer Info</span> <span> <a
                                        href="#" class="login-text"> Log in</a></span></h3>
                               <div class="form-group col-md-12 px-1 mb-2">
-                                 <input type="text" name="emailAddress" class="form-control" placeholder="Email"
-                                    required>
+                                 <input id="email-address" type="email" name="emailAddress" class="form-control"
+                                    placeholder="Email">
                               </div>
                               <div class="form-check col-md-12 mb-2">
                                  <label class="form-check-label cursor" for="email-checkbox">
@@ -165,7 +153,7 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-12 px-1 mb-2">
-                                 <select name="countryCode" required="" autocomplete="shipping country" class="">
+                                 <select name="countryCode" autocomplete="shipping country" class="">
                                     <option value="US">United States</option>
                                     <option value="">---</option>
                                     <option value="AR">Argentina</option>
@@ -267,7 +255,7 @@
                                  <input type="text" name="City" placeholder="City" class="shipzip form-control">
                               </div>
                               <div class="form-group col-md-4 px-1 mb-2">
-                                 <select name="zone" required="" autocomplete="address-level1" class="">
+                                 <select name="zone" autocomplete="address-level1" class="">
                                     <option hidden="" disabled="" value="">&nbsp;</option>
                                     <option data-alternate-values="Alabama" value="AL">Alabama</option>
                                     <option data-alternate-values="Alaska" value="AK">Alaska</option>
@@ -445,8 +433,7 @@
                                           </div>
                                           <div class="row hide" id="billing-address-feilds">
                                              <div class="form-group col-md-12 mb-2">
-                                                <select name="countryCode" required="" autocomplete="shipping country"
-                                                   class="">
+                                                <select name="countryCode" autocomplete="shipping country" class="">
                                                    <option value="US">United States</option>
                                                    <option value="">---</option>
                                                    <option value="AR">Argentina</option>
@@ -518,16 +505,16 @@
                                              </div>
                                              <div class="form-group col-md-6  mb-2">
                                                 <input type="text" name="shipfirstName" placeholder="First Name"
-                                                   class="form-control" isrequired="">
+                                                   class="form-control">
                                              </div>
                                              <div class="form-group col-md-6  mb-2">
                                                 <input type="text" name="shiplastName" placeholder="Last Name"
-                                                   class="secss form-control" isrequired="">
+                                                   class="secss form-control">
                                              </div>
                                              <div class="form-group col-md-12  mb-2">
                                                 <div class="icons-col-set">
                                                    <input type="text" name="shipAddress1" placeholder="Address"
-                                                      class="ads1 form-control" spellcheck="false" isrequired=""
+                                                      class="ads1 form-control" spellcheck="false"
                                                       data-threeds="shippingStreetAddress">
                                                    <div class="icons-col-mgrole">
                                                       <img src="images/search.svg">
@@ -544,7 +531,7 @@
                                                    class="shipzip form-control">
                                              </div>
                                              <div class="form-group col-md-4 mb-2">
-                                                <select name="zone" required="" autocomplete="shipping address-level1">
+                                                <select name="zone" autocomplete="shipping address-level1">
                                                    <option hidden="" disabled="" value="">&nbsp;</option>
                                                    <option data-alternate-values="Alabama" value="AL">Alabama</option>
                                                    <option data-alternate-values="Alaska" value="AK">Alaska</option>
@@ -766,8 +753,7 @@
                                        </div>
                                        <div class="row">
                                           <div class="form-group col-md-12 mb-2">
-                                             <select name="countryCode" id="Select0" required=""
-                                                autocomplete="shipping country"
+                                             <select name="countryCode" id="Select0" autocomplete="shipping country"
                                                 class="ZHJU6 _1k3449n5 _1k3449n3 _1fragemu0 oAlPg IWR5K tu1VS">
                                                 <option value="US">United States</option>
                                                 <option value="">---</option>
@@ -840,16 +826,16 @@
                                           </div>
                                           <div class="form-group col-md-6  mb-2">
                                              <input type="text" name="shipfirstName" placeholder="First Name"
-                                                class="form-control" isrequired="">
+                                                class="form-control">
                                           </div>
                                           <div class="form-group col-md-6  mb-2">
                                              <input type="text" name="shiplastName" placeholder="Last Name"
-                                                class="secss form-control" isrequired="">
+                                                class="secss form-control">
                                           </div>
                                           <div class="form-group col-md-12  mb-2">
                                              <div class="icons-col-set">
                                                 <input type="text" name="shipAddress1" placeholder="Address"
-                                                   class="ads1 form-control" spellcheck="false" isrequired=""
+                                                   class="ads1 form-control" spellcheck="false"
                                                    data-threeds="shippingStreetAddress">
                                                 <div class="icons-col-mgrole">
                                                    <img src="images/search.svg">
@@ -866,8 +852,7 @@
                                                 class="shipzip form-control">
                                           </div>
                                           <div class="form-group col-md-4  mb-2">
-                                             <select name="zone" id="Select1" required=""
-                                                autocomplete="shipping address-level1"
+                                             <select name="zone" id="Select1" autocomplete="shipping address-level1"
                                                 class="ZHJU6 _1k3449n5 _1k3449n3 _1fragemu0 oAlPg IWR5K tu1VS">
                                                 <option hidden="" disabled="" value="">&nbsp;</option>
                                                 <option data-alternate-values="Alabama" value="AL">Alabama</option>
@@ -977,8 +962,10 @@
                               automatically renew and your card will be charged at the price and frequency on this page
                               until you cancel. Cancel anytime through your online account. You also agree to our Terms
                               of Service and Privacy policy</span>
+
+                           <!-- PAY NOW Button -->
                            <div class="form-group col-md-12  mb-2 btn-role mt-3 px-0">
-                              <button type='button' class="btn pay">Pay now</button>
+                              <button id="paynow-button" type='submit' class="btn pay">PAY NOW</button>
                            </div>
                         </div>
                         <hr class="d-none d-sm-none d-lg-block">
