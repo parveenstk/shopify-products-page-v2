@@ -135,14 +135,14 @@
                               <h3 class="d-flex justify-content-between px-0 mb-3"><span>Customer Info</span> <span> <a
                                        href="#" class="login-text"> Log in</a></span></h3>
                               <div class="form-group col-md-12 px-1 mb-2">
-                                 <input id="email-address" type="email" name="emailAddress" class="form-control"
-                                    placeholder="Email">
+                                 <!-- email address -->
+                                 <input id="delivery-email-address" type="email" name="emailAddress"
+                                    class="form-control" placeholder="Email">
                               </div>
-                              <div class="form-check col-md-12 mb-2">
+                              <div class="form-check col-md-12 mb-2 ml-4">
                                  <label class="form-check-label cursor" for="email-checkbox">
                                     <input class="form-check-input" id="email-checkbox" name="billShipSame"
-                                       type="checkbox"> Email me with
-                                    news and offers
+                                       type="checkbox"> Email me with news and offers
                                  </label>
                               </div>
                            </div>
@@ -226,18 +226,22 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-6 px-1 mb-2">
-                                 <input type="text" name="shipfirstName" placeholder="First Name" class="form-control"
-                                    isRequired>
+                                 <!-- Delivery section - First Name -->
+                                 <input id="delivery-first-name" type="text" name="shipfirstName"
+                                    placeholder="First Name" class="form-control" isRequired>
                               </div>
                               <div class="form-group col-md-6 px-1 mb-2">
-                                 <input type="text" name="shiplastName" placeholder="Last Name"
+                                 <!-- Delivery section - Last Name -->
+                                 <input id="delivery-last-name" type="text" name="shiplastName" placeholder="Last Name"
                                     class="secss form-control" isRequired>
                               </div>
                            </div>
                            <div class="row">
                               <div class="form-group col-md-12 px-1 mb-2 icons-col-set">
-                                 <input type="text" name="shipAddress1" placeholder="Address" class="ads1 form-control"
-                                    spellcheck="false" isRequired data-threeds="shippingStreetAddress">
+                                 <!-- Delivery section - Address - 1 -->
+                                 <input id="delivery-address" type="text" name="shipAddress1" placeholder="Address"
+                                    class="ads1 form-control" spellcheck="false" isRequired
+                                    data-threeds="shippingStreetAddress">
                                  <div class="icons-col-mgrole">
                                     <img src="images/search.svg">
                                  </div>
@@ -245,17 +249,20 @@
                            </div>
                            <div class="row">
                               <div class="form-group col-md-12 px-1 mb-2">
-                                 <input type="text" name="shipAddress2" placeholder="Apartment, suite, etc. (optional)"
-                                    class="form-control secss">
+                                 <!-- Delivery section - Address - 2 ( Optional ) -->
+                                 <input id="delivery-address-optional" type="text" name="shipAddress2"
+                                    placeholder="Apartment, suite, etc. (optional)" class="form-control secss">
                               </div>
                            </div>
 
                            <div class="row">
                               <div class="form-group col-md-4 px-1 mb-2">
-                                 <input type="text" name="City" placeholder="City" class="shipzip form-control">
+                                 <!-- Delivery section - City -->
+                                 <input id="delivery-city" type="text" name="City" placeholder="City"
+                                    class="shipzip form-control">
                               </div>
                               <div class="form-group col-md-4 px-1 mb-2">
-                                 <select name="zone" autocomplete="address-level1" class="">
+                                 <select id="delivery-state" name="zone" autocomplete="address-level1" class="">
                                     <option hidden="" disabled="" value="">&nbsp;</option>
                                     <option data-alternate-values="Alabama" value="AL">Alabama</option>
                                     <option data-alternate-values="Alaska" value="AK">Alaska</option>
@@ -331,8 +338,9 @@
                                  </select>
                               </div>
                               <div class="form-group col-md-4 px-1 mb-2">
-                                 <input type="text" name="Postal Code" placeholder="Postal Code"
-                                    class="shipzip form-control">
+                                 <!-- Delivery section - Postal Code -->
+                                 <input id="delivery-postal-code" type="number" name="Postal Code"
+                                    placeholder="Postal Code" class="shipzip form-control">
                               </div>
                            </div>
                         </div>
@@ -350,12 +358,11 @@
                               <!-- Credit Card -->
                               <div class="accordion-item">
                                  <h4 class="accordion-header cursor">
-                                    <button class="accordion-button button-spacing" type="button"
-                                       data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                       aria-controls="collapseOne">
+                                    <button class="accordion-button payment-btn" type="button" data-bs-toggle="collapse"
+                                       data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                        <div class="form-check">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                             id="flexRadioDefault">
+                                             id="flexRadioDefault" checked>
                                           <div class="d-flex justify-content-between">
                                              <label class="form-check-label cursor" for="flexRadioDefault">
                                                 Credit card
@@ -392,21 +399,28 @@
                                           <div class="row">
                                              <div class="form-group col-md-12 mb-2">
                                                 <div class="icons-col-set">
-                                                   <input type="number" name="Card number" placeholder="Card number"
-                                                      class="form-control">
+                                                   <!-- Card number input -->
+                                                   <input id="credit-card-number" type="text" name="Card number"
+                                                      placeholder="Card number" class="form-control" minlength="15"
+                                                      maxlength="17" inputmode="numeric" pattern="\d{15,17}"
+                                                      autocomplete="cc-number" />
                                                    <div class="icons-col-mgrole">
                                                       <img src="images/padlock.svg">
                                                    </div>
                                                 </div>
                                              </div>
                                              <div class="form-group col-6 mb-2">
-                                                <input type="text" name="Expiration date (MM / YY)"
-                                                   placeholder="Expiration date (MM / YY)" class="form-control">
+                                                <!-- Card expiry -->
+                                                <input id="credit-card-expiry" type="text"
+                                                   name="Expiration date (MM / YY)" placeholder="MM / YY"
+                                                   class="form-control" inputmode="numeric" maxlength="7" />
                                              </div>
                                              <div class="form-group col-6  mb-2">
                                                 <div class="icons-col-set">
-                                                   <input type="text" name="Security code" placeholder="Security code"
-                                                      class="form-control">
+                                                   <!-- Card CVV -->
+                                                   <input id="credit-card-cvv" type="text" name="Security code"
+                                                      placeholder="Security code" class="form-control"
+                                                      inputmode="numeric" maxlength="4" />
                                                    <div class="icons-col-mgrole">
                                                       <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
                                                          data-bs-title="3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."><img
@@ -415,8 +429,9 @@
                                                 </div>
                                              </div>
                                              <div class="form-group col-md-12 mb-2">
-                                                <input type="text" name="Name on card" placeholder="Name on card"
-                                                   class="form-control">
+                                                <!-- Name on credit card -->
+                                                <input id="nameon-credit-card" type="text" name="Name on card"
+                                                   placeholder="Name on card" class="form-control">
                                              </div>
 
                                              <div class="form-check col-md-12 mb-2 py-3 left-check-padding width-fit">
@@ -504,17 +519,20 @@
                                                 </select>
                                              </div>
                                              <div class="form-group col-md-6  mb-2">
-                                                <input type="text" name="shipfirstName" placeholder="First Name"
-                                                   class="form-control">
+                                                <!-- billing first name -->
+                                                <input id="billing-first-name" type="text" name="shipfirstName"
+                                                   placeholder="First Name" class="form-control">
                                              </div>
                                              <div class="form-group col-md-6  mb-2">
-                                                <input type="text" name="shiplastName" placeholder="Last Name"
-                                                   class="secss form-control">
+                                                <!-- billing last name -->
+                                                <input id="billing-last-name" type="text" name="shiplastName"
+                                                   placeholder="Last Name" class="secss form-control">
                                              </div>
                                              <div class="form-group col-md-12  mb-2">
                                                 <div class="icons-col-set">
-                                                   <input type="text" name="shipAddress1" placeholder="Address"
-                                                      class="ads1 form-control" spellcheck="false"
+                                                   <!-- billing address - 1 -->
+                                                   <input id="billing-address" type="text" name="shipAddress1"
+                                                      placeholder="Address" class="ads1 form-control" spellcheck="false"
                                                       data-threeds="shippingStreetAddress">
                                                    <div class="icons-col-mgrole">
                                                       <img src="images/search.svg">
@@ -522,12 +540,14 @@
                                                 </div>
                                              </div>
                                              <div class="form-group col-md-12  mb-2">
-                                                <input type="text" name="shipAddress2"
+                                                <!-- billing address optional -->
+                                                <input id="billing-address-optional" type="text" name="shipAddress2"
                                                    placeholder="Apartment, suite, etc. (optional)"
                                                    class="form-control secss">
                                              </div>
                                              <div class="form-group col-md-4 mb-2">
-                                                <input type="text" name="City" placeholder="City"
+                                                <!-- billing city -->
+                                                <input id="billing-city" type="text" name="City" placeholder="City"
                                                    class="shipzip form-control">
                                              </div>
                                              <div class="form-group col-md-4 mb-2">
@@ -630,8 +650,9 @@
                                                 </select>
                                              </div>
                                              <div class="form-group col-md-4  mb-2">
-                                                <input type="text" name="Postal Code" placeholder="Postal Code"
-                                                   class="shipzip form-control">
+                                                <!-- billind postal code -->
+                                                <input id="billing-postal-code" type="text" name="Postal Code"
+                                                   placeholder="Postal Code" class="shipzip form-control">
                                              </div>
                                           </div>
                                        </div>
@@ -645,12 +666,13 @@
                                     <button class="accordion-button collapsed remove-spacing" type="button"
                                        data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
                                        aria-controls="collapseTwo">
-                                       <div class="form-check button-spacing">
+                                       <div class="form-check padding0">
                                           <input class="form-check-input" type="radio" name="flexRadioDefault"
                                              id="flexRadioDefault2">
                                           <div class="d-flex justify-content-between">
                                              <!-- Proper association using 'for' -->
-                                             <label class="form-check-label cursor" for="flexRadioDefault2">
+                                             <label class="form-check-label cursor  button-spacing"
+                                                for="flexRadioDefault2">
                                                 PayPal
                                                 <span class="images">
                                                    <img src="images/checkout/paypal-3.png" class="img-fluid">

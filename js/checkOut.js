@@ -82,7 +82,7 @@ const updateTotal = () => {
 const udpateOrderSummary = () => {
     const summaryProductContainer = document.getElementById('ordersummary-products-container');
     const existingCart = JSON.parse(localStorage.getItem("cartData")) || [];
-    console.log("existingCart", existingCart);
+    // console.log("existingCart", existingCart);
 
     const newHtml = existingCart.map(product => {
         const html = `
@@ -113,6 +113,7 @@ const orderSummaryTotal = () => {
     const orderTotal = document.getElementById('oredersummary-total');
     const existingCartData = JSON.parse(localStorage.getItem("cartData")) || [];
 
+    // to updated 'Order total'
     if (existingCartData.length > 0) {
         const totalSubPrice = existingCartData.reduce((acc, product) => {
             return acc + (product.price * product.quantity);
@@ -122,6 +123,7 @@ const orderSummaryTotal = () => {
         orderHeaderTotal.textContent = "$0.00";
     }
 
+    // to updated 'Order subTotal'
     if (existingCartData.length > 0) {
         const totalSubPrice = existingCartData.reduce((acc, product) => {
             return acc + (product.price * product.quantity);
@@ -139,7 +141,6 @@ const orderSummaryTotal = () => {
     } else {
         orderTotal.innerHTML = `<strong id="oredersummary-total"><sub>USD</sub>$0.00</strong>`;
     }
-
     orderQuantity.innerHTML = `<span id="total-items">Subtotal · ${existingCartData.length + 3} items</span>`
 }
 
@@ -147,22 +148,170 @@ const orderSummaryTotal = () => {
 const form = document.getElementById('checkout-form');
 const paynowBtn = document.getElementById('paynow-button');
 
-// form elements / inputs
-const email = document.getElementById('email-address');
-const firstName = document.getElementById('');
-const lastName = document.getElementById('');
-const address = document.getElementById('');
-const city = document.getElementById('');
-const postalCode = document.getElementById('');
+// delivery section inputs
+const email = document.getElementById('delivery-email-address');
+const firstName = document.getElementById('delivery-first-name');
+const lastName = document.getElementById('delivery-last-name');
+const address = document.getElementById('delivery-address');
+const addressOptional = document.getElementById('delivery-address-optional');
+const city = document.getElementById('delivery-city');
+const state = document.getElementById('delivery-state');
+const postalCode = document.getElementById('delivery-postal-code');
 
+// credit card inputs
+const cardNumber = document.getElementById('credit-card-number');
+const cardExpiry = document.getElementById('credit-card-expiry');
+const cartCVV = document.getElementById('credit-card-cvv');
+const nameOnCard = document.getElementById('nameon-credit-card');
+
+// billing address
+const billingFirstName = document.getElementById('billing-first-name');
+const billingLastName = document.getElementById('billing-last-name');
+const billingAddress = document.getElementById('billing-address');
+const billingAddressOtional = document.getElementById('billing-address-optional');
+const billingCity = document.getElementById('billing-city');
+// const billingState = document.getElementById('billing-state');
+const billingPostalCode = document.getElementById('billing-postal-code');
+
+// onClick submit
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // to prevent refresh on reload.
+    e.preventDefault(); // prevent page refresh
 
-    // getting data by inputs
+    // delivery data
     const emailData = email.value;
-    console.log("email", emailData);
+    const firstNameData = firstName.value;
+    const lastNameData = lastName.value;
+    const addressData = address.value;
+    const addressOptionalData = addressOptional.value;
+    const cityData = city.value;
+    const stateData = state.value;
+    const postalCodeData = postalCode.value;
+    const cardNumberData = cardNumber.value;
+    const cardExpiryData = cardExpiry.value;
+    const cartCVVData = cartCVV.value;
+    const nameOnCardData = nameOnCard.value;
+
+    // billing data
+    const billingFirstNameData = billingFirstName.value;
+    const billingLastNameData = billingLastName.value;
+    const billingAddressData = billingAddress.value;
+    const billingAddressOtionalData = billingAddressOtional.value;
+    const billingCityData = billingCity.value;
+    // const billingStateData = billingState.value;
+    const billingPostalCodeData = billingPostalCode.value;
+
+    // Save to localStorage
+    localStorage.setItem('email', emailData);
+    localStorage.setItem('firstName', firstNameData);
+    localStorage.setItem('lastName', lastNameData);
+    localStorage.setItem('address', addressData);
+    localStorage.setItem('addressOptional', addressOptionalData);
+    localStorage.setItem('city', cityData);
+    localStorage.setItem('state', stateData);
+    localStorage.setItem('postalCode', postalCodeData);
+    localStorage.setItem('cardNumber', cardNumberData);
+    localStorage.setItem('cardExpiry', cardExpiryData);
+    localStorage.setItem('cartCVV', cartCVVData);
+    localStorage.setItem('nameOnCard', nameOnCardData);
+    localStorage.setItem('billingFirstName', billingFirstNameData);
+    localStorage.setItem('billingLastName', billingLastNameData);
+    localStorage.setItem('billingAddress', billingAddressData);
+    localStorage.setItem('billingAddressOptional', billingAddressOtionalData);
+    localStorage.setItem('billingCity', billingCityData);
+    // localStorage.setItem('billingState', billingStateData);
+    localStorage.setItem('billingPostalCode', billingPostalCodeData);
+
+    // Optionally, save all at once as an object:
+    /*
+    const checkoutData = {
+        email: emailData,
+        firstName: firstNameData,
+        lastName: lastNameData,
+        ...
+    };
+    localStorage.setItem('checkoutData', JSON.stringify(checkoutData));
+    */
+
+    resetForm();
+});
+
+const resetForm = () => {
 
     // to clean the inputs
     email.value = '';
+    firstName.value = '';
+    lastName.value = '';
+    address.value = '';
+    city.value = '';
+    postalCode.value = '';
 
-})
+    // credit card
+    cardNumber.value = '';
+    cardExpiry.value = '';
+    cartCVV.value = '';
+    nameOnCard.value = '';
+
+    // billing address 
+    billingFirstName.value = '';
+    billingLastName.value = '';
+    billingAddress.value = '';
+    billingAddressOtional.value = '';
+    billingCity.value = '';
+    // billingState.value = '';
+    billingPostalCode.value = '';
+}
+
+// card expiry work format in MM / YY
+const expiryInput = document.getElementById('credit-card-expiry');
+expiryInput.addEventListener('input', function () {
+    let rawValue = this.value.replace(/\D/g, ''); // Remove non-digits
+    let formattedValue = '';
+
+    if (rawValue.length === 0) {
+        this.value = '';
+        return;
+    }
+
+    // Validate and format month
+    if (rawValue.length >= 1) {
+        let month = rawValue.slice(0, 2);
+
+        if (month.length === 1) {
+            if (parseInt(month, 10) > 1) {
+                // e.g., if user types '3', auto-prepend '0' to make it '03'
+                month = '0' + month;
+                rawValue = month + rawValue.slice(1); // shift rest
+            }
+        }
+
+        if (month.length === 2) {
+            const monthNum = parseInt(month, 10);
+            if (monthNum < 1 || monthNum > 12) {
+                this.value = ''; // Clear invalid input
+                return;
+            }
+            formattedValue += month;
+        }
+    }
+
+    // Add separator and YY
+    if (rawValue.length > 2) {
+        const year = rawValue.slice(2, 4);
+        formattedValue += ' / ' + year;
+    }
+
+    this.value = formattedValue;
+});
+
+// card cvv value should more then 4
+const cvvInput = document.getElementById('credit-card-cvv');
+
+cvvInput.addEventListener('input', function () {
+  // Keep only digits
+  this.value = this.value.replace(/\D/g, '');
+
+  // Limit to 4 digits max
+  if (this.value.length > 4) {
+    this.value = this.value.slice(0, 4);
+  }
+});
