@@ -586,8 +586,8 @@ const clickListner = () => {
     // Re-direct to checkout page
     const checkOutButton = document.getElementById("checkout-btn");
     checkOutButton && checkOutButton.addEventListener("click", () => {
-        window.location.href = "https://suretekinfosoft.com/demo106/products/yomz-pdp/v2/checkout.html";
-        // window.location.href = "http://127.0.0.1:5500/checkout.html";
+        // window.location.href = "https://suretekinfosoft.com/demo106/products/yomz-pdp/v2/checkout.html";
+        window.location.href = "http://127.0.0.1:5500/checkout.html";
     });
 }
 

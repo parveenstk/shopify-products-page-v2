@@ -170,67 +170,44 @@ const billingLastName = document.getElementById('billing-last-name');
 const billingAddress = document.getElementById('billing-address');
 const billingAddressOtional = document.getElementById('billing-address-optional');
 const billingCity = document.getElementById('billing-city');
-// const billingState = document.getElementById('billing-state');
+const billingState = document.getElementById('billing-state');
 const billingPostalCode = document.getElementById('billing-postal-code');
 
 // onClick submit
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // prevent page refresh
 
-    // delivery data
-    const emailData = email.value;
-    const firstNameData = firstName.value;
-    const lastNameData = lastName.value;
-    const addressData = address.value;
-    const addressOptionalData = addressOptional.value;
-    const cityData = city.value;
-    const stateData = state.value;
-    const postalCodeData = postalCode.value;
-    const cardNumberData = cardNumber.value;
-    const cardExpiryData = cardExpiry.value;
-    const cartCVVData = cartCVV.value;
-    const nameOnCardData = nameOnCard.value;
-
-    // billing data
-    const billingFirstNameData = billingFirstName.value;
-    const billingLastNameData = billingLastName.value;
-    const billingAddressData = billingAddress.value;
-    const billingAddressOtionalData = billingAddressOtional.value;
-    const billingCityData = billingCity.value;
-    // const billingStateData = billingState.value;
-    const billingPostalCodeData = billingPostalCode.value;
-
-    // Save to localStorage
-    localStorage.setItem('email', emailData);
-    localStorage.setItem('firstName', firstNameData);
-    localStorage.setItem('lastName', lastNameData);
-    localStorage.setItem('address', addressData);
-    localStorage.setItem('addressOptional', addressOptionalData);
-    localStorage.setItem('city', cityData);
-    localStorage.setItem('state', stateData);
-    localStorage.setItem('postalCode', postalCodeData);
-    localStorage.setItem('cardNumber', cardNumberData);
-    localStorage.setItem('cardExpiry', cardExpiryData);
-    localStorage.setItem('cartCVV', cartCVVData);
-    localStorage.setItem('nameOnCard', nameOnCardData);
-    localStorage.setItem('billingFirstName', billingFirstNameData);
-    localStorage.setItem('billingLastName', billingLastNameData);
-    localStorage.setItem('billingAddress', billingAddressData);
-    localStorage.setItem('billingAddressOptional', billingAddressOtionalData);
-    localStorage.setItem('billingCity', billingCityData);
-    // localStorage.setItem('billingState', billingStateData);
-    localStorage.setItem('billingPostalCode', billingPostalCodeData);
-
-    // Optionally, save all at once as an object:
-    /*
     const checkoutData = {
-        email: emailData,
-        firstName: firstNameData,
-        lastName: lastNameData,
-        ...
+        'credit card': {
+            cardNumber: cardNumber.value,
+            cardExpiry: cardExpiry.value,
+            cartCVV: cartCVV.value,
+            nameOnCard: nameOnCard.value,
+        },
+        'delivery address': {
+            email: email.value,
+            firstName: firstName.value,
+            lastName: lastName.value,
+            address: address.value,
+            addressOptional: addressOptional.value,
+            city: city.value,
+            state: state.value,
+            postalCode: postalCode.value,
+        },
+        'billing address': {
+            billingFirstName: billingFirstName.value,
+            billingLastName: billingLastName.value,
+            billingAddress: billingAddress.value,
+            billingAddressOptional: billingAddressOtional.value,
+            billingCity: billingCity.value,
+            billingState: billingState.value,
+            billingPostalCode: billingPostalCode.value
+        },
     };
-    localStorage.setItem('checkoutData', JSON.stringify(checkoutData));
-    */
+
+    let allCheckouts = JSON.parse(localStorage.getItem('checkoutData')) || [];
+    allCheckouts.push(checkoutData);
+    localStorage.setItem('checkoutData', JSON.stringify(allCheckouts));
 
     resetForm();
 });
@@ -257,9 +234,12 @@ const resetForm = () => {
     billingAddress.value = '';
     billingAddressOtional.value = '';
     billingCity.value = '';
-    // billingState.value = '';
+    billingState.value = '';
     billingPostalCode.value = '';
 }
+
+const dataArray = JSON.parse(localStorage.getItem('checkoutData')) || [];
+console.log(dataArray);
 
 // card expiry work format in MM / YY
 const expiryInput = document.getElementById('credit-card-expiry');
@@ -307,11 +287,82 @@ expiryInput.addEventListener('input', function () {
 const cvvInput = document.getElementById('credit-card-cvv');
 
 cvvInput.addEventListener('input', function () {
-  // Keep only digits
-  this.value = this.value.replace(/\D/g, '');
+    // Keep only digits
+    this.value = this.value.replace(/\D/g, '');
 
-  // Limit to 4 digits max
-  if (this.value.length > 4) {
-    this.value = this.value.slice(0, 4);
-  }
+    // Limit to 4 digits max
+    if (this.value.length > 4) {
+        this.value = this.value.slice(0, 4);
+    }
 });
+
+// billing address selection 
+document.addEventListener('DOMContentLoaded', function () {
+    const radios = document.querySelectorAll('input[name="billingAddressFlexRadioDefault"]');
+    const collapseSix = document.getElementById('collapsesix');
+    const shippingAddresss = document.getElementById('same-as-shipping-address');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.id === 'flexRadioDefault4') {
+                console.log("this.id", this.id);
+
+                // Hide other collapse
+                if (collapseSix.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(collapseSix).hide();
+                }
+
+                // Set background on active
+                shippingAddresss.classList.replace('not-select', 'on-select');
+            }
+
+            if (this.id === 'flexRadioDefault5') {
+                // Show the collapse if not already shown
+                if (!collapseSix.classList.contains('show')) {
+                    new bootstrap.Collapse(collapseSix, {
+                        toggle: true
+                    });
+                    shippingAddresss.classList.replace('on-select', 'not-select');
+                }
+            }
+        });
+    });
+});
+
+// // Onclick payPal btn show & hide 
+// const creditCard = document.getElementById('credit-card-option');
+// const payPal = document.getElementById('payPal-option');
+// const payPalBtn = document.getElementById('payPal-button');
+// const payNowBtn = document.getElementById('paynow-button');
+
+// payPal.addEventListener('click', () => {
+//     payPalBtn.classList.remove('hide');
+//     paynowBtn.classList.add('hide');
+// })
+
+// creditCard.addEventListener('click', ()=>{
+//     payPalBtn.classList.add('hide');
+//     paynowBtn.classList.remove('hide');
+// })
+
+// Elements
+const paymentOptions = {
+    creditCard: document.getElementById('credit-card-option'),
+    payPal: document.getElementById('payPal-option'),
+};
+
+const buttons = {
+    creditCard: document.getElementById('paynow-button'),
+    payPal: document.getElementById('payPal-button'),
+};
+
+// Utility to toggle visibility
+const togglePaymentButtons = (activeMethod) => {
+    for (const method in buttons) {
+        buttons[method].classList.toggle('hide', method !== activeMethod);
+    }
+};
+
+// Bind events
+paymentOptions.creditCard.addEventListener('click', () => togglePaymentButtons('creditCard'));
+paymentOptions.payPal.addEventListener('click', () => togglePaymentButtons('payPal'));
