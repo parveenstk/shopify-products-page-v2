@@ -2993,7 +2993,7 @@ p.people {
 
     #sticky-btn2.stopped {
         position: absolute;
-        top: auto;
+        top: 0px;
         bottom: 0;
         width: 100%;
     }
@@ -3680,6 +3680,7 @@ p.people {
 
     .manufactured {
         padding: 10px 15px;
+        margin-top: 64px;
     }
 
     .manufactured .col-3 {

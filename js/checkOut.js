@@ -175,46 +175,6 @@ const billingCity = document.getElementById('billing-city');
 const billingState = document.getElementById('billing-state');
 const billingPostalCode = document.getElementById('billing-postal-code');
 
-// onClick submit
-// form.addEventListener('submit', (e) => {
-//     e.preventDefault(); // prevent page refresh
-
-//     const checkoutData = {
-//         'credit card': {
-//             cardNumber: cardNumber.value,
-//             cardExpiry: cardExpiry.value,
-//             cartCVV: cartCVV.value,
-//             nameOnCard: nameOnCard.value,
-//         },
-//         'delivery address': {
-//             email: email.value,
-//             firstName: firstName.value,
-//             lastName: lastName.value,
-//             address: address.value,
-//             addressOptional: addressOptional.value,
-//             city: city.value,
-//             state: state.value,
-//             postalCode: postalCode.value,
-//         },
-
-//         // 'billing address': {
-//         //     billingFirstName: billingFirstName.value,
-//         //     billingLastName: billingLastName.value,
-//         //     billingAddress: billingAddress.value,
-//         //     billingAddressOptional: billingAddressOtional.value,
-//         //     billingCity: billingCity.value,
-//         //     billingState: billingState.value,
-//         //     billingPostalCode: billingPostalCode.value
-//         // },
-//     };
-
-//     let allCheckouts = JSON.parse(localStorage.getItem('checkoutData')) || [];
-//     allCheckouts.push(checkoutData);
-//     localStorage.setItem('checkoutData', JSON.stringify(allCheckouts));
-
-//     resetForm();
-// });
-
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // prevent page refresh
 
@@ -288,6 +248,7 @@ console.log(dataArray);
 
 // card expiry work format in MM / YY
 const expiryInput = document.getElementById('credit-card-expiry');
+
 expiryInput.addEventListener('input', function () {
     let rawValue = this.value.replace(/\D/g, ''); // Remove non-digits
     let formattedValue = '';
@@ -297,29 +258,28 @@ expiryInput.addEventListener('input', function () {
         return;
     }
 
-    // Validate and format month
+    // Handle month (first two digits)
     if (rawValue.length >= 1) {
         let month = rawValue.slice(0, 2);
 
-        if (month.length === 1) {
-            if (parseInt(month, 10) > 1) {
-                // e.g., if user types '3', auto-prepend '0' to make it '03'
-                month = '0' + month;
-                rawValue = month + rawValue.slice(1); // shift rest
-            }
+        // If user typed 1 digit
+        if (rawValue.length === 1) {
+            formattedValue = rawValue;
+            this.value = formattedValue;
+            return;
         }
 
-        if (month.length === 2) {
-            const monthNum = parseInt(month, 10);
-            if (monthNum < 1 || monthNum > 12) {
-                this.value = ''; // Clear invalid input
-                return;
-            }
-            formattedValue += month;
+        const monthNum = parseInt(month, 10);
+
+        if (monthNum < 1 || monthNum > 12) {
+            this.value = ''; // Invalid month
+            return;
         }
+
+        formattedValue = month;
     }
 
-    // Add separator and YY
+    // Handle year
     if (rawValue.length > 2) {
         const year = rawValue.slice(2, 4);
         formattedValue += ' / ' + year;
