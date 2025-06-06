@@ -7,9 +7,11 @@ function toggleBillingAddress() {
     if (shippingCheckbox.checked) {
         billingAddText.classList.add('hide');
         billingFeilds.classList.add('hide');
+        console.log("tick hain");
     } else {
         billingAddText.classList.remove('hide');
         billingFeilds.classList.remove('hide');
+        billingDetails();
     }
 }
 
@@ -174,6 +176,45 @@ const billingState = document.getElementById('billing-state');
 const billingPostalCode = document.getElementById('billing-postal-code');
 
 // onClick submit
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault(); // prevent page refresh
+
+//     const checkoutData = {
+//         'credit card': {
+//             cardNumber: cardNumber.value,
+//             cardExpiry: cardExpiry.value,
+//             cartCVV: cartCVV.value,
+//             nameOnCard: nameOnCard.value,
+//         },
+//         'delivery address': {
+//             email: email.value,
+//             firstName: firstName.value,
+//             lastName: lastName.value,
+//             address: address.value,
+//             addressOptional: addressOptional.value,
+//             city: city.value,
+//             state: state.value,
+//             postalCode: postalCode.value,
+//         },
+
+//         // 'billing address': {
+//         //     billingFirstName: billingFirstName.value,
+//         //     billingLastName: billingLastName.value,
+//         //     billingAddress: billingAddress.value,
+//         //     billingAddressOptional: billingAddressOtional.value,
+//         //     billingCity: billingCity.value,
+//         //     billingState: billingState.value,
+//         //     billingPostalCode: billingPostalCode.value
+//         // },
+//     };
+
+//     let allCheckouts = JSON.parse(localStorage.getItem('checkoutData')) || [];
+//     allCheckouts.push(checkoutData);
+//     localStorage.setItem('checkoutData', JSON.stringify(allCheckouts));
+
+//     resetForm();
+// });
+
 form.addEventListener('submit', (e) => {
     e.preventDefault(); // prevent page refresh
 
@@ -193,8 +234,12 @@ form.addEventListener('submit', (e) => {
             city: city.value,
             state: state.value,
             postalCode: postalCode.value,
-        },
-        'billing address': {
+        }
+    };
+
+    // Conditionally add billing address if checkbox is not checked
+    if (!shippingCheckbox.checked) {
+        checkoutData['billing address'] = {
             billingFirstName: billingFirstName.value,
             billingLastName: billingLastName.value,
             billingAddress: billingAddress.value,
@@ -202,8 +247,8 @@ form.addEventListener('submit', (e) => {
             billingCity: billingCity.value,
             billingState: billingState.value,
             billingPostalCode: billingPostalCode.value
-        },
-    };
+        };
+    }
 
     let allCheckouts = JSON.parse(localStorage.getItem('checkoutData')) || [];
     allCheckouts.push(checkoutData);
@@ -345,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //     paynowBtn.classList.remove('hide');
 // })
 
-// Elements
+// payment mode selection & changing button accordingly
 const paymentOptions = {
     creditCard: document.getElementById('credit-card-option'),
     payPal: document.getElementById('payPal-option'),
