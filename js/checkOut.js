@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // // Onclick payPal btn show & hide 
 // const creditCard = document.getElementById('credit-card-option');
 // const payPal = document.getElementById('payPal-option');
-// const payPalBtn = document.getElementById('payPal-button');
+// const payPalBtn = document.getElementById('payPal-button');    
 // const payNowBtn = document.getElementById('paynow-button');
 
 // payPal.addEventListener('click', () => {
