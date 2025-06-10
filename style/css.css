@@ -2805,6 +2805,16 @@ p.people {
     border-radius: 10px;
 }
 
+#yomz-original-carousel2 .product-thumbs .swiper-slide img {
+    border: 3px solid #1EB9F0;
+    border-radius: 10px;
+}
+
+#yomz-sours-carousel2 .product-thumbs .swiper-slide img {
+    border: 3px solid #0AA03C;
+    border-radius: 10px;
+}
+
 /*Newcss*/
 /*Products*/
 /* ------about------- */
