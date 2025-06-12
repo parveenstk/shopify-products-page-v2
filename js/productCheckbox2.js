@@ -251,17 +251,18 @@ const replaceCls2 = (element, existedCls, toChangedCls) => {
 const selectedOpt2 = (clicked) => {
     const optPrice = document.getElementById('options-price2');
     const opts = document.querySelectorAll('.offer2-opts');
-    opts.forEach(opt => {
+    opts.forEach((opt) => {
         remvoeCls2(opt, 'borderBlueOffer2');
         remvoeCls2(opt, 'borderGreenOffer2');
     });
-    const colorSchema = JSON.parse(localStorage.getItem('colorSchema2'));
-    colorSchema === 'Green' ? addCls2(clicked, 'borderGreenOffer2') : addCls2(clicked, 'borderBlueOffer2');
+    const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
+    colorSchema2 === 'Green'
+        ? addCls2(clicked, 'borderGreenOffer2')
+        : addCls2(clicked, 'borderBlueOffer2');
 
     // to change the ( options-price )
     const value = clicked.dataset.qty;
     console.log("value:", value);
-
     const optPriceValue = optPrice.dataset.price;
     const finalValue = value * optPriceValue;
     optPrice.innerText = `$${finalValue.toFixed(2)}`;
@@ -279,11 +280,12 @@ householdItems2.forEach(item => {
 
 // [Try Once Box] - Offer 3 functionality
 const offerBoxes2 = document.querySelectorAll('.offerBox2');
+const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
 offerBoxes2.length > 0 ? (offerBoxes2[0].classList.add('selected-offer-blue')) : '';
 offerBoxes2.forEach(box => {
     box.addEventListener('click', () => {
-        offerBoxes2.forEach(b => b.classList.remove('selected-offer-blue'));
-        offerBoxes2.forEach(b => b.classList.remove('selected-offer-Green'));
+        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-blue'));
+        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-Green'));
 
         // to change/update the "offer3 - tryOnce Value"
         const tryOncePrice = document.getElementById('tryOnce-price2');
@@ -305,8 +307,8 @@ offerBoxes2.forEach(box => {
         bestValuePrice.innerHTML = `$${UpdatedBestValue.toFixed(2)}`;
 
         // to fill the color according to the gummy selected
-        const colorSchema = JSON.parse(localStorage.getItem('colorSchema2'));
-        colorSchema === 'Green' ? addCls2(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
+        const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
+        colorSchema2 === 'Green' ? addCls2(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
     });
 });
 
@@ -317,12 +319,12 @@ const bestValueHeader2 = document.getElementById('offer3-bv-box-header2');
 
 // show border color & header color when input is checked 
 const updateBoxBorder2 = () => {
-    const colorSchema = JSON.parse(localStorage.getItem('colorSchema2')) || 'Blue';
+    const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2')) || 'Blue';
     bestValueBox2.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
     bestValueHeader2.classList.remove('bg-Green', 'bg-Blue');
     if (checkbox2.checked) {
-        const borderClass = colorSchema === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2';
-        const bgClass = colorSchema === 'Green' ? 'bg-Green' : 'bg-Blue';
+        const borderClass = colorSchema2 === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2';
+        const bgClass = colorSchema2 === 'Green' ? 'bg-Green' : 'bg-Blue';
         bestValueBox2.classList.add(borderClass);
         bestValueHeader2.classList.add(bgClass);
     }
@@ -330,8 +332,148 @@ const updateBoxBorder2 = () => {
 checkbox2.addEventListener('change', updateBoxBorder2);
 
 // Cart Section
-const cart2 = document.getElementById('cart-section');
+const nextStep3_3 = document.getElementById("nextStep3-2");
 
-nextStep3_2.addEventListener('click', () => {
-    replaceCls2(cart2, 'hide', 'show')
-})
+// Helper function to show cart and overlay
+function showCart() {
+    replaceCls(cart, "hide", "show");
+    replaceCls(cartOverlay, "hide", "show");
+}
+
+// Helper function to hide cart and overlay
+function hideCart() {
+    replaceCls(cart, "show", "hide");
+    replaceCls(cartOverlay, "show", "hide");
+}
+
+nextStep3_3?.addEventListener("click", showCart);
+
+// Product Details
+const products2 = [
+    {
+        id: 9,
+        title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-1.jpg",
+            Green: "./images/yomzSours/pack-1.png"
+        },
+        quantity: 1,
+        price: 12,
+        gummyType: 'YOMZ Original',
+    },
+
+    {
+        id: 10,
+        title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-2.jpg",
+            Green: "./images/yomzSours/pack-2.jpg"
+        },
+        quantity: 1,
+        price: 24,
+        gummyType: 'YOMZ Original',
+    },
+
+    {
+        id: 11,
+        title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-3.jpg",
+            Green: "./images/yomzSours/pack-3.jpg"
+        },
+        quantity: 1,
+        price: 36,
+        gummyType: 'YOMZ Original',
+    },
+
+    {
+        id: 12,
+        title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-4.jpg",
+            Green: "./images/yomzSours/pack-4.jpg"
+        },
+        quantity: 1,
+        price: 48,
+        gummyType: 'YOMZ Original',
+    },
+    {
+        id: 13,
+        title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-1.jpg",
+            Green: "./images/yomzSours/pack-1.png"
+        },
+        quantity: 1,
+        price: 12,
+        gummyType: 'YOMZ Sours',
+    },
+
+    {
+        id: 14,
+        title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-2.jpg",
+            Green: "./images/yomzSours/pack-2.jpg"
+        },
+        quantity: 1,
+        price: 24,
+        gummyType: 'YOMZ Sours',
+    },
+
+    {
+        id: 15,
+        title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-3.jpg",
+            Green: "./images/yomzSours/pack-3.jpg"
+        },
+        quantity: 1,
+        price: 36,
+        gummyType: 'YOMZ Sours',
+    },
+
+    {
+        id: 16,
+        title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-4.jpg",
+            Green: "./images/yomzSours/pack-4.jpg"
+        },
+        quantity: 1,
+        price: 48,
+        gummyType: 'YOMZ Sours',
+    }
+];
+
+// 
+const selectProduct2 = (id) => {
+    const existingCartData2 = JSON.parse(localStorage.getItem("cartData")) ? JSON.parse(localStorage.getItem("cartData")) : [];
+    console.log("existingCartData", existingCartData2)
+
+    const existingProduct2 = existingCartData2.filter(product => product.id === Number(id));
+    // console.log("existingProduct2", existingProduct2);
+
+    // check if product already exist in cart
+    if (existingProduct2.length > 0) {
+        handleExistingProduct(existingProduct2[0].id);
+
+    } else {
+        const data = products.find(product => product.id === Number(id));
+        const colorSchema2 = JSON.parse(localStorage.getItem("colorSchema2"));
+        // console.log('colorSchema2', colorSchema2);
+        // console.log('id', id);
+        const image = colorSchema2 === "Blue" ? data.image.Blue : data.image.Green;
+        const updatedData = {
+            id: data.id,
+            title: data.title,
+            image,
+            quantity: data.quantity,
+            price: data.price,
+            gummyType: data.gummyType,
+        }
+        // console.log("updatedData", updatedData, colorSchema2)
+        localStorage.setItem("cartData", JSON.stringify([...existingCartData, updatedData]));
+    }
+    updateCart();
+};

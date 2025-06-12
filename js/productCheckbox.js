@@ -349,9 +349,6 @@ const cartOverlay = document.getElementById("cart-overlay");
 const cartItem1 = document.getElementById("cartItem-1");
 const cartCross = document.getElementById("cartCross");
 
-// 3NextStep Button of 2nd product banner
-const nextStep3_3 = document.getElementById("nextStep3-2");
-
 // Helper function to show cart and overlay
 function showCart() {
     replaceCls(cart, "hide", "show");
@@ -366,14 +363,10 @@ function hideCart() {
 
 // Hook into events
 nextStep3?.addEventListener("click", showCart);
-nextStep3_3?.addEventListener("click", showCart);
 cartIcon?.addEventListener("click", showCart);
 cartIconMobile?.addEventListener("click", showCart);
 cartCrossBtn?.addEventListener("click", hideCart);
 cartOverlay?.addEventListener("click", hideCart); // Click outside to close
-// cartCross.addEventListener("click", () => {
-//     addCls(cartItem1, "hide");
-// });
 
 // Product Details
 const products = [
@@ -503,7 +496,7 @@ const selectProduct = (id) => {
         localStorage.setItem("cartData", JSON.stringify([...existingCartData, updatedData]));
     }
     updateCart();
-}
+};
 
 // if product already existed then "update the quantity".
 const handleExistingProduct = (id) => {
