@@ -252,13 +252,13 @@ const selectedOpt2 = (clicked) => {
     const optPrice = document.getElementById('options-price2');
     const opts = document.querySelectorAll('.offer2-opts');
     opts.forEach((opt) => {
-        remvoeCls2(opt, 'borderBlueOffer2');
-        remvoeCls2(opt, 'borderGreenOffer2');
+        remvoeCls2(opt, 'borderBlueOffer');
+        remvoeCls2(opt, 'borderGreenOffer');
     });
     const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
     colorSchema2 === 'Green'
-        ? addCls2(clicked, 'borderGreenOffer2')
-        : addCls2(clicked, 'borderBlueOffer2');
+        ? addCls2(clicked, 'borderGreenOffer')
+        : addCls2(clicked, 'borderBlueOffer');
 
     // to change the ( options-price )
     const value = clicked.dataset.qty;
