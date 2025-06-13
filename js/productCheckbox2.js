@@ -475,5 +475,54 @@ const selectProduct2 = (id) => {
         // console.log("updatedData", updatedData, colorSchema2)
         localStorage.setItem("cartData", JSON.stringify([...existingCartData, updatedData]));
     }
-    updateCart();
+    updateCart2();
 };
+
+// udpate cart data
+const updateCart2 = () => {
+    const existingCart = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    // existingCart.forEach((item, index) => {
+    //     console.log(`Item ${index} image:`, item.image);
+    // });
+
+    const container = document.getElementById('cartContainer');
+    const newHtml = existingCart.map(product => {
+        const html = `
+        <div id="cartItem-${product.id}" class="card-item">
+               <img id="cartCross" data-id="${product.id}" src="images/cross.svg" class="img-fluid crossiocns">
+               <div class="row">
+                  <div class="col-3 px-0">
+                     <!-- product image -->
+                     <div class="card-products-images">
+                     <img src="${product.image}" class="img-fluid"></img>
+                     </div>
+                     <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" data-id="${product.id}" id="minus">
+                         <i class="fas fa-minus"></i></button>
+                        <input type="number" class="form-control no-arrow" id="quantity" value="${product.quantity}" min="1" max="100">
+                        <button class="btn btn-outline-secondary" type="button" data-id="${product.id}" id="plus">
+                        <i class="fas fa-plus"></i></button>
+                     </div>
+                  </div>
+                  <!-- product descriptions -->
+                  <div class="col-9 px-0">
+                     <div class="card-products-titles">
+                        <h3>${product.title}</h3>
+                        <h4>${product.gummyType}/ 1 Case</h4>
+                        <p class="card-products-price-">$${product.price * product.quantity}</p>
+                        <p class="daily-items">($3.85 per daily dose)</p>
+                     </div>
+                  </div>
+               </div>
+               <hr>
+            </div>
+        `
+        return html;
+    })
+    const adjustedHtmlString = newHtml.join('');
+    container.innerHTML = adjustedHtmlString;
+    cartItem();
+    cartTotal();
+    clickListner();
+}
