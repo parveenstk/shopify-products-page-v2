@@ -263,10 +263,12 @@ const selectedOpt2 = (clicked) => {
 
     // to change the ( options-price )
     const value = clicked.dataset.qty;
-    console.log("value:", value);
+    // console.log("value:", value);
     const optPriceValue = optPrice.dataset.price;
     const finalValue = value * optPriceValue;
     optPrice.innerText = `$${finalValue.toFixed(2)}`;
+
+    colorSchema2 === 'Green' ? selectProduct2(Number(clicked.dataset.id) + 4) : selectProduct2(clicked.dataset.id);
 };
 
 // [Which frequency is right for me?] Offer-2 functionality
@@ -351,7 +353,7 @@ nextStep3_3?.addEventListener("click", showCart);
 // Product Details
 const products2 = [
     {
-        id: 9,
+        id: 1,
         title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-1.jpg",
@@ -363,7 +365,7 @@ const products2 = [
     },
 
     {
-        id: 10,
+        id: 2,
         title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-2.jpg",
@@ -375,7 +377,7 @@ const products2 = [
     },
 
     {
-        id: 11,
+        id: 3,
         title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-3.jpg",
@@ -387,7 +389,7 @@ const products2 = [
     },
 
     {
-        id: 12,
+        id: 4,
         title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-4.jpg",
@@ -398,7 +400,7 @@ const products2 = [
         gummyType: 'YOMZ Original',
     },
     {
-        id: 13,
+        id: 5,
         title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-1.jpg",
@@ -410,7 +412,7 @@ const products2 = [
     },
 
     {
-        id: 14,
+        id: 6,
         title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-2.jpg",
@@ -422,7 +424,7 @@ const products2 = [
     },
 
     {
-        id: 15,
+        id: 7,
         title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-3.jpg",
@@ -434,7 +436,7 @@ const products2 = [
     },
 
     {
-        id: 16,
+        id: 8,
         title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
         image: {
             Blue: "./images/yomzOriginal/pack-4.jpg",
@@ -449,7 +451,7 @@ const products2 = [
 // 
 const selectProduct2 = (id) => {
     const existingCartData2 = JSON.parse(localStorage.getItem("cartData")) ? JSON.parse(localStorage.getItem("cartData")) : [];
-    console.log("existingCartData", existingCartData2)
+    console.log("existingCartData2", existingCartData2)
 
     const existingProduct2 = existingCartData2.filter(product => product.id === Number(id));
     // console.log("existingProduct2", existingProduct2);
@@ -459,12 +461,12 @@ const selectProduct2 = (id) => {
         handleExistingProduct(existingProduct2[0].id);
 
     } else {
-        const data = products.find(product => product.id === Number(id));
+        const data = products2.find(product => product.id === Number(id));
         const colorSchema2 = JSON.parse(localStorage.getItem("colorSchema2"));
         // console.log('colorSchema2', colorSchema2);
-        // console.log('id', id);
+        console.log('id:', id);
         const image = colorSchema2 === "Blue" ? data.image.Blue : data.image.Green;
-        const updatedData = {
+        const updatedData2 = {
             id: data.id,
             title: data.title,
             image,
@@ -472,57 +474,8 @@ const selectProduct2 = (id) => {
             price: data.price,
             gummyType: data.gummyType,
         }
-        // console.log("updatedData", updatedData, colorSchema2)
-        localStorage.setItem("cartData", JSON.stringify([...existingCartData, updatedData]));
+        // console.log("updatedData2", updatedData2, colorSchema2)
+        localStorage.setItem("cartData", JSON.stringify([...existingCartData2, updatedData2]));
     }
-    updateCart2();
+    updateCart();
 };
-
-// udpate cart data
-const updateCart2 = () => {
-    const existingCart = JSON.parse(localStorage.getItem("cartData")) || [];
-
-    // existingCart.forEach((item, index) => {
-    //     console.log(`Item ${index} image:`, item.image);
-    // });
-
-    const container = document.getElementById('cartContainer');
-    const newHtml = existingCart.map(product => {
-        const html = `
-        <div id="cartItem-${product.id}" class="card-item">
-               <img id="cartCross" data-id="${product.id}" src="images/cross.svg" class="img-fluid crossiocns">
-               <div class="row">
-                  <div class="col-3 px-0">
-                     <!-- product image -->
-                     <div class="card-products-images">
-                     <img src="${product.image}" class="img-fluid"></img>
-                     </div>
-                     <div class="input-group mb-3">
-                        <button class="btn btn-outline-secondary" type="button" data-id="${product.id}" id="minus">
-                         <i class="fas fa-minus"></i></button>
-                        <input type="number" class="form-control no-arrow" id="quantity" value="${product.quantity}" min="1" max="100">
-                        <button class="btn btn-outline-secondary" type="button" data-id="${product.id}" id="plus">
-                        <i class="fas fa-plus"></i></button>
-                     </div>
-                  </div>
-                  <!-- product descriptions -->
-                  <div class="col-9 px-0">
-                     <div class="card-products-titles">
-                        <h3>${product.title}</h3>
-                        <h4>${product.gummyType}/ 1 Case</h4>
-                        <p class="card-products-price-">$${product.price * product.quantity}</p>
-                        <p class="daily-items">($3.85 per daily dose)</p>
-                     </div>
-                  </div>
-               </div>
-               <hr>
-            </div>
-        `
-        return html;
-    })
-    const adjustedHtmlString = newHtml.join('');
-    container.innerHTML = adjustedHtmlString;
-    cartItem();
-    cartTotal();
-    clickListner();
-}
