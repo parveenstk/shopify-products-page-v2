@@ -189,8 +189,9 @@ const handleCheckboxClick2 = (clicked) => {
         if (cb !== clicked) cb.checked = false;
     });
 
-    // updating the color of offer - 3 ( Best Value Box )
+    // updating the color of offer-3 (Best Value Box) & offer-2 (One time purchase)
     updateBoxBorder2();
+    updateOtpBox2();
 };
 
 // Stepper ( bar & circle )
@@ -250,6 +251,21 @@ const remvoeCls2 = (element, className) => {
 const replaceCls2 = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`);
 };
+
+// checkBox ( One time purchase )
+const checkBoxOTP2 = document.getElementById('checkBox-input1-2');
+const oneTimePrice2 = document.getElementById('one-time-purchase-2');
+
+const updateOtpBox2 = () => {
+    const colorSchema2 = JSON.parse(localStorage.getItem("colorSchema2")) || "Blue";
+    oneTimePrice2.classList.remove('borderBlue', 'borderGreen')
+    if (checkBoxOTP2.checked) {
+        const borderClass = colorSchema2 === "Green" ? "borderGreen" : "borderBlue";
+        addCls(oneTimePrice2, borderClass);
+    };
+};
+
+checkBoxOTP2.addEventListener('change', updateOtpBox2);
 
 // offer - 2 box options changing border [Best Value Box]
 const selectedOpt2 = (clicked) => {
