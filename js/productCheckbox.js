@@ -89,6 +89,7 @@ const handleCheckboxClick = (clicked) => {
         // Inputs
         const inputs = [checkInput1, checkInput2, checkInput3, checkInput4];
         inputs.forEach((input) => addCls(input, "inputBorderGreen"));
+
         checkOriginal.style.accentColor = "black";
         originalButton.classList.remove("borderBlue");
         soursButton.classList.add("borderGreen");
@@ -190,8 +191,9 @@ const handleCheckboxClick = (clicked) => {
         if (cb !== clicked) cb.checked = false;
     });
 
-    // updating the color of offer - 3 ( Best Value Box )
+    // updating the color of offer-3 (Best Value Box) & offer-2 (One time purchase)
     updateBoxBorder();
+    updateOtpBox();
 };
 
 // Stepper ( bar & circle )
@@ -251,6 +253,21 @@ const remvoeCls = (element, className) => {
 const replaceCls = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`);
 };
+
+// checkBox ( One time purchase )
+const checkBoxOTP = document.getElementById('checkBox-input1');
+const oneTimePrice = document.getElementById('one-time-purchase');
+
+const updateOtpBox = () => {
+    const colorSchema = JSON.parse(localStorage.getItem("colorSchema")) || "Blue";
+    oneTimePrice.classList.remove('borderBlue', 'borderGreen')
+    if (checkBoxOTP.checked) {
+        const borderClass = colorSchema === "Green" ? "borderGreen" : "borderBlue";
+        addCls(oneTimePrice, borderClass);
+    };
+};
+
+checkBoxOTP.addEventListener('change', updateOtpBox);
 
 // offer - 2 box options changing border [Best Value Box]
 const selectedOpt = (clicked) => {
