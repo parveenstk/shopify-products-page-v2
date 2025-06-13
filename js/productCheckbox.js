@@ -189,6 +189,9 @@ const handleCheckboxClick = (clicked) => {
     checkboxes.forEach((cb) => {
         if (cb !== clicked) cb.checked = false;
     });
+
+    // updating the color of offer - 3 ( Best Value Box )
+    updateBoxBorder();
 };
 
 // Stepper ( bar & circle )
