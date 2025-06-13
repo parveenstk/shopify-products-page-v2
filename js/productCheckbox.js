@@ -114,7 +114,7 @@ const handleCheckboxClick = (clicked) => {
         // for best value selectors ( offer - 2 box options changing border )
         const bestValueSelectors = document.querySelectorAll(".slt-bag-item .card");
         bestValueSelectors.forEach((selector) => {
-            selector.classList.replace("borderBlueOffer2", "borderGreenOffer2");
+            selector.classList.replace("borderBlueOffer", "borderGreenOffer");
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
@@ -176,7 +176,7 @@ const handleCheckboxClick = (clicked) => {
         // for best value selectors ( offer - 2 box options changing border )
         const bestValueSelectors = document.querySelectorAll(".slt-bag-item .card");
         bestValueSelectors.forEach((selector) => {
-            selector.classList.replace("borderGreenOffer2", "borderBlueOffer2");
+            selector.classList.replace("borderGreenOffer", "borderBlueOffer");
         });
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
         const savePack = document.querySelectorAll(".offerBox");
@@ -254,13 +254,13 @@ const selectedOpt = (clicked) => {
     const optPrice = document.getElementById("options-price");
     const opts = document.querySelectorAll(".offer2-opts");
     opts.forEach((opt) => {
-        remvoeCls(opt, "borderBlueOffer2");
-        remvoeCls(opt, "borderGreenOffer2");
+        remvoeCls(opt, "borderBlueOffer");
+        remvoeCls(opt, "borderGreenOffer");
     });
     const colorSchema = JSON.parse(localStorage.getItem("colorSchema"));
     colorSchema === "Green"
-        ? addCls(clicked, "borderGreenOffer2")
-        : addCls(clicked, "borderBlueOffer2");
+        ? addCls(clicked, "borderGreenOffer")
+        : addCls(clicked, "borderBlueOffer");
 
     // to change the ( options-price )
     const value = clicked.dataset.id;
@@ -327,10 +327,10 @@ const bestValueHeader = document.getElementById("offer3-bv-box-header");
 // show border color & header color when checkBox is checked
 const updateBoxBorder = () => {
     const colorSchema = JSON.parse(localStorage.getItem("colorSchema")) || "Blue";
-    bestValueBox.classList.remove("borderGreenOffer2", "borderBlueOffer2");
+    bestValueBox.classList.remove("borderGreenOffer", "borderBlueOffer");
     bestValueHeader.classList.remove("bg-Green", "bg-Blue");
     if (checkbox.checked) {
-        const borderClass = colorSchema === "Green" ? "borderGreenOffer2" : "borderBlueOffer2";
+        const borderClass = colorSchema === "Green" ? "borderGreenOffer" : "borderBlueOffer";
         const bgClass = colorSchema === "Green" ? "bg-Green" : "bg-Blue";
         bestValueBox.classList.add(borderClass);
         bestValueHeader.classList.add(bgClass);

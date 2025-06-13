@@ -134,6 +134,18 @@ p {
     border: 3px solid #4CAF50 !important;
 }
 
+.selected-offer-blue2 {
+    color: white !important;
+    background-color: #2DC6F7 !important;
+    border: 3px solid #1EB9F0 !important;
+}
+
+.selected-offer-Green2 {
+    color: white !important;
+    background-color: #4CAF50 !important;
+    border: 3px solid #4CAF50 !important;
+}
+
 /* Target inner elements of selected boxes */
 .selected-offer-Green #box1-save,
 .selected-offer-Green #box1-qty,
@@ -151,18 +163,18 @@ p {
 }
 
 /* Target inner elements of selected boxes */
-.selected-offer-Green #box1-save2,
-.selected-offer-Green #box1-qty2,
-.selected-offer-Green #box1-pack2,
-.selected-offer-Green #box2-save2,
-.selected-offer-Green #box2-qty2,
-.selected-offer-Green #box2-pack2,
-.selected-offer-Green #box3-Save2,
-.selected-offer-Green #box3-Qty2,
-.selected-offer-Green #box3-pack2,
-.selected-offer-Green #box4-save2,
-.selected-offer-Green #box4-qty2,
-.selected-offer-Green #box4-pack2 {
+.selected-offer-Green2 #box1-save2,
+.selected-offer-Green2 #box1-qty2,
+.selected-offer-Green2 #box1-pack2,
+.selected-offer-Green2 #box2-save2,
+.selected-offer-Green2 #box2-qty2,
+.selected-offer-Green2 #box2-pack2,
+.selected-offer-Green2 #box3-Save2,
+.selected-offer-Green2 #box3-Qty2,
+.selected-offer-Green2 #box3-pack2,
+.selected-offer-Green2 #box4-save2,
+.selected-offer-Green2 #box4-qty2,
+.selected-offer-Green2 #box4-pack2 {
     color: white !important;
 }
 
@@ -183,18 +195,18 @@ p {
 }
 
 /* Target inner elements of selected boxes */
-.selected-offer-blue #box1-save2,
-.selected-offer-blue #box1-qty2,
-.selected-offer-blue #box1-pack2,
-.selected-offer-blue #box2-save2,
-.selected-offer-blue #box2-qty2,
-.selected-offer-blue #box2-pack2,
-.selected-offer-blue #box3-Save2,
-.selected-offer-blue #box3-Qty2,
-.selected-offer-blue #box3-pack2,
-.selected-offer-blue #box4-save2,
-.selected-offer-blue #box4-qty2,
-.selected-offer-blue #box4-pack2 {
+.selected-offer-blue2 #box1-save2,
+.selected-offer-blue2 #box1-qty2,
+.selected-offer-blue2 #box1-pack2,
+.selected-offer-blue2 #box2-save2,
+.selected-offer-blue2 #box2-qty2,
+.selected-offer-blue2 #box2-pack2,
+.selected-offer-blue2 #box3-Save2,
+.selected-offer-blue2 #box3-Qty2,
+.selected-offer-blue2 #box3-pack2,
+.selected-offer-blue2 #box4-save2,
+.selected-offer-blue2 #box4-qty2,
+.selected-offer-blue2 #box4-pack2 {
     color: white !important;
 }
 
@@ -289,19 +301,19 @@ p {
     border: 4px solid #dee2e6 !important;
 }
 
-.borderBlueOffer2 {
-    border: 4px solid #1EB9F0 !important;
-}
-
-.borderGreenOffer2 {
-    border: 4px solid #0AA03C !important;
-}
-
 .borderBlueOffer {
     border: 4px solid #1EB9F0 !important;
 }
 
+.borderBlueOffer2 {
+    border: 4px solid #1EB9F0 !important;
+}
+
 .borderGreenOffer {
+    border: 4px solid #0AA03C !important;
+}
+
+.borderGreenOffer2 {
     border: 4px solid #0AA03C !important;
 }
 
@@ -2961,6 +2973,10 @@ p.people {
 }
 
 @media screen and (max-width: 767px) {
+
+    #offer3-boxBorder {
+        margin-top: 65px !important;
+    }
 
     #stop-point {
         height: 20px;

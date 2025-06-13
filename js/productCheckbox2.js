@@ -53,6 +53,7 @@ const checkInput4_2 = document.getElementById('checkBox-input4-2');
 // Clear localStorage on page reload
 window.addEventListener('load', function () {
     // localStorage.clear();
+    localStorage.setItem("colorSchema2", JSON.stringify("Blue")) // Setting "Blue" to localStorage
 });
 
 // product price 
@@ -114,9 +115,9 @@ const handleCheckboxClick2 = (clicked) => {
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
-        const savePack = document.querySelectorAll('.offerBox');
+        const savePack = document.querySelectorAll('.offerBox2');
         savePack.forEach(element => {
-            replaceCls2(element, 'selected-offer-blue', 'selected-offer-Green');
+            replaceCls2(element, 'selected-offer-blue2', 'selected-offer-Green2');
         });
 
     } else if (clicked.value === 'yomzOriginal') {
@@ -176,9 +177,9 @@ const handleCheckboxClick2 = (clicked) => {
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
-        const savePack = document.querySelectorAll('.offerBox');
+        const savePack = document.querySelectorAll('.offerBox2');
         savePack.forEach(element => {
-            replaceCls2(element, 'selected-offer-Green', 'selected-offer-blue');
+            replaceCls2(element, 'selected-offer-Green2', 'selected-offer-blue2');
         });
     }
 
@@ -250,15 +251,15 @@ const replaceCls2 = (element, existedCls, toChangedCls) => {
 // offer - 2 box options changing border [Best Value Box]
 const selectedOpt2 = (clicked) => {
     const optPrice = document.getElementById('options-price2');
-    const opts = document.querySelectorAll('.offer2-opts');
+    const opts = document.querySelectorAll('.offer2-opts2');
     opts.forEach((opt) => {
-        remvoeCls2(opt, 'borderBlueOffer');
-        remvoeCls2(opt, 'borderGreenOffer');
+        remvoeCls2(opt, 'borderBlueOffer2');
+        remvoeCls2(opt, 'borderGreenOffer2');
     });
     const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
     colorSchema2 === 'Green'
-        ? addCls2(clicked, 'borderGreenOffer')
-        : addCls2(clicked, 'borderBlueOffer');
+        ? addCls2(clicked, 'borderGreenOffer2')
+        : addCls2(clicked, 'borderBlueOffer2');
 
     // to change the ( options-price )
     const value = clicked.dataset.qty;
@@ -280,12 +281,11 @@ householdItems2.forEach(item => {
 
 // [Try Once Box] - Offer 3 functionality
 const offerBoxes2 = document.querySelectorAll('.offerBox2');
-const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
-offerBoxes2.length > 0 ? (offerBoxes2[0].classList.add('selected-offer-blue')) : '';
+offerBoxes2.length > 0 ? (offerBoxes2[0].classList.add('selected-offer-blue2')) : '';
 offerBoxes2.forEach(box => {
     box.addEventListener('click', () => {
-        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-blue'));
-        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-Green'));
+        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-blue2'));
+        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-Green2'));
 
         // to change/update the "offer3 - tryOnce Value"
         const tryOncePrice = document.getElementById('tryOnce-price2');
@@ -308,7 +308,7 @@ offerBoxes2.forEach(box => {
 
         // to fill the color according to the gummy selected
         const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
-        colorSchema2 === 'Green' ? addCls2(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
+        colorSchema2 === 'Green' ? addCls2(box, 'selected-offer-Green2') : box.classList.add('selected-offer-blue2');
     });
 });
 
