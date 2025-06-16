@@ -50,15 +50,24 @@ const checkInput2_2 = document.getElementById('checkBox-input2-2');
 const checkInput3_2 = document.getElementById('checkBox-input3-2');
 const checkInput4_2 = document.getElementById('checkBox-input4-2');
 
+// product price 
+const productPrice2 = document.getElementById('product-price2');
+
 // Clear localStorage on page reload
 window.addEventListener('load', function () {
     // localStorage.clear();
     localStorage.setItem("colorSchema2", JSON.stringify("Blue")) // Setting "Blue" to localStorage
 });
 
-// product price 
-const productPrice2 = document.getElementById('product-price2');
+// to check which one is selected
 const handleCheckboxClick2 = (clicked) => {
+
+    // Prevent the checkbox from being unchecked if it's clicked again
+    if (clicked.checked === false) {
+        clicked.checked = true;
+        return;
+    };
+
     if (clicked.value === 'yomzSours') {
         // for yomz Sours
 

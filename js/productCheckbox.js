@@ -50,6 +50,9 @@ const checkInput2 = document.getElementById("checkBox-input2");
 const checkInput3 = document.getElementById("checkBox-input3");
 const checkInput4 = document.getElementById("checkBox-input4");
 
+// product price
+const productPrice = document.getElementById("product-price");
+
 // Clear localStorage on page reload
 window.addEventListener("load", function () {
 
@@ -58,9 +61,15 @@ window.addEventListener("load", function () {
     updateCart();
 });
 
-// product price
-const productPrice = document.getElementById("product-price");
+// to check which one is selected
 const handleCheckboxClick = (clicked) => {
+
+    // Prevent the checkbox from being unchecked if it's clicked again
+    if (clicked.checked === false) {
+        clicked.checked = true;
+        return;
+    };
+
     if (clicked.value === "yomzSours") {
         // for yomz Sours
 
