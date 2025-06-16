@@ -1705,7 +1705,6 @@ footer .subscribe-form input[type="email"] {
     color: #000000 !important;
     border: 2 !important;
     padding: 10px 20px !important;
-    text-transform: uppercase;
 }
 
 footer .subscribe-form button {
