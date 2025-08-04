@@ -23,6 +23,12 @@ const saveText2_2 = document.getElementById('offer2-saveText2');
 const offer2Opt1_2 = document.getElementById('offer2-opt1-2');
 const offer2Month2 = document.getElementById('offer2-month2');
 
+// offer - 02 ( package images )
+const opt1Img_2 = document.getElementById('banner2-opt1-img1');
+const opt2Img_2 = document.getElementById('banner2-opt2-img2');
+const opt3Img_2 = document.getElementById('banner2-opt3-img3');
+const opt4Img_2 = document.getElementById('banner2-opt4-img4');
+
 // offer - 03
 const nextStep3_2 = document.getElementById('nextStep3-2');
 const backStep3_2 = document.getElementById('backStep3-2');
@@ -44,14 +50,24 @@ const checkInput2_2 = document.getElementById('checkBox-input2-2');
 const checkInput3_2 = document.getElementById('checkBox-input3-2');
 const checkInput4_2 = document.getElementById('checkBox-input4-2');
 
-// Clear localStorage on page reload
-window.addEventListener('load', function () {
-    localStorage.clear();
-});
-
 // product price 
 const productPrice2 = document.getElementById('product-price2');
+
+// Clear localStorage on page reload
+window.addEventListener('load', function () {
+    // localStorage.clear();
+    localStorage.setItem("colorSchema2", JSON.stringify("Blue")) // Setting "Blue" to localStorage
+});
+
+// to check which one is selected
 const handleCheckboxClick2 = (clicked) => {
+
+    // Prevent the checkbox from being unchecked if it's clicked again
+    if (clicked.checked === false) {
+        clicked.checked = true;
+        return;
+    };
+
     if (clicked.value === 'yomzSours') {
         // for yomz Sours
 
@@ -74,8 +90,8 @@ const handleCheckboxClick2 = (clicked) => {
         addCls2(faqSours2_2, 'show2');
 
         // products
-        productDesc2.innerHTML = '<p id="prod-Description2" class="text-center mt-3 simp-font">Flavor:<br>Peachy, Strawbeary</p>';
-        productPrice2.innerHTML = '<span id="product-price2" class="tab-price">$XX.22</span>';
+        productDesc2.innerHTML = '<p id="prod-Description" class="text-center mt-3 simp-font">Sour Flavor:<br>Sour Peachy, Strawbeary, Beary Berry</p>';
+        productPrice2.innerHTML = '<span id="product-price" class="tab-price">$XX.22</span>';
 
         // Inputs
         const inputs = [checkInput1_2, checkInput2_2, checkInput3_2, checkInput4_2];
@@ -86,6 +102,13 @@ const handleCheckboxClick2 = (clicked) => {
         soursProduct2.classList.remove('hide');
         soursProduct2.classList.add('show');
         yomzProduct2.classList.add('hide');
+
+        // for changing pack images
+        const imgs = [opt1Img_2, opt2Img_2, opt3Img_2, opt4Img_2];
+        const paths = ['./images/yomzSours/pack-1.png', './images/yomzSours/pack-2.jpg', './images/yomzSours/pack-3.jpg', './images/yomzSours/pack-4.jpg'];
+        imgs.forEach((img, index) => {
+            img ? (img.src = paths[index]) : console.log("imgs are not found.");
+        });
 
         // Refresh Swiper instance
         if (swiperInstances['yomz-sours-carousel2']) {
@@ -101,9 +124,9 @@ const handleCheckboxClick2 = (clicked) => {
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
-        const savePack = document.querySelectorAll('.offerBox');
+        const savePack = document.querySelectorAll('.offerBox2');
         savePack.forEach(element => {
-            replaceCls2(element, 'selected-offer-blue', 'selected-offer-Green');
+            replaceCls2(element, 'selected-offer-blue2', 'selected-offer-Green2');
         });
 
     } else if (clicked.value === 'yomzOriginal') {
@@ -142,6 +165,13 @@ const handleCheckboxClick2 = (clicked) => {
         yomzProduct2.classList.add('show');
         soursProduct2.classList.add('hide');
 
+        // for changing pack images
+        const imgs = [opt1Img_2, opt2Img_2, opt3Img_2, opt4Img_2];
+        const paths = ['./images/yomzOriginal/pack-1.jpg', './images/yomzOriginal/pack-2.jpg', './images/yomzOriginal/pack-3.jpg', './images/yomzOriginal/pack-4.jpg'];
+        imgs.forEach((img, index) => {
+            img ? (img.src = paths[index]) : console.log("imgs are not found.");
+        });
+
         // Refresh Swiper instance
         if (swiperInstances['yomz-original-carousel2']) {
             const { productSlider, productThumbs } = swiperInstances['yomz-original-carousel2'];
@@ -156,9 +186,9 @@ const handleCheckboxClick2 = (clicked) => {
         });
 
         // for changing the color on selection ( [Try Once Box] - Offer 3 functionality )
-        const savePack = document.querySelectorAll('.offerBox');
+        const savePack = document.querySelectorAll('.offerBox2');
         savePack.forEach(element => {
-            replaceCls2(element, 'selected-offer-Green', 'selected-offer-blue');
+            replaceCls2(element, 'selected-offer-Green2', 'selected-offer-blue2');
         });
     }
 
@@ -167,6 +197,10 @@ const handleCheckboxClick2 = (clicked) => {
     checkboxes.forEach(cb => {
         if (cb !== clicked) cb.checked = false;
     });
+
+    // updating the color of offer-3 (Best Value Box) & offer-2 (One time purchase)
+    updateBoxBorder2();
+    updateOtpBox2();
 };
 
 // Stepper ( bar & circle )
@@ -227,22 +261,42 @@ const replaceCls2 = (element, existedCls, toChangedCls) => {
     element.classList.replace(`${existedCls}`, `${toChangedCls}`);
 };
 
+// checkBox ( One time purchase )
+const checkBoxOTP2 = document.getElementById('checkBox-input1-2');
+const oneTimePrice2 = document.getElementById('one-time-purchase-2');
+
+const updateOtpBox2 = () => {
+    const colorSchema2 = JSON.parse(localStorage.getItem("colorSchema2")) || "Blue";
+    oneTimePrice2.classList.remove('borderBlue', 'borderGreen')
+    if (checkBoxOTP2.checked) {
+        const borderClass = colorSchema2 === "Green" ? "borderGreen" : "borderBlue";
+        addCls(oneTimePrice2, borderClass);
+    };
+};
+
+checkBoxOTP2.addEventListener('change', updateOtpBox2);
+
 // offer - 2 box options changing border [Best Value Box]
 const selectedOpt2 = (clicked) => {
     const optPrice = document.getElementById('options-price2');
-    const opts = document.querySelectorAll('.offer2-opts');
-    opts.forEach(opt => {
+    const opts = document.querySelectorAll('.offer2-opts2');
+    opts.forEach((opt) => {
         remvoeCls2(opt, 'borderBlueOffer2');
         remvoeCls2(opt, 'borderGreenOffer2');
     });
-    const colorSchema = JSON.parse(localStorage.getItem('colorSchema2'));
-    colorSchema === 'Green' ? addCls2(clicked, 'borderGreenOffer2') : addCls2(clicked, 'borderBlueOffer2');
+    const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
+    colorSchema2 === 'Green'
+        ? addCls2(clicked, 'borderGreenOffer2')
+        : addCls2(clicked, 'borderBlueOffer2');
 
     // to change the ( options-price )
-    const value = clicked.dataset.price;
+    const value = clicked.dataset.qty;
+    // console.log("value:", value);
     const optPriceValue = optPrice.dataset.price;
     const finalValue = value * optPriceValue;
     optPrice.innerText = `$${finalValue.toFixed(2)}`;
+
+    colorSchema2 === 'Green' ? selectProduct2(Number(clicked.dataset.id) + 4) : selectProduct2(clicked.dataset.id);
 };
 
 // [Which frequency is right for me?] Offer-2 functionality
@@ -257,11 +311,11 @@ householdItems2.forEach(item => {
 
 // [Try Once Box] - Offer 3 functionality
 const offerBoxes2 = document.querySelectorAll('.offerBox2');
-offerBoxes2.length > 0 ? (offerBoxes2[0].classList.add('selected-offer-blue')) : '';
+offerBoxes2.length > 0 ? (offerBoxes2[0].classList.add('selected-offer-blue2')) : '';
 offerBoxes2.forEach(box => {
     box.addEventListener('click', () => {
-        offerBoxes2.forEach(b => b.classList.remove('selected-offer-blue'));
-        offerBoxes2.forEach(b => b.classList.remove('selected-offer-Green'));
+        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-blue2'));
+        offerBoxes2.forEach((b) => b.classList.remove('selected-offer-Green2'));
 
         // to change/update the "offer3 - tryOnce Value"
         const tryOncePrice = document.getElementById('tryOnce-price2');
@@ -283,8 +337,8 @@ offerBoxes2.forEach(box => {
         bestValuePrice.innerHTML = `$${UpdatedBestValue.toFixed(2)}`;
 
         // to fill the color according to the gummy selected
-        const colorSchema = JSON.parse(localStorage.getItem('colorSchema2'));
-        colorSchema === 'Green' ? addCls2(box, 'selected-offer-Green') : box.classList.add('selected-offer-blue');
+        const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2'));
+        colorSchema2 === 'Green' ? addCls2(box, 'selected-offer-Green2') : box.classList.add('selected-offer-blue2');
     });
 });
 
@@ -295,12 +349,12 @@ const bestValueHeader2 = document.getElementById('offer3-bv-box-header2');
 
 // show border color & header color when input is checked 
 const updateBoxBorder2 = () => {
-    const colorSchema = JSON.parse(localStorage.getItem('colorSchema2')) || 'Blue';
+    const colorSchema2 = JSON.parse(localStorage.getItem('colorSchema2')) || 'Blue';
     bestValueBox2.classList.remove('borderGreenOffer2', 'borderBlueOffer2');
     bestValueHeader2.classList.remove('bg-Green', 'bg-Blue');
     if (checkbox2.checked) {
-        const borderClass = colorSchema === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2';
-        const bgClass = colorSchema === 'Green' ? 'bg-Green' : 'bg-Blue';
+        const borderClass = colorSchema2 === 'Green' ? 'borderGreenOffer2' : 'borderBlueOffer2';
+        const bgClass = colorSchema2 === 'Green' ? 'bg-Green' : 'bg-Blue';
         bestValueBox2.classList.add(borderClass);
         bestValueHeader2.classList.add(bgClass);
     }
@@ -308,8 +362,148 @@ const updateBoxBorder2 = () => {
 checkbox2.addEventListener('change', updateBoxBorder2);
 
 // Cart Section
-const cart2 = document.getElementById('cart-section');
+const nextStep3_3 = document.getElementById("nextStep3-2");
 
-nextStep3_2.addEventListener('click', () => {
-    replaceCls2(cart2, 'hide', 'show')
-})
+// Helper function to show cart and overlay
+function showCart() {
+    replaceCls(cart, "hide", "show");
+    replaceCls(cartOverlay, "hide", "show");
+}
+
+// Helper function to hide cart and overlay
+function hideCart() {
+    replaceCls(cart, "show", "hide");
+    replaceCls(cartOverlay, "show", "hide");
+}
+
+nextStep3_3?.addEventListener("click", showCart);
+
+// Product Details
+const products2 = [
+    {
+        id: 1,
+        title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-1.jpg",
+            Green: "./images/yomzSours/pack-1.png"
+        },
+        quantity: 1,
+        price: 12,
+        gummyType: 'YOMZ Original',
+    },
+
+    {
+        id: 2,
+        title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-2.jpg",
+            Green: "./images/yomzSours/pack-2.jpg"
+        },
+        quantity: 1,
+        price: 24,
+        gummyType: 'YOMZ Original',
+    },
+
+    {
+        id: 3,
+        title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-3.jpg",
+            Green: "./images/yomzSours/pack-3.jpg"
+        },
+        quantity: 1,
+        price: 36,
+        gummyType: 'YOMZ Original',
+    },
+
+    {
+        id: 4,
+        title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-4.jpg",
+            Green: "./images/yomzSours/pack-4.jpg"
+        },
+        quantity: 1,
+        price: 48,
+        gummyType: 'YOMZ Original',
+    },
+    {
+        id: 5,
+        title: "YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-1.jpg",
+            Green: "./images/yomzSours/pack-1.png"
+        },
+        quantity: 1,
+        price: 12,
+        gummyType: 'YOMZ Sours',
+    },
+
+    {
+        id: 6,
+        title: "2 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-2.jpg",
+            Green: "./images/yomzSours/pack-2.jpg"
+        },
+        quantity: 1,
+        price: 24,
+        gummyType: 'YOMZ Sours',
+    },
+
+    {
+        id: 7,
+        title: "3 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-3.jpg",
+            Green: "./images/yomzSours/pack-3.jpg"
+        },
+        quantity: 1,
+        price: 36,
+        gummyType: 'YOMZ Sours',
+    },
+
+    {
+        id: 8,
+        title: "4 x YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew",
+        image: {
+            Blue: "./images/yomzOriginal/pack-4.jpg",
+            Green: "./images/yomzSours/pack-4.jpg"
+        },
+        quantity: 1,
+        price: 48,
+        gummyType: 'YOMZ Sours',
+    }
+];
+
+// 
+const selectProduct2 = (id) => {
+    const existingCartData2 = JSON.parse(localStorage.getItem("cartData")) ? JSON.parse(localStorage.getItem("cartData")) : [];
+    console.log("existingCartData2", existingCartData2)
+
+    const existingProduct2 = existingCartData2.filter(product => product.id === Number(id));
+    // console.log("existingProduct2", existingProduct2);
+
+    // check if product already exist in cart
+    if (existingProduct2.length > 0) {
+        handleExistingProduct(existingProduct2[0].id);
+
+    } else {
+        const data = products2.find(product => product.id === Number(id));
+        const colorSchema2 = JSON.parse(localStorage.getItem("colorSchema2"));
+        // console.log('colorSchema2', colorSchema2);
+        console.log('id:', id);
+        const image = colorSchema2 === "Blue" ? data.image.Blue : data.image.Green;
+        const updatedData2 = {
+            id: data.id,
+            title: data.title,
+            image,
+            quantity: data.quantity,
+            price: data.price,
+            gummyType: data.gummyType,
+        }
+        // console.log("updatedData2", updatedData2, colorSchema2)
+        localStorage.setItem("cartData", JSON.stringify([...existingCartData2, updatedData2]));
+    }
+    updateCart();
+};

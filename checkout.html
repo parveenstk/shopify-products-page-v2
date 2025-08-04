@@ -1,54 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <title>Shopify YOMZ</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-      <link href="style/checkout.css" rel="stylesheet">
-      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-      <link rel="shortcut icon" href="images/light.png" type="image/ico">
-   </head>
-   <body>
-      <div class="checkoutpart">
+
+<head>
+   <title>Shopify YOMZ</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link href="style/checkout.css" rel="stylesheet">
+   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <link rel="shortcut icon" href="images/light.png" type="image/ico">
+</head>
+
+<body>
+   <div class="checkoutpart">
+      <!-- Mobile order summary -->
       <div class="total-price d-sm-block d-lg-none">
          <div class="accordion">
             <div class="accordion-item">
                <h4 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetrep" aria-expanded="true" aria-controls="collapsetrep">
-                  <span class="arrowsummy">Order summary <img class="arrow-icon" src="images/down.svg"> </span> <span class="price-accordion">$68.00</span> 
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                     data-bs-target="#collapsetrep" aria-expanded="true" aria-controls="collapsetrep">
+                     <span class="arrowsummy">Order summary
+                        <img class="arrow-icon" src="images/down.svg">
+                     </span>
+                     <span id="ordersummary-header-total" class="price-accordion">$0.00</span>
                   </button>
                </h4>
-               <div id="collapsetrep" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+               <div id="collapsetrep" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample">
                   <div class="accordion-body">
                      <div class="controlform  side-baar item">
-                        <div class="product-card row">
-                           <div class="col-2 px-0">
-                              <div class="product-image">
-                                 <img src="images/slider/green/4.png" alt="">
-                                 <div class="number-joit">1</div>
-                              </div>
-                           </div>
-                           <div class="product-info col-8">
-                              <div class="product-title">YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</div>
-                              <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                           </div>
-                           <div class="product-price col-2">$26.00</div>
-                        </div>
-                        <div class="product-card row">
-                           <div class="col-2 px-0">
-                              <div class="product-image">
-                                 <img src="images/slider/4.png" alt="">
-                                 <div class="number-joit">1</div>
-                              </div>
-                           </div>
-                           <div class="product-info col-8">
-                              <div class="product-title">YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</div>
-                              <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                           </div>
-                           <div class="product-price col-2">$26.00</div>
-                        </div>
+
+                        <!-- Order summary Product - 1 -->
+                        <div id="ordersummary-products-container"></div>
+
+                        <!-- Order summary Free Gifts - 1 -->
                         <div class="product-card row">
                            <div class="col-2 px-0">
                               <div class="product-image">
@@ -61,6 +48,8 @@
                            </div>
                            <div class="product-price col-2">FREE</div>
                         </div>
+
+                        <!-- Order summary Free Gifts - 2 -->
                         <div class="product-card row">
                            <div class="col-2 px-0">
                               <div class="product-image">
@@ -73,6 +62,8 @@
                            </div>
                            <div class="product-price col-2">FREE</div>
                         </div>
+
+                        <!-- Order summary Free Gifts - 3 -->
                         <div class="product-card row">
                            <div class="col-2 px-0">
                               <div class="product-image">
@@ -88,7 +79,8 @@
                      </div>
                      <div class="row controlform apply-form">
                         <div class="form-group col-9 px-1 mb-2">
-                           <input name="couponCode" id="couponCode" type="text" class="secss form-control" placeholder="Coupon Code" spellcheck="false" value="">
+                           <input name="couponCode" id="couponCode" type="text" class="secss form-control"
+                              placeholder="Coupon Code" spellcheck="false" value="">
                         </div>
                         <div class="form-group col-3 px-1 mb-2">
                            <div class="role-btn">
@@ -98,8 +90,8 @@
                      </div>
                      <div class="price-count">
                         <div class="d-flex justify-content-between mb-2">
-                           <span>Subtotal · 3 items</span>
-                           <strong>$44.00</strong>
+                           <span id="ordersummary-quantity">Subtotal · 3 items</span>
+                           <strong id="ordersummary-subtotal"></strong>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                            <span>Shipping</span>
@@ -107,7 +99,7 @@
                         </div>
                         <div class="d-flex justify-content-between total-price">
                            <span>Total</span>
-                           <strong><sub>USD</sub> $44.00</strong>
+                           <strong id="oredersummary-total"><sub>USD</sub> $44.00</strong>
                         </div>
                      </div>
                      <hr>
@@ -117,970 +109,1241 @@
             </div>
          </div>
       </div>
+      <!-- Mobile order summary -->
+
       <div class="container-fluid">
-      <div class="checkoutpart-body-ponts">
-      <form>
-         <div class="row">
-            <div class="col-md-6 leftside-bg">
-               <div class="left-side-form">
-                  <div class="div-1 controlform fr-2">
-                     <div class="express-checkout">
-                        <img src="images/logo.png" class="img-fluid logo-hd">
-                        <span class="d-block text-center py-2 mb-2">Express checkout</span>
-                        <div class="btn-group w-100 gap-2">
-                           <button class="btn btn-primary w-100 btn-pay-blue"><img src="images/ShopPay.png" class="img-fluid"> </button>
-                           <button class="btn btn-primary w-100 btn-pay-yellow"><img src="images/paypal.png" class="img-fluid"> </button>
-                        </div>
-                        <div class="divider-container">
-                           <span class="divider-text">OR</span>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <h3 class="d-flex justify-content-between px-0 mb-3"><span>Customer Info</span> <span> <a href="#" class="login-text"> Log in</a></span></h3>
-                        <div class="form-group col-md-12 px-1 mb-2">
-                           <input type="text" name="emailAddress" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="form-check col-md-12 mb-2">
-                           <label class="form-check-label" for="checkbox-sh">
-                           <input class="form-check-input" name="billShipSame" type="checkbox"> Email me with news and offers
-                           </label>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="controlform mt-4">
-                     <div class="row">
-                        <h3 class="d-flex justify-content-between px-0 mb-3">Delivery</h3>
-                     </div>
-                     <div class="row">
-                        <div class="form-group col-md-12 px-1 mb-2">
-                           <select name="countryCode"  required="" autocomplete="shipping country" class="">
-                              <option value="US">United States</option>
-                              <option value="">---</option>
-                              <option value="AR">Argentina</option>
-                              <option value="AU">Australia</option>
-                              <option value="AT">Austria</option>
-                              <option value="BE">Belgium</option>
-                              <option value="BM">Bermuda</option>
-                              <option value="BO">Bolivia</option>
-                              <option value="BR">Brazil</option>
-                              <option value="BG">Bulgaria</option>
-                              <option value="CA">Canada</option>
-                              <option value="CL">Chile</option>
-                              <option value="HR">Croatia</option>
-                              <option value="CY">Cyprus</option>
-                              <option value="CZ">Czechia</option>
-                              <option value="DK">Denmark</option>
-                              <option value="EC">Ecuador</option>
-                              <option value="EE">Estonia</option>
-                              <option value="FO">Faroe Islands</option>
-                              <option value="FI">Finland</option>
-                              <option value="FR">France</option>
-                              <option value="DE">Germany</option>
-                              <option value="GI">Gibraltar</option>
-                              <option value="GR">Greece</option>
-                              <option value="GG">Guernsey</option>
-                              <option value="HK">Hong Kong SAR</option>
-                              <option value="HU">Hungary</option>
-                              <option value="IS">Iceland</option>
-                              <option value="IE">Ireland</option>
-                              <option value="IM">Isle of Man</option>
-                              <option value="IL">Israel</option>
-                              <option value="IT">Italy</option>
-                              <option value="JP">Japan</option>
-                              <option value="JE">Jersey</option>
-                              <option value="LV">Latvia</option>
-                              <option value="LT">Lithuania</option>
-                              <option value="LU">Luxembourg</option>
-                              <option value="MY">Malaysia</option>
-                              <option value="MT">Malta</option>
-                              <option value="MX">Mexico</option>
-                              <option value="MC">Monaco</option>
-                              <option value="NL">Netherlands</option>
-                              <option value="NC">New Caledonia</option>
-                              <option value="NZ">New Zealand</option>
-                              <option value="MK">North Macedonia</option>
-                              <option value="NO">Norway</option>
-                              <option value="PY">Paraguay</option>
-                              <option value="PE">Peru</option>
-                              <option value="PH">Philippines</option>
-                              <option value="PL">Poland</option>
-                              <option value="PT">Portugal</option>
-                              <option value="RE">Réunion</option>
-                              <option value="RO">Romania</option>
-                              <option value="RS">Serbia</option>
-                              <option value="SG">Singapore</option>
-                              <option value="SI">Slovenia</option>
-                              <option value="ZA">South Africa</option>
-                              <option value="KR">South Korea</option>
-                              <option value="ES">Spain</option>
-                              <option value="SE">Sweden</option>
-                              <option value="CH">Switzerland</option>
-                              <option value="TR">Türkiye</option>
-                              <option value="AE">United Arab Emirates</option>
-                              <option value="GB">United Kingdom</option>
-                              <option value="US">United States</option>
-                              <option value="UY">Uruguay</option>
-                              <option value="VE">Venezuela</option>
-                           </select>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="form-group col-md-6 px-1 mb-2">
-                           <input type="text" name="shipfirstName" placeholder="First Name" class="form-control" isRequired>
-                        </div>
-                        <div class="form-group col-md-6 px-1 mb-2">
-                           <input type="text" name="shiplastName" placeholder="Last Name" class="secss form-control" isRequired>
-                        </div>
-                     </div>
-                     <div class="row">
-                        <div class="form-group col-md-12 px-1 mb-2 icons-col-set">
-                           <input type="text" name="shipAddress1" placeholder="Address" class="ads1 form-control"  spellcheck="false" isRequired data-threeds="shippingStreetAddress">
-                           <div class="icons-col-mgrole">
-                              <img src="images/search.svg">
+         <div class="checkoutpart-body-ponts">
+            <form id="checkout-form">
+               <div class="row">
+                  <div class="col-md-6 leftside-bg">
+                     <div class="left-side-form">
+                        <div class="div-1 controlform fr-2">
+                           <div class="express-checkout">
+                              <img src="images/logo.png" class="img-fluid logo-hd">
+                              <span class="d-block text-center py-2 mb-2">Express checkout</span>
+                              <div class="btn-group w-100 gap-2">
+                                 <button class="btn btn-primary w-100 btn-pay-blue"><img src="images/ShopPay.png"
+                                       class="img-fluid"> </button>
+                                 <button class="btn btn-primary w-100 btn-pay-yellow"><img src="images/paypal.png"
+                                       class="img-fluid"> </button>
+                              </div>
+                              <div class="divider-container">
+                                 <span class="divider-text">OR</span>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <h3 class="d-flex justify-content-between px-0 mb-3"><span>Customer Info</span> <span> <a
+                                       href="#" class="login-text"> Log in</a></span></h3>
+                              <div class="form-group col-md-12 px-1 mb-2">
+                                 <!-- email address -->
+                                 <input id="delivery-email-address" type="email" name="emailAddress"
+                                    class="form-control" placeholder="Email">
+                              </div>
+                              <div class="form-check col-md-12 mb-2 ml-4">
+                                 <label class="form-check-label cursor" for="email-checkbox">
+                                    <input class="form-check-input" id="email-checkbox" name="billShipSame"
+                                       type="checkbox" checked> Email me with news and offers
+                                 </label>
+                              </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="form-group col-md-12 px-1 mb-2">
-                           <input type="text" name="shipAddress2" placeholder="Apartment, suite, etc. (optional)" class="form-control secss">
+                        <div class="controlform mt-4">
+                           <div class="row">
+                              <h3 class="d-flex justify-content-between px-0 mb-3">Delivery</h3>
+                           </div>
+                           <div class="row">
+                              <div class="form-group col-md-12 px-1 mb-2">
+                                 <select name="countryCode" autocomplete="shipping country" class="">
+                                    <option value="US">United States</option>
+                                    <option value="">---</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="AT">Austria</option>
+                                    <option value="BE">Belgium</option>
+                                    <option value="BM">Bermuda</option>
+                                    <option value="BO">Bolivia</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="BG">Bulgaria</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="CL">Chile</option>
+                                    <option value="HR">Croatia</option>
+                                    <option value="CY">Cyprus</option>
+                                    <option value="CZ">Czechia</option>
+                                    <option value="DK">Denmark</option>
+                                    <option value="EC">Ecuador</option>
+                                    <option value="EE">Estonia</option>
+                                    <option value="FO">Faroe Islands</option>
+                                    <option value="FI">Finland</option>
+                                    <option value="FR">France</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="GI">Gibraltar</option>
+                                    <option value="GR">Greece</option>
+                                    <option value="GG">Guernsey</option>
+                                    <option value="HK">Hong Kong SAR</option>
+                                    <option value="HU">Hungary</option>
+                                    <option value="IS">Iceland</option>
+                                    <option value="IE">Ireland</option>
+                                    <option value="IM">Isle of Man</option>
+                                    <option value="IL">Israel</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="JE">Jersey</option>
+                                    <option value="LV">Latvia</option>
+                                    <option value="LT">Lithuania</option>
+                                    <option value="LU">Luxembourg</option>
+                                    <option value="MY">Malaysia</option>
+                                    <option value="MT">Malta</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="MC">Monaco</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="NC">New Caledonia</option>
+                                    <option value="NZ">New Zealand</option>
+                                    <option value="MK">North Macedonia</option>
+                                    <option value="NO">Norway</option>
+                                    <option value="PY">Paraguay</option>
+                                    <option value="PE">Peru</option>
+                                    <option value="PH">Philippines</option>
+                                    <option value="PL">Poland</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="RE">Réunion</option>
+                                    <option value="RO">Romania</option>
+                                    <option value="RS">Serbia</option>
+                                    <option value="SG">Singapore</option>
+                                    <option value="SI">Slovenia</option>
+                                    <option value="ZA">South Africa</option>
+                                    <option value="KR">South Korea</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="CH">Switzerland</option>
+                                    <option value="TR">Türkiye</option>
+                                    <option value="AE">United Arab Emirates</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="US">United States</option>
+                                    <option value="UY">Uruguay</option>
+                                    <option value="VE">Venezuela</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="form-group col-md-6 px-1 mb-2">
+                                 <!-- Delivery section - First Name -->
+                                 <input id="delivery-first-name" type="text" name="shipfirstName"
+                                    placeholder="First Name" class="form-control" isRequired>
+                              </div>
+                              <div class="form-group col-md-6 px-1 mb-2">
+                                 <!-- Delivery section - Last Name -->
+                                 <input id="delivery-last-name" type="text" name="shiplastName" placeholder="Last Name"
+                                    class="secss form-control" isRequired>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="form-group col-md-12 px-1 mb-2 icons-col-set">
+                                 <!-- Delivery section - Address - 1 -->
+                                 <input id="delivery-address" type="text" name="shipAddress1" placeholder="Address"
+                                    class="ads1 form-control" spellcheck="false" isRequired
+                                    data-threeds="shippingStreetAddress">
+                                 <div class="icons-col-mgrole">
+                                    <img src="images/search.svg">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="form-group col-md-12 px-1 mb-2">
+                                 <!-- Delivery section - Address - 2 ( Optional ) -->
+                                 <input id="delivery-address-optional" type="text" name="shipAddress2"
+                                    placeholder="Apartment, suite, etc. (optional)" class="form-control secss">
+                              </div>
+                           </div>
+
+                           <div class="row">
+                              <div class="form-group col-md-4 px-1 mb-2">
+                                 <!-- Delivery section - City -->
+                                 <input id="delivery-city" type="text" name="City" placeholder="City"
+                                    class="shipzip form-control">
+                              </div>
+                              <div class="form-group col-md-4 px-1 mb-2">
+                                 <select id="delivery-state" name="zone" autocomplete="address-level1" class="">
+                                    <option hidden="" disabled="" value="">&nbsp;</option>
+                                    <option data-alternate-values="Alabama" value="AL">Alabama</option>
+                                    <option data-alternate-values="Alaska" value="AK">Alaska</option>
+                                    <option data-alternate-values="American Samoa" value="AS">American Samoa</option>
+                                    <option data-alternate-values="Arizona" value="AZ">Arizona</option>
+                                    <option data-alternate-values="Arkansas" value="AR">Arkansas</option>
+                                    <option data-alternate-values="California" value="CA">California</option>
+                                    <option data-alternate-values="Colorado" value="CO">Colorado</option>
+                                    <option data-alternate-values="Connecticut" value="CT">Connecticut</option>
+                                    <option data-alternate-values="Delaware" value="DE">Delaware</option>
+                                    <option
+                                       data-alternate-values="Federated States of Micronesia&quot;,&quot;Micronesia"
+                                       value="FM">Micronesia</option>
+                                    <option data-alternate-values="Florida" value="FL">Florida</option>
+                                    <option data-alternate-values="Georgia" value="GA">Georgia</option>
+                                    <option data-alternate-values="Guam" value="GU">Guam</option>
+                                    <option data-alternate-values="Hawaii" value="HI">Hawaii</option>
+                                    <option data-alternate-values="Idaho" value="ID">Idaho</option>
+                                    <option data-alternate-values="Illinois" value="IL">Illinois</option>
+                                    <option data-alternate-values="Indiana" value="IN">Indiana</option>
+                                    <option data-alternate-values="Iowa" value="IA">Iowa</option>
+                                    <option data-alternate-values="Kansas" value="KS">Kansas</option>
+                                    <option data-alternate-values="Kentucky" value="KY">Kentucky</option>
+                                    <option data-alternate-values="Louisiana" value="LA">Louisiana</option>
+                                    <option data-alternate-values="Maine" value="ME">Maine</option>
+                                    <option data-alternate-values="Marshall Islands" value="MH">Marshall Islands
+                                    </option>
+                                    <option data-alternate-values="Maryland" value="MD">Maryland</option>
+                                    <option data-alternate-values="Massachusetts" value="MA">Massachusetts</option>
+                                    <option data-alternate-values="Michigan" value="MI">Michigan</option>
+                                    <option data-alternate-values="Minnesota" value="MN">Minnesota</option>
+                                    <option data-alternate-values="Mississippi" value="MS">Mississippi</option>
+                                    <option data-alternate-values="Missouri" value="MO">Missouri</option>
+                                    <option data-alternate-values="Montana" value="MT">Montana</option>
+                                    <option data-alternate-values="Nebraska" value="NE">Nebraska</option>
+                                    <option data-alternate-values="Nevada" value="NV">Nevada</option>
+                                    <option data-alternate-values="New Hampshire" value="NH">New Hampshire</option>
+                                    <option data-alternate-values="New Jersey" value="NJ">New Jersey</option>
+                                    <option data-alternate-values="New Mexico" value="NM">New Mexico</option>
+                                    <option data-alternate-values="New York" value="NY">New York</option>
+                                    <option data-alternate-values="North Carolina" value="NC">North Carolina</option>
+                                    <option data-alternate-values="North Dakota" value="ND">North Dakota</option>
+                                    <option data-alternate-values="Northern Mariana Islands" value="MP">Northern Mariana
+                                       Islands</option>
+                                    <option data-alternate-values="Ohio" value="OH">Ohio</option>
+                                    <option data-alternate-values="Oklahoma" value="OK">Oklahoma</option>
+                                    <option data-alternate-values="Oregon" value="OR">Oregon</option>
+                                    <option data-alternate-values="Palau" value="PW">Palau</option>
+                                    <option data-alternate-values="Pennsylvania" value="PA">Pennsylvania</option>
+                                    <option data-alternate-values="Puerto Rico" value="PR">Puerto Rico</option>
+                                    <option data-alternate-values="Rhode Island" value="RI">Rhode Island</option>
+                                    <option data-alternate-values="South Carolina" value="SC">South Carolina</option>
+                                    <option data-alternate-values="South Dakota" value="SD">South Dakota</option>
+                                    <option data-alternate-values="Tennessee" value="TN">Tennessee</option>
+                                    <option data-alternate-values="Texas" value="TX">Texas</option>
+                                    <option data-alternate-values="Utah" value="UT">Utah</option>
+                                    <option data-alternate-values="Vermont" value="VT">Vermont</option>
+                                    <option data-alternate-values="Virginia" value="VA">Virginia</option>
+                                    <option data-alternate-values="Washington" value="WA">Washington</option>
+                                    <option data-alternate-values="District of Columbia&quot;,&quot;Washington DC"
+                                       value="DC">Washington DC</option>
+                                    <option data-alternate-values="West Virginia" value="WV">West Virginia</option>
+                                    <option data-alternate-values="Wisconsin" value="WI">Wisconsin</option>
+                                    <option data-alternate-values="Wyoming" value="WY">Wyoming</option>
+                                    <option data-alternate-values="Virgin Islands&quot;,&quot;U.S. Virgin Islands"
+                                       value="VI">U.S. Virgin Islands</option>
+                                    <option data-alternate-values="Armed Forces Americas" value="AA">Armed Forces
+                                       Americas</option>
+                                    <option data-alternate-values="Armed Forces Europe" value="AE">Armed Forces Europe
+                                    </option>
+                                    <option data-alternate-values="Armed Forces Pacific" value="AP">Armed Forces Pacific
+                                    </option>
+                                 </select>
+                              </div>
+                              <div class="form-group col-md-4 px-1 mb-2">
+                                 <!-- Delivery section - Postal Code -->
+                                 <input id="delivery-postal-code" type="number" name="Postal Code"
+                                    placeholder="Postal Code" class="shipzip form-control">
+                              </div>
+                           </div>
                         </div>
-                     </div>
-                    
-                     <div class="row">
-                        <div class="form-group col-md-4 px-1 mb-2">
-                           <input type="text" placeholder="City" class="shipzip form-control">
+                        <div class="row shippingmethod mt-4 mb-3">
+                           <h3 class="d-flex px-0">Shipping method</h3>
+                           <p>Enter your shipping address to view available shipping methods.</p>
                         </div>
-                        <div class="form-group col-md-4 px-1 mb-2">
-                           <select name="zone"  required="" autocomplete="address-level1" class="">
-                              <option hidden="" disabled="" value="">&nbsp;</option>
-                              <option data-alternate-values="Alabama" value="AL">Alabama</option>
-                              <option data-alternate-values="Alaska" value="AK">Alaska</option>
-                              <option data-alternate-values="American Samoa" value="AS">American Samoa</option>
-                              <option data-alternate-values="Arizona" value="AZ">Arizona</option>
-                              <option data-alternate-values="Arkansas" value="AR">Arkansas</option>
-                              <option data-alternate-values="California" value="CA">California</option>
-                              <option data-alternate-values="Colorado" value="CO">Colorado</option>
-                              <option data-alternate-values="Connecticut" value="CT">Connecticut</option>
-                              <option data-alternate-values="Delaware" value="DE">Delaware</option>
-                              <option data-alternate-values="Federated States of Micronesia&quot;,&quot;Micronesia" value="FM">Micronesia</option>
-                              <option data-alternate-values="Florida" value="FL">Florida</option>
-                              <option data-alternate-values="Georgia" value="GA">Georgia</option>
-                              <option data-alternate-values="Guam" value="GU">Guam</option>
-                              <option data-alternate-values="Hawaii" value="HI">Hawaii</option>
-                              <option data-alternate-values="Idaho" value="ID">Idaho</option>
-                              <option data-alternate-values="Illinois" value="IL">Illinois</option>
-                              <option data-alternate-values="Indiana" value="IN">Indiana</option>
-                              <option data-alternate-values="Iowa" value="IA">Iowa</option>
-                              <option data-alternate-values="Kansas" value="KS">Kansas</option>
-                              <option data-alternate-values="Kentucky" value="KY">Kentucky</option>
-                              <option data-alternate-values="Louisiana" value="LA">Louisiana</option>
-                              <option data-alternate-values="Maine" value="ME">Maine</option>
-                              <option data-alternate-values="Marshall Islands" value="MH">Marshall Islands</option>
-                              <option data-alternate-values="Maryland" value="MD">Maryland</option>
-                              <option data-alternate-values="Massachusetts" value="MA">Massachusetts</option>
-                              <option data-alternate-values="Michigan" value="MI">Michigan</option>
-                              <option data-alternate-values="Minnesota" value="MN">Minnesota</option>
-                              <option data-alternate-values="Mississippi" value="MS">Mississippi</option>
-                              <option data-alternate-values="Missouri" value="MO">Missouri</option>
-                              <option data-alternate-values="Montana" value="MT">Montana</option>
-                              <option data-alternate-values="Nebraska" value="NE">Nebraska</option>
-                              <option data-alternate-values="Nevada" value="NV">Nevada</option>
-                              <option data-alternate-values="New Hampshire" value="NH">New Hampshire</option>
-                              <option data-alternate-values="New Jersey" value="NJ">New Jersey</option>
-                              <option data-alternate-values="New Mexico" value="NM">New Mexico</option>
-                              <option data-alternate-values="New York" value="NY">New York</option>
-                              <option data-alternate-values="North Carolina" value="NC">North Carolina</option>
-                              <option data-alternate-values="North Dakota" value="ND">North Dakota</option>
-                              <option data-alternate-values="Northern Mariana Islands" value="MP">Northern Mariana Islands</option>
-                              <option data-alternate-values="Ohio" value="OH">Ohio</option>
-                              <option data-alternate-values="Oklahoma" value="OK">Oklahoma</option>
-                              <option data-alternate-values="Oregon" value="OR">Oregon</option>
-                              <option data-alternate-values="Palau" value="PW">Palau</option>
-                              <option data-alternate-values="Pennsylvania" value="PA">Pennsylvania</option>
-                              <option data-alternate-values="Puerto Rico" value="PR">Puerto Rico</option>
-                              <option data-alternate-values="Rhode Island" value="RI">Rhode Island</option>
-                              <option data-alternate-values="South Carolina" value="SC">South Carolina</option>
-                              <option data-alternate-values="South Dakota" value="SD">South Dakota</option>
-                              <option data-alternate-values="Tennessee" value="TN">Tennessee</option>
-                              <option data-alternate-values="Texas" value="TX">Texas</option>
-                              <option data-alternate-values="Utah" value="UT">Utah</option>
-                              <option data-alternate-values="Vermont" value="VT">Vermont</option>
-                              <option data-alternate-values="Virginia" value="VA">Virginia</option>
-                              <option data-alternate-values="Washington" value="WA">Washington</option>
-                              <option data-alternate-values="District of Columbia&quot;,&quot;Washington DC" value="DC">Washington DC</option>
-                              <option data-alternate-values="West Virginia" value="WV">West Virginia</option>
-                              <option data-alternate-values="Wisconsin" value="WI">Wisconsin</option>
-                              <option data-alternate-values="Wyoming" value="WY">Wyoming</option>
-                              <option data-alternate-values="Virgin Islands&quot;,&quot;U.S. Virgin Islands" value="VI">U.S. Virgin Islands</option>
-                              <option data-alternate-values="Armed Forces Americas" value="AA">Armed Forces Americas</option>
-                              <option data-alternate-values="Armed Forces Europe" value="AE">Armed Forces Europe</option>
-                              <option data-alternate-values="Armed Forces Pacific" value="AP">Armed Forces Pacific</option>
-                           </select>
-                        </div>
-                        <div class="form-group col-md-4 px-1 mb-2">
-                           <input type="text" placeholder="Postal Code" class="shipzip form-control">
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row shippingmethod mt-4 mb-3">
-                     <h3 class="d-flex px-0">Shipping method</h3>
-                     <p>Enter your shipping address to view available shipping methods.</p>
-                  </div>
-                  <div class="controlform-accordion mt-4 row">
-                     <h3 class="d-flex px-0">Payment</h3>
-                     <p class="transactions d-flex px-0">All transactions are secure and encrypted.</p>
-                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                           <h4 class="accordion-header">
-                              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <div class="d-flex justify-content-between">
-                                       <label class="form-check-label" for="flexRadioDefault1">
-                                          Credit card 
-                                          <span class="images">
-                                             <img src="images/checkout/visa.svg">
-                                             <img src="images/checkout/mastercard.svg">
-                                             <img src="images/checkout/amex.svg">
-                                             <img src="images/checkout/discover.svg">
-                                             <!-- Trigger Button -->
-                                             <span type="button" class="btn btn-secondary" id="tooltip-trigger" data-bs-toggle="tooltip" data-bs-placement="top" title="">4+</span>
-                                             <!-- Hidden HTML content for the tooltip -->
-                                             <div id="tooltip-images" style="display: none;">
-                                                <img src="images/checkout/diners_club.svg" alt="Diners Club" style="height: 20px; margin-right: 5px;">
-                                                <img src="images/checkout/elo.svg" alt="Elo" style="height: 20px; margin-right: 5px;">
-                                                <img src="images/checkout/jcb.svg" alt="JCB" style="height: 20px; margin-right: 5px;">
-                                                <img src="images/checkout/unionpay.svg" alt="UnionPay" style="height: 20px;">
+                        <div class="controlform-accordion mt-4 row">
+                           <h3 class="d-flex px-0">Payment</h3>
+                           <p class="transactions d-flex px-0">All transactions are secure and encrypted.</p>
+
+                           <!-- Credit Card & Paypal Options -->
+                           <div class="accordion" id="accordionExample">
+
+                              <!-- Credit Card -->
+                              <div class="accordion-item">
+                                 <h4 class="accordion-header cursor">
+                                    <button id="credit-card-option" class="accordion-button payment-btn" type="button"
+                                       data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                       aria-controls="collapseOne">
+                                       <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                             id="flexRadioDefault" checked>
+                                          <div class="d-flex justify-content-between">
+                                             <label class="form-check-label cursor" for="flexRadioDefault">
+                                                Credit card
+                                                <span class="images">
+                                                   <img src="images/checkout/visa.svg">
+                                                   <img src="images/checkout/mastercard.svg">
+                                                   <img src="images/checkout/amex.svg">
+                                                   <img src="images/checkout/discover.svg">
+                                                   <!-- Trigger Button -->
+                                                   <span type="button" class="btn btn-secondary" id="tooltip-trigger"
+                                                      data-bs-toggle="tooltip" data-bs-placement="top"
+                                                      title="">4+</span>
+                                                   <!-- Hidden HTML content for the tooltip -->
+                                                   <div id="tooltip-images" style="display: none;">
+                                                      <img src="images/checkout/diners_club.svg" alt="Diners Club"
+                                                         style="height: 20px; margin-right: 5px;">
+                                                      <img src="images/checkout/elo.svg" alt="Elo"
+                                                         style="height: 20px; margin-right: 5px;">
+                                                      <img src="images/checkout/jcb.svg" alt="JCB"
+                                                         style="height: 20px; margin-right: 5px;">
+                                                      <img src="images/checkout/unionpay.svg" alt="UnionPay"
+                                                         style="height: 20px;">
+                                                   </div>
+                                                </span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </button>
+                                 </h4>
+                                 <div id="collapseOne" class="accordion-collapse collapse show"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                       <div class="payment-form controlform">
+                                          <div class="row">
+                                             <div class="form-group col-md-12 mb-2">
+                                                <div class="icons-col-set">
+                                                   <!-- Card number input -->
+                                                   <input id="credit-card-number" type="text" name="Card number"
+                                                      placeholder="Card number" class="form-control" minlength="15"
+                                                      maxlength="17" inputmode="numeric" pattern="\d{15,17}"
+                                                      autocomplete="cc-number" />
+                                                   <div class="icons-col-mgrole">
+                                                      <img src="images/padlock.svg">
+                                                   </div>
+                                                </div>
                                              </div>
-                                          </span>
-                                       </label>
+                                             <div class="form-group col-6 mb-2">
+                                                <!-- Card expiry -->
+                                                <input id="credit-card-expiry" type="text"
+                                                   name="Expiration date (MM / YY)" placeholder="MM / YY"
+                                                   class="form-control" inputmode="numeric" maxlength="7" />
+                                             </div>
+                                             <div class="form-group col-6  mb-2">
+                                                <div class="icons-col-set">
+                                                   <!-- Card CVV -->
+                                                   <input id="credit-card-cvv" type="text" name="Security code"
+                                                      placeholder="Security code" class="form-control"
+                                                      inputmode="numeric" maxlength="4" />
+                                                   <div class="icons-col-mgrole">
+                                                      <a href="#" data-bs-toggle="tooltip" data-bs-placement="top"
+                                                         data-bs-title="3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."><img
+                                                            src="images/question.svg"></a>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="form-group col-md-12 mb-2">
+                                                <!-- Name on credit card -->
+                                                <input id="nameon-credit-card" type="text" name="Name on card"
+                                                   placeholder="Name on card" class="form-control">
+                                             </div>
+
+                                             <div class="form-check col-md-12 mb-2 py-3 left-check-padding width-fit">
+                                                <input class="form-check-input cursor" id="shipping-checkbox"
+                                                   name="billShipSame" type="checkbox" checked>
+                                                <label class="form-check-label cursor" for="shipping-checkbox">
+                                                   Use shipping address as billing address
+                                                </label>
+                                             </div>
+
+                                          </div>
+                                          <div class="row hide" id="billing-address-text">
+                                             <h3 class="d-flex justify-content-between">Billing address</h3>
+                                          </div>
+                                          <div class="row hide" id="billing-address-feilds">
+                                             <div class="form-group col-md-12 mb-2">
+                                                <select name="countryCode" autocomplete="shipping country" class="">
+                                                   <option value="US">United States</option>
+                                                   <option value="">---</option>
+                                                   <option value="AR">Argentina</option>
+                                                   <option value="AU">Australia</option>
+                                                   <option value="AT">Austria</option>
+                                                   <option value="BE">Belgium</option>
+                                                   <option value="BM">Bermuda</option>
+                                                   <option value="BO">Bolivia</option>
+                                                   <option value="BR">Brazil</option>
+                                                   <option value="BG">Bulgaria</option>
+                                                   <option value="CA">Canada</option>
+                                                   <option value="CL">Chile</option>
+                                                   <option value="HR">Croatia</option>
+                                                   <option value="CY">Cyprus</option>
+                                                   <option value="CZ">Czechia</option>
+                                                   <option value="DK">Denmark</option>
+                                                   <option value="EC">Ecuador</option>
+                                                   <option value="EE">Estonia</option>
+                                                   <option value="FO">Faroe Islands</option>
+                                                   <option value="FI">Finland</option>
+                                                   <option value="FR">France</option>
+                                                   <option value="DE">Germany</option>
+                                                   <option value="GI">Gibraltar</option>
+                                                   <option value="GR">Greece</option>
+                                                   <option value="GG">Guernsey</option>
+                                                   <option value="HK">Hong Kong SAR</option>
+                                                   <option value="HU">Hungary</option>
+                                                   <option value="IS">Iceland</option>
+                                                   <option value="IE">Ireland</option>
+                                                   <option value="IM">Isle of Man</option>
+                                                   <option value="IL">Israel</option>
+                                                   <option value="IT">Italy</option>
+                                                   <option value="JP">Japan</option>
+                                                   <option value="JE">Jersey</option>
+                                                   <option value="LV">Latvia</option>
+                                                   <option value="LT">Lithuania</option>
+                                                   <option value="LU">Luxembourg</option>
+                                                   <option value="MY">Malaysia</option>
+                                                   <option value="MT">Malta</option>
+                                                   <option value="MX">Mexico</option>
+                                                   <option value="MC">Monaco</option>
+                                                   <option value="NL">Netherlands</option>
+                                                   <option value="NC">New Caledonia</option>
+                                                   <option value="NZ">New Zealand</option>
+                                                   <option value="MK">North Macedonia</option>
+                                                   <option value="NO">Norway</option>
+                                                   <option value="PY">Paraguay</option>
+                                                   <option value="PE">Peru</option>
+                                                   <option value="PH">Philippines</option>
+                                                   <option value="PL">Poland</option>
+                                                   <option value="PT">Portugal</option>
+                                                   <option value="RE">Réunion</option>
+                                                   <option value="RO">Romania</option>
+                                                   <option value="RS">Serbia</option>
+                                                   <option value="SG">Singapore</option>
+                                                   <option value="SI">Slovenia</option>
+                                                   <option value="ZA">South Africa</option>
+                                                   <option value="KR">South Korea</option>
+                                                   <option value="ES">Spain</option>
+                                                   <option value="SE">Sweden</option>
+                                                   <option value="CH">Switzerland</option>
+                                                   <option value="TR">Türkiye</option>
+                                                   <option value="AE">United Arab Emirates</option>
+                                                   <option value="GB">United Kingdom</option>
+                                                   <option value="US">United States</option>
+                                                   <option value="UY">Uruguay</option>
+                                                   <option value="VE">Venezuela</option>
+                                                </select>
+                                             </div>
+                                             <div class="form-group col-md-6  mb-2">
+                                                <!-- billing first name -->
+                                                <input id="billing-first-name" type="text" name="shipfirstName"
+                                                   placeholder="First Name" class="form-control">
+                                             </div>
+                                             <div class="form-group col-md-6  mb-2">
+                                                <!-- billing last name -->
+                                                <input id="billing-last-name" type="text" name="shiplastName"
+                                                   placeholder="Last Name" class="secss form-control">
+                                             </div>
+                                             <div class="form-group col-md-12  mb-2">
+                                                <div class="icons-col-set">
+                                                   <!-- billing address - 1 -->
+                                                   <input id="billing-address" type="text" name="shipAddress1"
+                                                      placeholder="Address" class="ads1 form-control" spellcheck="false"
+                                                      data-threeds="shippingStreetAddress">
+                                                   <div class="icons-col-mgrole">
+                                                      <img src="images/search.svg">
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="form-group col-md-12  mb-2">
+                                                <!-- billing address optional -->
+                                                <input id="billing-address-optional" type="text" name="shipAddress2"
+                                                   placeholder="Apartment, suite, etc. (optional)"
+                                                   class="form-control secss">
+                                             </div>
+                                             <div class="form-group col-md-4 mb-2">
+                                                <!-- billing city -->
+                                                <input id="billing-city" type="text" name="City" placeholder="City"
+                                                   class="shipzip form-control">
+                                             </div>
+                                             <div class="form-group col-md-4 mb-2">
+                                                <select id="billing-state" name="zone"
+                                                   autocomplete="shipping address-level1">
+                                                   <option hidden="" disabled="" value="">&nbsp;</option>
+                                                   <option data-alternate-values="Alabama" value="AL">Alabama</option>
+                                                   <option data-alternate-values="Alaska" value="AK">Alaska</option>
+                                                   <option data-alternate-values="American Samoa" value="AS">American
+                                                      Samoa</option>
+                                                   <option data-alternate-values="Arizona" value="AZ">Arizona</option>
+                                                   <option data-alternate-values="Arkansas" value="AR">Arkansas</option>
+                                                   <option data-alternate-values="California" value="CA">California
+                                                   </option>
+                                                   <option data-alternate-values="Colorado" value="CO">Colorado</option>
+                                                   <option data-alternate-values="Connecticut" value="CT">Connecticut
+                                                   </option>
+                                                   <option data-alternate-values="Delaware" value="DE">Delaware</option>
+                                                   <option
+                                                      data-alternate-values="Federated States of Micronesia&quot;,&quot;Micronesia"
+                                                      value="FM">Micronesia</option>
+                                                   <option data-alternate-values="Florida" value="FL">Florida</option>
+                                                   <option data-alternate-values="Georgia" value="GA">Georgia</option>
+                                                   <option data-alternate-values="Guam" value="GU">Guam</option>
+                                                   <option data-alternate-values="Hawaii" value="HI">Hawaii</option>
+                                                   <option data-alternate-values="Idaho" value="ID">Idaho</option>
+                                                   <option data-alternate-values="Illinois" value="IL">Illinois</option>
+                                                   <option data-alternate-values="Indiana" value="IN">Indiana</option>
+                                                   <option data-alternate-values="Iowa" value="IA">Iowa</option>
+                                                   <option data-alternate-values="Kansas" value="KS">Kansas</option>
+                                                   <option data-alternate-values="Kentucky" value="KY">Kentucky</option>
+                                                   <option data-alternate-values="Louisiana" value="LA">Louisiana
+                                                   </option>
+                                                   <option data-alternate-values="Maine" value="ME">Maine</option>
+                                                   <option data-alternate-values="Marshall Islands" value="MH">Marshall
+                                                      Islands</option>
+                                                   <option data-alternate-values="Maryland" value="MD">Maryland</option>
+                                                   <option data-alternate-values="Massachusetts" value="MA">
+                                                      Massachusetts</option>
+                                                   <option data-alternate-values="Michigan" value="MI">Michigan</option>
+                                                   <option data-alternate-values="Minnesota" value="MN">Minnesota
+                                                   </option>
+                                                   <option data-alternate-values="Mississippi" value="MS">Mississippi
+                                                   </option>
+                                                   <option data-alternate-values="Missouri" value="MO">Missouri</option>
+                                                   <option data-alternate-values="Montana" value="MT">Montana</option>
+                                                   <option data-alternate-values="Nebraska" value="NE">Nebraska</option>
+                                                   <option data-alternate-values="Nevada" value="NV">Nevada</option>
+                                                   <option data-alternate-values="New Hampshire" value="NH">New
+                                                      Hampshire</option>
+                                                   <option data-alternate-values="New Jersey" value="NJ">New Jersey
+                                                   </option>
+                                                   <option data-alternate-values="New Mexico" value="NM">New Mexico
+                                                   </option>
+                                                   <option data-alternate-values="New York" value="NY">New York</option>
+                                                   <option data-alternate-values="North Carolina" value="NC">North
+                                                      Carolina</option>
+                                                   <option data-alternate-values="North Dakota" value="ND">North Dakota
+                                                   </option>
+                                                   <option data-alternate-values="Northern Mariana Islands" value="MP">
+                                                      Northern Mariana Islands</option>
+                                                   <option data-alternate-values="Ohio" value="OH">Ohio</option>
+                                                   <option data-alternate-values="Oklahoma" value="OK">Oklahoma</option>
+                                                   <option data-alternate-values="Oregon" value="OR">Oregon</option>
+                                                   <option data-alternate-values="Palau" value="PW">Palau</option>
+                                                   <option data-alternate-values="Pennsylvania" value="PA">Pennsylvania
+                                                   </option>
+                                                   <option data-alternate-values="Puerto Rico" value="PR">Puerto Rico
+                                                   </option>
+                                                   <option data-alternate-values="Rhode Island" value="RI">Rhode Island
+                                                   </option>
+                                                   <option data-alternate-values="South Carolina" value="SC">South
+                                                      Carolina</option>
+                                                   <option data-alternate-values="South Dakota" value="SD">South Dakota
+                                                   </option>
+                                                   <option data-alternate-values="Tennessee" value="TN">Tennessee
+                                                   </option>
+                                                   <option data-alternate-values="Texas" value="TX">Texas</option>
+                                                   <option data-alternate-values="Utah" value="UT">Utah</option>
+                                                   <option data-alternate-values="Vermont" value="VT">Vermont</option>
+                                                   <option data-alternate-values="Virginia" value="VA">Virginia</option>
+                                                   <option data-alternate-values="Washington" value="WA">Washington
+                                                   </option>
+                                                   <option
+                                                      data-alternate-values="District of Columbia&quot;,&quot;Washington DC"
+                                                      value="DC">Washington DC</option>
+                                                   <option data-alternate-values="West Virginia" value="WV">West
+                                                      Virginia</option>
+                                                   <option data-alternate-values="Wisconsin" value="WI">Wisconsin
+                                                   </option>
+                                                   <option data-alternate-values="Wyoming" value="WY">Wyoming</option>
+                                                   <option
+                                                      data-alternate-values="Virgin Islands&quot;,&quot;U.S. Virgin Islands"
+                                                      value="VI">U.S. Virgin Islands</option>
+                                                   <option data-alternate-values="Armed Forces Americas" value="AA">
+                                                      Armed Forces Americas</option>
+                                                   <option data-alternate-values="Armed Forces Europe" value="AE">Armed
+                                                      Forces Europe</option>
+                                                   <option data-alternate-values="Armed Forces Pacific" value="AP">Armed
+                                                      Forces Pacific</option>
+                                                </select>
+                                             </div>
+                                             <div class="form-group col-md-4  mb-2">
+                                                <!-- billind postal code -->
+                                                <input id="billing-postal-code" type="text" name="Postal Code"
+                                                   placeholder="Postal Code" class="shipzip form-control">
+                                             </div>
+                                          </div>
+                                       </div>
                                     </div>
                                  </div>
+                              </div>
+
+                              <!-- PayPal -->
+                              <div class="accordion-item">
+                                 <h4 class="accordion-header cursor">
+                                    <button id="payPal-option" class="accordion-button collapsed remove-spacing"
+                                       type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                       aria-expanded="false" aria-controls="collapseTwo">
+                                       <div class="form-check padding0">
+                                          <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                             id="flexRadioDefault2">
+                                          <div class="d-flex justify-content-between">
+                                             <!-- Proper association using 'for' -->
+                                             <label class="form-check-label cursor  button-spacing"
+                                                for="flexRadioDefault2">
+                                                PayPal
+                                                <span class="images">
+                                                   <img src="images/checkout/paypal-3.png" class="img-fluid">
+                                                </span>
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </button>
+                                 </h4>
+                                 <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                       <div class="paypal-box">
+                                          <img src="images/checkout/check-box.jpg" class="img-fluid">
+                                          <p>After clicking "Pay with PayPal", you will be redirected to PayPal to
+                                             complete your purchase securely.</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                           </div>
+
+                        </div>
+
+                        <!-- Remember me -->
+                        <div class="controlform-accordion controlform   mt-4 row">
+                           <h3 class="d-flex px-0 mb-3">Remember me</h3>
+                           <div class="accordion" id="accordionExample">
+                              <div class="accordion-item">
+                                 <h4 class="accordion-header">
+                                    <button class="accordion-button collapsed padding0" type="button"
+                                       data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false"
+                                       aria-controls="collapsefour">
+                                       <div class="form-check padding0">
+                                          <input class="form-check-input" type="checkbox" name="flexRadioDefault"
+                                             id="flexRadioDefault3">
+                                          <div class="d-flex justify-content-between">
+                                             <label class="form-check-label cursor button-spacing"
+                                                for="flexRadioDefault3">
+                                                Save my information for a faster checkout
+                                             </label>
+                                          </div>
+                                 </h4>
+                                 <div id="collapsefour" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                       <div class="mobile-number">
+                                          <div class="form-group col-md-12 mb-2 ">
+                                             <div class="icons-col-set icons-col-set-mobile">
+                                                <input type="number" name="Mobile phone number"
+                                                   placeholder="Mobile phone number" class="form-control">
+                                                <div class="icons-col-mgrole">
+                                                   <img src="images/smartphone.svg">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <!-- Billing Address -->
+                        <div class="controlform-accordion controlform mt-4 row">
+                           <h3 class="d-flex px-0 mb-3">Billing address</h3>
+                           <div class="accordion" id="accordionExample">
+                              <div class="accordion-item">
+                                 <!-- Same as shipping address -->
+                                 <h4 class="accordion-header">
+                                    <button id="same-as-shipping-address" class="accordion-button padding0 on-select"
+                                       type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive"
+                                       aria-expanded="true" aria-controls="collapsefive">
+                                       <div class="form-check padding0 margin0">
+                                          <input class="form-check-input" type="radio"
+                                             name="billingAddressFlexRadioDefault" id="flexRadioDefault4" checked>
+                                          <div class="d-flex justify-content-between">
+                                             <label class="form-check-label button-spacing cursor"
+                                                for="flexRadioDefault4">
+                                                Same as shipping address
+                                             </label>
+                                          </div>
+                                       </div>
+                                    </button>
+                                 </h4>
+                              </div>
+
+                              <div class="accordion-item">
+                                 <!-- Use a different billing address -->
+                                 <h4 class="accordion-header">
+                                    <button class="accordion-button collapsed padding0" type="button"
+                                       data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false"
+                                       aria-controls="collapsesix">
+                                       <div class="form-check padding0 margin0">
+                                          <input class="form-check-input" type="radio"
+                                             name="billingAddressFlexRadioDefault" id="flexRadioDefault5">
+                                          <div class="d-flex justify-content-between">
+                                             <label class="form-check-label cursor button-spacing"
+                                                for="flexRadioDefault5">
+                                                Use a different billing address
+                                             </label>
+                                          </div>
+                                 </h4>
+                                 <div id="collapsesix" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                       <div class="row">
+                                          <h3 class="d-flex justify-content-between">Billing address</h3>
+                                       </div>
+                                       <div class="row">
+                                          <div class="form-group col-md-12 mb-2">
+                                             <select name="countryCode" id="Select0" autocomplete="shipping country"
+                                                class="ZHJU6 _1k3449n5 _1k3449n3 _1fragemu0 oAlPg IWR5K tu1VS">
+                                                <option value="US">United States</option>
+                                                <option value="">---</option>
+                                                <option value="AR">Argentina</option>
+                                                <option value="AU">Australia</option>
+                                                <option value="AT">Austria</option>
+                                                <option value="BE">Belgium</option>
+                                                <option value="BM">Bermuda</option>
+                                                <option value="BO">Bolivia</option>
+                                                <option value="BR">Brazil</option>
+                                                <option value="BG">Bulgaria</option>
+                                                <option value="CA">Canada</option>
+                                                <option value="CL">Chile</option>
+                                                <option value="HR">Croatia</option>
+                                                <option value="CY">Cyprus</option>
+                                                <option value="CZ">Czechia</option>
+                                                <option value="DK">Denmark</option>
+                                                <option value="EC">Ecuador</option>
+                                                <option value="EE">Estonia</option>
+                                                <option value="FO">Faroe Islands</option>
+                                                <option value="FI">Finland</option>
+                                                <option value="FR">France</option>
+                                                <option value="DE">Germany</option>
+                                                <option value="GI">Gibraltar</option>
+                                                <option value="GR">Greece</option>
+                                                <option value="GG">Guernsey</option>
+                                                <option value="HK">Hong Kong SAR</option>
+                                                <option value="HU">Hungary</option>
+                                                <option value="IS">Iceland</option>
+                                                <option value="IE">Ireland</option>
+                                                <option value="IM">Isle of Man</option>
+                                                <option value="IL">Israel</option>
+                                                <option value="IT">Italy</option>
+                                                <option value="JP">Japan</option>
+                                                <option value="JE">Jersey</option>
+                                                <option value="LV">Latvia</option>
+                                                <option value="LT">Lithuania</option>
+                                                <option value="LU">Luxembourg</option>
+                                                <option value="MY">Malaysia</option>
+                                                <option value="MT">Malta</option>
+                                                <option value="MX">Mexico</option>
+                                                <option value="MC">Monaco</option>
+                                                <option value="NL">Netherlands</option>
+                                                <option value="NC">New Caledonia</option>
+                                                <option value="NZ">New Zealand</option>
+                                                <option value="MK">North Macedonia</option>
+                                                <option value="NO">Norway</option>
+                                                <option value="PY">Paraguay</option>
+                                                <option value="PE">Peru</option>
+                                                <option value="PH">Philippines</option>
+                                                <option value="PL">Poland</option>
+                                                <option value="PT">Portugal</option>
+                                                <option value="RE">Réunion</option>
+                                                <option value="RO">Romania</option>
+                                                <option value="RS">Serbia</option>
+                                                <option value="SG">Singapore</option>
+                                                <option value="SI">Slovenia</option>
+                                                <option value="ZA">South Africa</option>
+                                                <option value="KR">South Korea</option>
+                                                <option value="ES">Spain</option>
+                                                <option value="SE">Sweden</option>
+                                                <option value="CH">Switzerland</option>
+                                                <option value="TR">Türkiye</option>
+                                                <option value="AE">United Arab Emirates</option>
+                                                <option value="GB">United Kingdom</option>
+                                                <option value="US">United States</option>
+                                                <option value="UY">Uruguay</option>
+                                                <option value="VE">Venezuela</option>
+                                             </select>
+                                          </div>
+                                          <div class="form-group col-md-6  mb-2">
+                                             <input type="text" name="shipfirstName" placeholder="First Name"
+                                                class="form-control">
+                                          </div>
+                                          <div class="form-group col-md-6  mb-2">
+                                             <input type="text" name="shiplastName" placeholder="Last Name"
+                                                class="secss form-control">
+                                          </div>
+                                          <div class="form-group col-md-12  mb-2">
+                                             <div class="icons-col-set">
+                                                <input type="text" name="shipAddress1" placeholder="Address"
+                                                   class="ads1 form-control" spellcheck="false"
+                                                   data-threeds="shippingStreetAddress">
+                                                <div class="icons-col-mgrole">
+                                                   <img src="images/search.svg">
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="form-group col-md-12  mb-2">
+                                             <input type="text" name="shipAddress2"
+                                                placeholder="Apartment, suite, etc. (optional)"
+                                                class="form-control secss">
+                                          </div>
+                                          <div class="form-group col-md-4  mb-2">
+                                             <input type="text" name="City" placeholder="City"
+                                                class="shipzip form-control">
+                                          </div>
+                                          <div class="form-group col-md-4  mb-2">
+                                             <select name="zone" id="Select1" autocomplete="shipping address-level1"
+                                                class="ZHJU6 _1k3449n5 _1k3449n3 _1fragemu0 oAlPg IWR5K tu1VS">
+                                                <option hidden="" disabled="" value="">&nbsp;</option>
+                                                <option data-alternate-values="Alabama" value="AL">Alabama</option>
+                                                <option data-alternate-values="Alaska" value="AK">Alaska</option>
+                                                <option data-alternate-values="American Samoa" value="AS">American Samoa
+                                                </option>
+                                                <option data-alternate-values="Arizona" value="AZ">Arizona</option>
+                                                <option data-alternate-values="Arkansas" value="AR">Arkansas</option>
+                                                <option data-alternate-values="California" value="CA">California
+                                                </option>
+                                                <option data-alternate-values="Colorado" value="CO">Colorado</option>
+                                                <option data-alternate-values="Connecticut" value="CT">Connecticut
+                                                </option>
+                                                <option data-alternate-values="Delaware" value="DE">Delaware</option>
+                                                <option
+                                                   data-alternate-values="Federated States of Micronesia&quot;,&quot;Micronesia"
+                                                   value="FM">Micronesia</option>
+                                                <option data-alternate-values="Florida" value="FL">Florida</option>
+                                                <option data-alternate-values="Georgia" value="GA">Georgia</option>
+                                                <option data-alternate-values="Guam" value="GU">Guam</option>
+                                                <option data-alternate-values="Hawaii" value="HI">Hawaii</option>
+                                                <option data-alternate-values="Idaho" value="ID">Idaho</option>
+                                                <option data-alternate-values="Illinois" value="IL">Illinois</option>
+                                                <option data-alternate-values="Indiana" value="IN">Indiana</option>
+                                                <option data-alternate-values="Iowa" value="IA">Iowa</option>
+                                                <option data-alternate-values="Kansas" value="KS">Kansas</option>
+                                                <option data-alternate-values="Kentucky" value="KY">Kentucky</option>
+                                                <option data-alternate-values="Louisiana" value="LA">Louisiana</option>
+                                                <option data-alternate-values="Maine" value="ME">Maine</option>
+                                                <option data-alternate-values="Marshall Islands" value="MH">Marshall
+                                                   Islands</option>
+                                                <option data-alternate-values="Maryland" value="MD">Maryland</option>
+                                                <option data-alternate-values="Massachusetts" value="MA">Massachusetts
+                                                </option>
+                                                <option data-alternate-values="Michigan" value="MI">Michigan</option>
+                                                <option data-alternate-values="Minnesota" value="MN">Minnesota</option>
+                                                <option data-alternate-values="Mississippi" value="MS">Mississippi
+                                                </option>
+                                                <option data-alternate-values="Missouri" value="MO">Missouri</option>
+                                                <option data-alternate-values="Montana" value="MT">Montana</option>
+                                                <option data-alternate-values="Nebraska" value="NE">Nebraska</option>
+                                                <option data-alternate-values="Nevada" value="NV">Nevada</option>
+                                                <option data-alternate-values="New Hampshire" value="NH">New Hampshire
+                                                </option>
+                                                <option data-alternate-values="New Jersey" value="NJ">New Jersey
+                                                </option>
+                                                <option data-alternate-values="New Mexico" value="NM">New Mexico
+                                                </option>
+                                                <option data-alternate-values="New York" value="NY">New York</option>
+                                                <option data-alternate-values="North Carolina" value="NC">North Carolina
+                                                </option>
+                                                <option data-alternate-values="North Dakota" value="ND">North Dakota
+                                                </option>
+                                                <option data-alternate-values="Northern Mariana Islands" value="MP">
+                                                   Northern Mariana Islands</option>
+                                                <option data-alternate-values="Ohio" value="OH">Ohio</option>
+                                                <option data-alternate-values="Oklahoma" value="OK">Oklahoma</option>
+                                                <option data-alternate-values="Oregon" value="OR">Oregon</option>
+                                                <option data-alternate-values="Palau" value="PW">Palau</option>
+                                                <option data-alternate-values="Pennsylvania" value="PA">Pennsylvania
+                                                </option>
+                                                <option data-alternate-values="Puerto Rico" value="PR">Puerto Rico
+                                                </option>
+                                                <option data-alternate-values="Rhode Island" value="RI">Rhode Island
+                                                </option>
+                                                <option data-alternate-values="South Carolina" value="SC">South Carolina
+                                                </option>
+                                                <option data-alternate-values="South Dakota" value="SD">South Dakota
+                                                </option>
+                                                <option data-alternate-values="Tennessee" value="TN">Tennessee</option>
+                                                <option data-alternate-values="Texas" value="TX">Texas</option>
+                                                <option data-alternate-values="Utah" value="UT">Utah</option>
+                                                <option data-alternate-values="Vermont" value="VT">Vermont</option>
+                                                <option data-alternate-values="Virginia" value="VA">Virginia</option>
+                                                <option data-alternate-values="Washington" value="WA">Washington
+                                                </option>
+                                                <option
+                                                   data-alternate-values="District of Columbia&quot;,&quot;Washington DC"
+                                                   value="DC">Washington DC</option>
+                                                <option data-alternate-values="West Virginia" value="WV">West Virginia
+                                                </option>
+                                                <option data-alternate-values="Wisconsin" value="WI">Wisconsin</option>
+                                                <option data-alternate-values="Wyoming" value="WY">Wyoming</option>
+                                                <option
+                                                   data-alternate-values="Virgin Islands&quot;,&quot;U.S. Virgin Islands"
+                                                   value="VI">U.S. Virgin Islands</option>
+                                                <option data-alternate-values="Armed Forces Americas" value="AA">Armed
+                                                   Forces Americas</option>
+                                                <option data-alternate-values="Armed Forces Europe" value="AE">Armed
+                                                   Forces Europe</option>
+                                                <option data-alternate-values="Armed Forces Pacific" value="AP">Armed
+                                                   Forces Pacific</option>
+                                             </select>
+                                          </div>
+                                          <div class="form-group col-md-4  mb-2">
+                                             <input type="text" name="Postal Code" placeholder="Postal Code"
+                                                class="shipzip form-control">
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="last-payment-btn">
+                           <span class="px-0">By continuing with your payment, you agree that your subscription will
+                              automatically renew and your card will be charged at the price and frequency on this page
+                              until you cancel. Cancel anytime through your online account. You also agree to our Terms
+                              of Service and Privacy policy</span>
+
+                           <!-- PAY NOW Button -->
+                           <div class="form-group col-md-12  mb-2 btn-role mt-3 px-0">
+                              <button id="paynow-button" type='submit' class="btn pay">PAY NOW</button>
+                              <button id="payPal-button" class="payPal-button hide">
+                                 <p>PAY WITH</p>
+                                 <img src="./images/payPal-btn.svg" alt="payPal-logo" width="100px">
                               </button>
-                           </h4>
-                           <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                 <div class="payment-form controlform">
-                                    <div class="row">
-                                       <div class="form-group col-md-12 mb-2">
-                                          <div class="icons-col-set">
-                                             <input type="text" name="" placeholder="Card number" class="form-control">
-                                             <div class="icons-col-mgrole">
-                                                <img src="images/padlock.svg">
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="form-group col-6 mb-2">
-                                          <input type="text" name="" placeholder="Expiration date (MM / YY)" class="form-control">
-                                       </div>
-                                       <div class="form-group col-6  mb-2">
-                                          <div class="icons-col-set">
-                                             <input type="text" name="" placeholder="Security code" class="form-control">
-                                             <div class="icons-col-mgrole">
-                                                <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="3-digit security code usually found on the back of your card. American Express cards have a 4-digit code located on the front."><img src="images/question.svg"></a>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="form-group col-md-12 mb-2">
-                                          <input type="text" name="" placeholder="Name on card" class="form-control">
-                                       </div>
-                                       <div class="form-check col-md-12 mb-2 py-3 left-check-padding">
-                                          <!-- <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> -->
-                                          <input class="form-check-input" name="billShipSame" type="checkbox" checked="">
-                                          <label class="form-check-label" for="checkbox-sh">
-                                          Use shipping address as billing address
-                                          </label>
-                                       </div>
-                                    </div>
-                                    <div class="row">
-                                       <h3 class="d-flex justify-content-between">Billing address</h3>
-                                    </div>
-                                    <div class="row">
-                                       <div class="form-group col-md-12 mb-2">
-                                          <select name="countryCode"  required="" autocomplete="shipping country" class="">
-                                             <option value="US">United States</option>
-                                             <option value="">---</option>
-                                             <option value="AR">Argentina</option>
-                                             <option value="AU">Australia</option>
-                                             <option value="AT">Austria</option>
-                                             <option value="BE">Belgium</option>
-                                             <option value="BM">Bermuda</option>
-                                             <option value="BO">Bolivia</option>
-                                             <option value="BR">Brazil</option>
-                                             <option value="BG">Bulgaria</option>
-                                             <option value="CA">Canada</option>
-                                             <option value="CL">Chile</option>
-                                             <option value="HR">Croatia</option>
-                                             <option value="CY">Cyprus</option>
-                                             <option value="CZ">Czechia</option>
-                                             <option value="DK">Denmark</option>
-                                             <option value="EC">Ecuador</option>
-                                             <option value="EE">Estonia</option>
-                                             <option value="FO">Faroe Islands</option>
-                                             <option value="FI">Finland</option>
-                                             <option value="FR">France</option>
-                                             <option value="DE">Germany</option>
-                                             <option value="GI">Gibraltar</option>
-                                             <option value="GR">Greece</option>
-                                             <option value="GG">Guernsey</option>
-                                             <option value="HK">Hong Kong SAR</option>
-                                             <option value="HU">Hungary</option>
-                                             <option value="IS">Iceland</option>
-                                             <option value="IE">Ireland</option>
-                                             <option value="IM">Isle of Man</option>
-                                             <option value="IL">Israel</option>
-                                             <option value="IT">Italy</option>
-                                             <option value="JP">Japan</option>
-                                             <option value="JE">Jersey</option>
-                                             <option value="LV">Latvia</option>
-                                             <option value="LT">Lithuania</option>
-                                             <option value="LU">Luxembourg</option>
-                                             <option value="MY">Malaysia</option>
-                                             <option value="MT">Malta</option>
-                                             <option value="MX">Mexico</option>
-                                             <option value="MC">Monaco</option>
-                                             <option value="NL">Netherlands</option>
-                                             <option value="NC">New Caledonia</option>
-                                             <option value="NZ">New Zealand</option>
-                                             <option value="MK">North Macedonia</option>
-                                             <option value="NO">Norway</option>
-                                             <option value="PY">Paraguay</option>
-                                             <option value="PE">Peru</option>
-                                             <option value="PH">Philippines</option>
-                                             <option value="PL">Poland</option>
-                                             <option value="PT">Portugal</option>
-                                             <option value="RE">Réunion</option>
-                                             <option value="RO">Romania</option>
-                                             <option value="RS">Serbia</option>
-                                             <option value="SG">Singapore</option>
-                                             <option value="SI">Slovenia</option>
-                                             <option value="ZA">South Africa</option>
-                                             <option value="KR">South Korea</option>
-                                             <option value="ES">Spain</option>
-                                             <option value="SE">Sweden</option>
-                                             <option value="CH">Switzerland</option>
-                                             <option value="TR">Türkiye</option>
-                                             <option value="AE">United Arab Emirates</option>
-                                             <option value="GB">United Kingdom</option>
-                                             <option value="US">United States</option>
-                                             <option value="UY">Uruguay</option>
-                                             <option value="VE">Venezuela</option>
-                                          </select>
-                                       </div>
-                                       <div class="form-group col-md-6  mb-2">
-                                          <input type="text" name="shipfirstName" placeholder="First Name" class="form-control" isrequired="">
-                                       </div>
-                                       <div class="form-group col-md-6  mb-2">
-                                          <input type="text" name="shiplastName" placeholder="Last Name" class="secss form-control" isrequired="">
-                                       </div>
-                                       <div class="form-group col-md-12  mb-2">
-                                          <div class="icons-col-set">
-                                             <input type="text" name="shipAddress1" placeholder="Address" class="ads1 form-control"  spellcheck="false" isrequired="" data-threeds="shippingStreetAddress">
-                                             <div class="icons-col-mgrole">
-                                                <img src="images/search.svg">
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="form-group col-md-12  mb-2">
-                                          <input type="text" name="shipAddress2" placeholder="Apartment, suite, etc. (optional)" class="form-control secss">
-                                       </div>
-                                       <div class="form-group col-md-4 mb-2">
-                                          <input type="text" placeholder="City" class="shipzip form-control">
-                                       </div>
-                                       <div class="form-group col-md-4 mb-2">
-                                          <select name="zone"  required="" autocomplete="shipping address-level1">
-                                             <option hidden="" disabled="" value="">&nbsp;</option>
-                                             <option data-alternate-values="Alabama" value="AL">Alabama</option>
-                                             <option data-alternate-values="Alaska" value="AK">Alaska</option>
-                                             <option data-alternate-values="American Samoa" value="AS">American Samoa</option>
-                                             <option data-alternate-values="Arizona" value="AZ">Arizona</option>
-                                             <option data-alternate-values="Arkansas" value="AR">Arkansas</option>
-                                             <option data-alternate-values="California" value="CA">California</option>
-                                             <option data-alternate-values="Colorado" value="CO">Colorado</option>
-                                             <option data-alternate-values="Connecticut" value="CT">Connecticut</option>
-                                             <option data-alternate-values="Delaware" value="DE">Delaware</option>
-                                             <option data-alternate-values="Federated States of Micronesia&quot;,&quot;Micronesia" value="FM">Micronesia</option>
-                                             <option data-alternate-values="Florida" value="FL">Florida</option>
-                                             <option data-alternate-values="Georgia" value="GA">Georgia</option>
-                                             <option data-alternate-values="Guam" value="GU">Guam</option>
-                                             <option data-alternate-values="Hawaii" value="HI">Hawaii</option>
-                                             <option data-alternate-values="Idaho" value="ID">Idaho</option>
-                                             <option data-alternate-values="Illinois" value="IL">Illinois</option>
-                                             <option data-alternate-values="Indiana" value="IN">Indiana</option>
-                                             <option data-alternate-values="Iowa" value="IA">Iowa</option>
-                                             <option data-alternate-values="Kansas" value="KS">Kansas</option>
-                                             <option data-alternate-values="Kentucky" value="KY">Kentucky</option>
-                                             <option data-alternate-values="Louisiana" value="LA">Louisiana</option>
-                                             <option data-alternate-values="Maine" value="ME">Maine</option>
-                                             <option data-alternate-values="Marshall Islands" value="MH">Marshall Islands</option>
-                                             <option data-alternate-values="Maryland" value="MD">Maryland</option>
-                                             <option data-alternate-values="Massachusetts" value="MA">Massachusetts</option>
-                                             <option data-alternate-values="Michigan" value="MI">Michigan</option>
-                                             <option data-alternate-values="Minnesota" value="MN">Minnesota</option>
-                                             <option data-alternate-values="Mississippi" value="MS">Mississippi</option>
-                                             <option data-alternate-values="Missouri" value="MO">Missouri</option>
-                                             <option data-alternate-values="Montana" value="MT">Montana</option>
-                                             <option data-alternate-values="Nebraska" value="NE">Nebraska</option>
-                                             <option data-alternate-values="Nevada" value="NV">Nevada</option>
-                                             <option data-alternate-values="New Hampshire" value="NH">New Hampshire</option>
-                                             <option data-alternate-values="New Jersey" value="NJ">New Jersey</option>
-                                             <option data-alternate-values="New Mexico" value="NM">New Mexico</option>
-                                             <option data-alternate-values="New York" value="NY">New York</option>
-                                             <option data-alternate-values="North Carolina" value="NC">North Carolina</option>
-                                             <option data-alternate-values="North Dakota" value="ND">North Dakota</option>
-                                             <option data-alternate-values="Northern Mariana Islands" value="MP">Northern Mariana Islands</option>
-                                             <option data-alternate-values="Ohio" value="OH">Ohio</option>
-                                             <option data-alternate-values="Oklahoma" value="OK">Oklahoma</option>
-                                             <option data-alternate-values="Oregon" value="OR">Oregon</option>
-                                             <option data-alternate-values="Palau" value="PW">Palau</option>
-                                             <option data-alternate-values="Pennsylvania" value="PA">Pennsylvania</option>
-                                             <option data-alternate-values="Puerto Rico" value="PR">Puerto Rico</option>
-                                             <option data-alternate-values="Rhode Island" value="RI">Rhode Island</option>
-                                             <option data-alternate-values="South Carolina" value="SC">South Carolina</option>
-                                             <option data-alternate-values="South Dakota" value="SD">South Dakota</option>
-                                             <option data-alternate-values="Tennessee" value="TN">Tennessee</option>
-                                             <option data-alternate-values="Texas" value="TX">Texas</option>
-                                             <option data-alternate-values="Utah" value="UT">Utah</option>
-                                             <option data-alternate-values="Vermont" value="VT">Vermont</option>
-                                             <option data-alternate-values="Virginia" value="VA">Virginia</option>
-                                             <option data-alternate-values="Washington" value="WA">Washington</option>
-                                             <option data-alternate-values="District of Columbia&quot;,&quot;Washington DC" value="DC">Washington DC</option>
-                                             <option data-alternate-values="West Virginia" value="WV">West Virginia</option>
-                                             <option data-alternate-values="Wisconsin" value="WI">Wisconsin</option>
-                                             <option data-alternate-values="Wyoming" value="WY">Wyoming</option>
-                                             <option data-alternate-values="Virgin Islands&quot;,&quot;U.S. Virgin Islands" value="VI">U.S. Virgin Islands</option>
-                                             <option data-alternate-values="Armed Forces Americas" value="AA">Armed Forces Americas</option>
-                                             <option data-alternate-values="Armed Forces Europe" value="AE">Armed Forces Europe</option>
-                                             <option data-alternate-values="Armed Forces Pacific" value="AP">Armed Forces Pacific</option>
-                                          </select>
-                                       </div>
-                                       <div class="form-group col-md-4  mb-2">
-                                          <input type="text" placeholder="Postal Code" class="shipzip form-control">
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
                            </div>
                         </div>
-                        <div class="accordion-item">
-                           <h4 class="accordion-header">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <div class="d-flex justify-content-between">
-                                       <label class="form-check-label" for="flexRadioDefault1">
-                                       PayPal
-                                       <span class="images">
-                                       <img src="images/checkout/paypal-3.png" class="img-fluid"></span>
-                                       </label>
-                                    </div>
-                           </h4>
-                           <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                           <div class="accordion-body">
-                           <div class="paypal-box">
-                           <img src="images/checkout/check-box.jpg" class="img-fluid">
-                           <p>After clicking "Pay with PayPal", you will be redirected to PayPal to complete your purchase securely.</p>
-                           </div>
-                           </div>
-                           </div>
-                           </div>
+                        <hr class="d-none d-sm-none d-lg-block">
+                        <div class="policy-row mt-4 d-none d-sm-none d-lg-block">
+                           <ul class="list-unstyled">
+                              <li><a href="#" data-bs-toggle="modal" data-bs-target="#Refund">Refund policy</a></li>
+                              <li><a href="#" data-bs-toggle="modal" data-bs-target="#Shipping">Shipping policy</a></li>
+                              <li><a href="#" data-bs-toggle="modal" data-bs-target="#Privacy">Privacy policy</a></li>
+                              <li><a href="#" data-bs-toggle="modal" data-bs-target="#Terms">Terms of service</a></li>
+                              <li><a href="#" data-bs-toggle="modal" data-bs-target="#Cancellation">Cancellation
+                                    policy</a></li>
+                              <li><a href="#" data-bs-toggle="modal" data-bs-target="#Contact">Contact information</a>
+                              </li>
+                           </ul>
                         </div>
                      </div>
-                     <div class="controlform-accordion controlform   mt-4 row">
-                     <h3 class="d-flex px-0 mb-3">Remember me</h3>
-                     <div class="accordion" id="accordionExample">
-                     <div class="accordion-item">
-                     <h4 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                     <div class="form-check">
-                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                     <div class="d-flex justify-content-between">
-                     <label class="form-check-label" for="flexRadioDefault1">
-                     Save my information for a faster checkout                                       
-                     </label>
-                     </div>
-                     </h4>
-                     <div id="collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                     <div class="accordion-body">
-                     <div class="mobile-number">
-                     <div class="form-group col-md-12 mb-2 ">
-                     <div class="icons-col-set icons-col-set-mobile">
-                     <input type="number" placeholder="Mobile phone number" class="form-control">
-                     <div class="icons-col-mgrole">
-                     <img src="images/smartphone.svg">
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     <div class="controlform-accordion controlform mt-4 row">
-                     <h3 class="d-flex px-0 mb-3">Billing address</h3>
-                     <div class="accordion" id="accordionExample">
-                     <div class="accordion-item">
-                     <h4 class="accordion-header">
-                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
-                     <div class="form-check">
-                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                     <div class="d-flex justify-content-between">
-                     <label class="form-check-label" for="flexRadioDefault1">
-                     Same as shipping address                                               
-                     </label>
-                     </div>
-                     </div>
-                     </button>
-                     </h4>
-                     </div>
-                     <div class="accordion-item">
-                     <h4 class="accordion-header">
-                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
-                     <div class="form-check">
-                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                     <div class="d-flex justify-content-between">
-                     <label class="form-check-label" for="flexRadioDefault1">
-                     Use a different billing address
-                     </label>
-                     </div>
-                     </h4>
-                     <div id="collapsesix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                     <div class="accordion-body">
-                     <div class="row">
-                     <h3 class="d-flex justify-content-between">Billing address</h3>
-                     </div>
-                     <div class="row">
-                     <div class="form-group col-md-12 mb-2">
-                     <select name="countryCode" id="Select0" required="" autocomplete="shipping country" class="ZHJU6 _1k3449n5 _1k3449n3 _1fragemu0 oAlPg IWR5K tu1VS">
-                     <option value="US">United States</option>
-                     <option value="">---</option>
-                     <option value="AR">Argentina</option>
-                     <option value="AU">Australia</option>
-                     <option value="AT">Austria</option>
-                     <option value="BE">Belgium</option>
-                     <option value="BM">Bermuda</option>
-                     <option value="BO">Bolivia</option>
-                     <option value="BR">Brazil</option>
-                     <option value="BG">Bulgaria</option>
-                     <option value="CA">Canada</option>
-                     <option value="CL">Chile</option>
-                     <option value="HR">Croatia</option>
-                     <option value="CY">Cyprus</option>
-                     <option value="CZ">Czechia</option>
-                     <option value="DK">Denmark</option>
-                     <option value="EC">Ecuador</option>
-                     <option value="EE">Estonia</option>
-                     <option value="FO">Faroe Islands</option>
-                     <option value="FI">Finland</option>
-                     <option value="FR">France</option>
-                     <option value="DE">Germany</option>
-                     <option value="GI">Gibraltar</option>
-                     <option value="GR">Greece</option>
-                     <option value="GG">Guernsey</option>
-                     <option value="HK">Hong Kong SAR</option>
-                     <option value="HU">Hungary</option>
-                     <option value="IS">Iceland</option>
-                     <option value="IE">Ireland</option>
-                     <option value="IM">Isle of Man</option>
-                     <option value="IL">Israel</option>
-                     <option value="IT">Italy</option>
-                     <option value="JP">Japan</option>
-                     <option value="JE">Jersey</option>
-                     <option value="LV">Latvia</option>
-                     <option value="LT">Lithuania</option>
-                     <option value="LU">Luxembourg</option>
-                     <option value="MY">Malaysia</option>
-                     <option value="MT">Malta</option>
-                     <option value="MX">Mexico</option>
-                     <option value="MC">Monaco</option>
-                     <option value="NL">Netherlands</option>
-                     <option value="NC">New Caledonia</option>
-                     <option value="NZ">New Zealand</option>
-                     <option value="MK">North Macedonia</option>
-                     <option value="NO">Norway</option>
-                     <option value="PY">Paraguay</option>
-                     <option value="PE">Peru</option>
-                     <option value="PH">Philippines</option>
-                     <option value="PL">Poland</option>
-                     <option value="PT">Portugal</option>
-                     <option value="RE">Réunion</option>
-                     <option value="RO">Romania</option>
-                     <option value="RS">Serbia</option>
-                     <option value="SG">Singapore</option>
-                     <option value="SI">Slovenia</option>
-                     <option value="ZA">South Africa</option>
-                     <option value="KR">South Korea</option>
-                     <option value="ES">Spain</option>
-                     <option value="SE">Sweden</option>
-                     <option value="CH">Switzerland</option>
-                     <option value="TR">Türkiye</option>
-                     <option value="AE">United Arab Emirates</option>
-                     <option value="GB">United Kingdom</option>
-                     <option value="US">United States</option>
-                     <option value="UY">Uruguay</option>
-                     <option value="VE">Venezuela</option>
-                     </select>
-                     </div>
-                     <div class="form-group col-md-6  mb-2">
-                     <input type="text" name="shipfirstName" placeholder="First Name" class="form-control" isrequired="">
-                     </div>
-                     <div class="form-group col-md-6  mb-2">
-                     <input type="text" name="shiplastName" placeholder="Last Name" class="secss form-control" isrequired="">
-                     </div>
-                     <div class="form-group col-md-12  mb-2">
-                     <div class="icons-col-set">
-                     <input type="text" name="shipAddress1" placeholder="Address" class="ads1 form-control"  spellcheck="false" isrequired="" data-threeds="shippingStreetAddress">
-                     <div class="icons-col-mgrole">
-                     <img src="images/search.svg">
-                     </div>
-                     </div>
-                     </div>
-                     <div class="form-group col-md-12  mb-2">
-                     <input type="text" name="shipAddress2" placeholder="Apartment, suite, etc. (optional)" class="form-control secss">
-                     </div>
-                     <div class="form-group col-md-4  mb-2">
-                     <input type="text" placeholder="City" class="shipzip form-control">
-                     </div>
-                     <div class="form-group col-md-4  mb-2">
-                     <select name="zone" id="Select1" required="" autocomplete="shipping address-level1" class="ZHJU6 _1k3449n5 _1k3449n3 _1fragemu0 oAlPg IWR5K tu1VS">
-                     <option hidden="" disabled="" value="">&nbsp;</option>
-                     <option data-alternate-values="Alabama" value="AL">Alabama</option>
-                     <option data-alternate-values="Alaska" value="AK">Alaska</option>
-                     <option data-alternate-values="American Samoa" value="AS">American Samoa</option>
-                     <option data-alternate-values="Arizona" value="AZ">Arizona</option>
-                     <option data-alternate-values="Arkansas" value="AR">Arkansas</option>
-                     <option data-alternate-values="California" value="CA">California</option>
-                     <option data-alternate-values="Colorado" value="CO">Colorado</option>
-                     <option data-alternate-values="Connecticut" value="CT">Connecticut</option>
-                     <option data-alternate-values="Delaware" value="DE">Delaware</option>
-                     <option data-alternate-values="Federated States of Micronesia&quot;,&quot;Micronesia" value="FM">Micronesia</option>
-                     <option data-alternate-values="Florida" value="FL">Florida</option>
-                     <option data-alternate-values="Georgia" value="GA">Georgia</option>
-                     <option data-alternate-values="Guam" value="GU">Guam</option>
-                     <option data-alternate-values="Hawaii" value="HI">Hawaii</option>
-                     <option data-alternate-values="Idaho" value="ID">Idaho</option>
-                     <option data-alternate-values="Illinois" value="IL">Illinois</option>
-                     <option data-alternate-values="Indiana" value="IN">Indiana</option>
-                     <option data-alternate-values="Iowa" value="IA">Iowa</option>
-                     <option data-alternate-values="Kansas" value="KS">Kansas</option>
-                     <option data-alternate-values="Kentucky" value="KY">Kentucky</option>
-                     <option data-alternate-values="Louisiana" value="LA">Louisiana</option>
-                     <option data-alternate-values="Maine" value="ME">Maine</option>
-                     <option data-alternate-values="Marshall Islands" value="MH">Marshall Islands</option>
-                     <option data-alternate-values="Maryland" value="MD">Maryland</option>
-                     <option data-alternate-values="Massachusetts" value="MA">Massachusetts</option>
-                     <option data-alternate-values="Michigan" value="MI">Michigan</option>
-                     <option data-alternate-values="Minnesota" value="MN">Minnesota</option>
-                     <option data-alternate-values="Mississippi" value="MS">Mississippi</option>
-                     <option data-alternate-values="Missouri" value="MO">Missouri</option>
-                     <option data-alternate-values="Montana" value="MT">Montana</option>
-                     <option data-alternate-values="Nebraska" value="NE">Nebraska</option>
-                     <option data-alternate-values="Nevada" value="NV">Nevada</option>
-                     <option data-alternate-values="New Hampshire" value="NH">New Hampshire</option>
-                     <option data-alternate-values="New Jersey" value="NJ">New Jersey</option>
-                     <option data-alternate-values="New Mexico" value="NM">New Mexico</option>
-                     <option data-alternate-values="New York" value="NY">New York</option>
-                     <option data-alternate-values="North Carolina" value="NC">North Carolina</option>
-                     <option data-alternate-values="North Dakota" value="ND">North Dakota</option>
-                     <option data-alternate-values="Northern Mariana Islands" value="MP">Northern Mariana Islands</option>
-                     <option data-alternate-values="Ohio" value="OH">Ohio</option>
-                     <option data-alternate-values="Oklahoma" value="OK">Oklahoma</option>
-                     <option data-alternate-values="Oregon" value="OR">Oregon</option>
-                     <option data-alternate-values="Palau" value="PW">Palau</option>
-                     <option data-alternate-values="Pennsylvania" value="PA">Pennsylvania</option>
-                     <option data-alternate-values="Puerto Rico" value="PR">Puerto Rico</option>
-                     <option data-alternate-values="Rhode Island" value="RI">Rhode Island</option>
-                     <option data-alternate-values="South Carolina" value="SC">South Carolina</option>
-                     <option data-alternate-values="South Dakota" value="SD">South Dakota</option>
-                     <option data-alternate-values="Tennessee" value="TN">Tennessee</option>
-                     <option data-alternate-values="Texas" value="TX">Texas</option>
-                     <option data-alternate-values="Utah" value="UT">Utah</option>
-                     <option data-alternate-values="Vermont" value="VT">Vermont</option>
-                     <option data-alternate-values="Virginia" value="VA">Virginia</option>
-                     <option data-alternate-values="Washington" value="WA">Washington</option>
-                     <option data-alternate-values="District of Columbia&quot;,&quot;Washington DC" value="DC">Washington DC</option>
-                     <option data-alternate-values="West Virginia" value="WV">West Virginia</option>
-                     <option data-alternate-values="Wisconsin" value="WI">Wisconsin</option>
-                     <option data-alternate-values="Wyoming" value="WY">Wyoming</option>
-                     <option data-alternate-values="Virgin Islands&quot;,&quot;U.S. Virgin Islands" value="VI">U.S. Virgin Islands</option>
-                     <option data-alternate-values="Armed Forces Americas" value="AA">Armed Forces Americas</option>
-                     <option data-alternate-values="Armed Forces Europe" value="AE">Armed Forces Europe</option>
-                     <option data-alternate-values="Armed Forces Pacific" value="AP">Armed Forces Pacific</option>
-                     </select>
-                     </div>
-                     <div class="form-group col-md-4  mb-2">
-                     <input type="text" placeholder="Postal Code" class="shipzip form-control">
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     </div>
-                     <div class="last-payment-btn">
-                     <span class="px-0">By continuing with your payment, you agree that your subscription will automatically renew and your card will be charged at the price and frequency on this page until you cancel. Cancel anytime through your online account. You also agree to our Terms of Service and Privacy policy</span>
-                     <div class="form-group col-md-12  mb-2 btn-role mt-3 px-0">
-                     <button type='button' class="btn pay">Pay now</button>
-                     </div>                                    
-                     </div>
-                     <hr class="d-none d-sm-none d-lg-block">
-                     <div class="policy-row mt-4 d-none d-sm-none d-lg-block">
-                     <ul class="list-unstyled">
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#Refund">Refund policy</a></li>
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#Shipping">Shipping policy</a></li>
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#Privacy">Privacy policy</a></li>
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#Terms">Terms of service</a></li>
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#Cancellation">Cancellation policy</a></li>
-                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#Contact">Contact information</a></li>
-                     </ul>
-                     </div>
-                     </div>
-                     </div>
-                     <div class="col-md-6 rightside-bg">
-                        <div class="stickyform">
-                           <div class="right-side-form">
-                              <div class="controlform  side-baar item">
-                                 <div class="product-card row">
-                                    <div class="col-2 px-0">
-                                       <div class="product-image">
-                                          <img src="images/slider/green/4.png" alt="">
-                                          <div class="number-joit">1</div>
-                                       </div>
+                  </div>
+                  <div class="col-md-6 rightside-bg">
+                     <div class="stickyform">
+                        <div class="right-side-form">
+
+                           <!-- Products -->
+                           <div class="controlform  side-baar item">
+                              <div id="products-container"></div>
+
+                              <!-- Free Gift 1 -->
+                              <div class="product-card row">
+                                 <div class="col-2 px-0">
+                                    <div class="product-image">
+                                       <img src="images/nty.png" alt="">
                                     </div>
-                                    <div class="product-info col-8">
-                                       <div class="product-title">YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</div>
-                                       <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                                    </div>
-                                    <div class="product-price col-2">$26.00</div>
                                  </div>
-                                 <div class="product-card row">
-                                    <div class="col-2 px-0">
-                                       <div class="product-image">
-                                          <img src="images/slider/4.png" alt="">
-                                          <div class="number-joit">1</div>
-                                       </div>
-                                    </div>
-                                    <div class="product-info col-8">
-                                       <div class="product-title">YOMZ DAILY NUTRITION - 28 Packets 40% Off Auto Renew</div>
-                                       <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                                    </div>
-                                    <div class="product-price col-2">$26.00</div>
+                                 <div class="product-info col-8">
+                                    <div class="product-title">INCLUDED FREE <strong>Collectable Sticker</strong> </div>
+                                    <div class="product-subtitle">YOMZ Original / 1 Case</div>
                                  </div>
-                                 <div class="product-card row">
-                                    <div class="col-2 px-0">
-                                       <div class="product-image">
-                                          <img src="images/nty.png" alt="">
-                                       </div>
+                                 <div class="product-price col-2">FREE</div>
+                              </div>
+
+                              <!-- Free Gift 2 -->
+                              <div class="product-card row">
+                                 <div class="col-2 px-0">
+                                    <div class="product-image">
+                                       <img src="images/white.jpg" alt="">
                                     </div>
-                                    <div class="product-info col-8">
-                                       <div class="product-title">INCLUDED FREE <strong>Collectable Sticker</strong> </div>
-                                       <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                                    </div>
-                                    <div class="product-price col-2">FREE</div>
                                  </div>
-                                 <div class="product-card row">
-                                    <div class="col-2 px-0">
-                                       <div class="product-image">
-                                          <img src="images/white.jpg" alt="">
-                                       </div>
-                                    </div>
-                                    <div class="product-info col-8">
-                                       <div class="product-title">INCLUDED FREE <strong>Donation</strong> </div>
-                                       <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                                    </div>
-                                    <div class="product-price col-2">FREE</div>
+                                 <div class="product-info col-8">
+                                    <div class="product-title">INCLUDED FREE <strong>Donation</strong> </div>
+                                    <div class="product-subtitle">YOMZ Original / 1 Case</div>
                                  </div>
-                                 <div class="product-card row">
-                                    <div class="col-2 px-0">
-                                       <div class="product-image">
-                                          <img src="images/white.jpg" alt="">
-                                       </div>
+                                 <div class="product-price col-2">FREE</div>
+                              </div>
+
+                              <!-- Free Gift 3 -->
+                              <div class="product-card row">
+                                 <div class="col-2 px-0">
+                                    <div class="product-image">
+                                       <img src="images/white.jpg" alt="">
                                     </div>
-                                    <div class="product-info col-8">
-                                       <div class="product-title">INCLUDED FREE <strong>Giveaway Entry</strong> </div>
-                                       <div class="product-subtitle">YOMZ Original / 1 Case</div>
-                                    </div>
-                                    <div class="product-price col-2">FREE</div>
+                                 </div>
+                                 <div class="product-info col-8">
+                                    <div class="product-title">INCLUDED FREE <strong>Giveaway Entry</strong> </div>
+                                    <div class="product-subtitle">YOMZ Original / 1 Case</div>
+                                 </div>
+                                 <div class="product-price col-2">FREE</div>
+                              </div>
+                           </div>
+
+                           <div class="row controlform apply-form">
+                              <div class="form-group col-9 px-1 mb-2">
+                                 <input name="couponCode" id="couponCode" type="text" class="secss form-control"
+                                    placeholder="Coupon Code" spellcheck="false" value="">
+                              </div>
+                              <div class="form-group col-3 px-1 mb-2">
+                                 <div class="role-btn">
+                                    <button type="button" class="btn btn-primary">APPLY</button>
                                  </div>
                               </div>
-                              <div class="row controlform apply-form">
-                                 <div class="form-group col-9 px-1 mb-2">
-                                    <input name="couponCode" id="couponCode" type="text" class="secss form-control" placeholder="Coupon Code" spellcheck="false" value="">
+                           </div>
+
+                           <!-- Total section -->
+                           <!-- Sub total -->
+                           <div class="price-count">
+                              <div class="d-flex justify-content-between mb-2">
+                                 <span id="total-items">Subtotal · 3 items</span>
+                                 <strong id="sut-total">$44.00</strong>
+                              </div>
+
+                              <div class="d-flex justify-content-between mb-2">
+                                 <span>Shipping</span>
+                                 <strong>Enter shipping address</strong>
+                              </div>
+
+                              <!-- Total -->
+                              <div class="d-flex justify-content-between total-price">
+                                 <span>Total</span>
+                                 <strong id="final-total"><sub>USD</sub> $44.00</strong>
+                              </div>
+                           </div>
+
+                           <hr>
+                           <p class="ordersum">This order has a recurring charge for multiple items.</p>
+                           <div class="mission-part">
+                              <h3>You are part of our mission</h3>
+                              <div class="col d-flex align-items-start">
+                                 <div class="icon-square flex-shrink-0 me-3">
+                                    <img src="images/moneyback.png" class="img-fluid">
                                  </div>
-                                 <div class="form-group col-3 px-1 mb-2">
-                                    <div class="role-btn">
-                                       <button type="button" class="btn btn-primary">APPLY</button>
-                                    </div>
+
+                                 <!-- YOMZ Picky Momz Guarantee -->
+                                 <div>
+                                    <h4>YOMZ Picky Momz Guarantee</h4>
+                                    <p>If YOMZ doesn't transform your
+                                       family's health and life, please
+                                       reach out to us within 60 days
+                                       of receiving your order and you'll
+                                       get a full refund - no hassles!</p>
                                  </div>
                               </div>
-                              <div class="price-count">
-                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Subtotal · 3 items</span>
-                                    <strong>$44.00</strong>
+                              <div class="col d-flex align-items-start">
+                                 <div class="icon-square flex-shrink-0 me-3">
+                                    <img src="images/earth.png" class="img-fluid">
                                  </div>
-                                 <div class="d-flex justify-content-between mb-2">
-                                    <span>Shipping</span>
-                                    <strong>Enter shipping address</strong>
-                                 </div>
-                                 <div class="d-flex justify-content-between total-price">
-                                    <span>Total</span>
-                                    <strong><sub>USD</sub> $44.00</strong>
-                                 </div>
-                              </div>
-                              <hr>
-                              <p class="ordersum">This order has a recurring charge for multiple items.</p>
-                              <div class="mission-part">
-                                 <h3>You are part of our mission</h3>
-                                 <div class="col d-flex align-items-start">
-                                    <div class="icon-square flex-shrink-0 me-3">
-                                       <img src="images/moneyback.png" class="img-fluid">
-                                    </div>
-                                    <div>
-                                       <h4>100% Satisfaction Guarantee</h4>
-                                       <p>If you don't love earth breeze more than your old detergent you will get a full refund - no questions asked, and no return necessary!</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-flex align-items-start">
-                                    <div class="icon-square flex-shrink-0 me-3">
-                                       <img src="images/earth.png" class="img-fluid">
-                                    </div>
-                                    <div>
-                                       <h4>Make An Impact Today</h4>
-                                       <p>Easy to use. Removes the toughest stains. Say goodbye to nasty odors. Great for the planet. Fast shipping and dedicated customer support.</p>
-                                    </div>
-                                 </div>
-                                 <div class="col d-flex align-items-start">
-                                    <div class="icon-square flex-shrink-0 me-3">
-                                       <img src="images/free-delivery.png" class="img-fluid">
-                                    </div>
-                                    <div>
-                                       <h4>FREE Carbon Offset Shipping</h4>
-                                       <p>All orders ship in 3-5 days. We offer FREE carbon offset shipping.</p>
-                                    </div>
+
+                                 <!-- Make An Impact Today -->
+                                 <div>
+                                    <h4>Make An Impact Today</h4>
+                                    <p>Your order today will help us end
+                                       Hidden Hunger for 100 million
+                                       people because we'll donate 1%
+                                       of the proceeds to a foundation
+                                       focused on ending child hunger.</p>
                                  </div>
                               </div>
-                              <hr class="d-sm-block d-lg-none">
-                              <div class="policy-row mt-4 d-sm-block d-lg-none">
-                                 <ul class="list-unstyled">
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Refund">Refund policy</a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Shipping">Shipping policy</a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Privacy">Privacy policy</a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Terms">Terms of service</a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Cancellation">Cancellation policy</a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#Contact">Contact information</a></li>
-                                 </ul>
+                              <div class="col d-flex align-items-start">
+                                 <div class="icon-square flex-shrink-0 me-3">
+                                    <img src="images/free-delivery.png" class="img-fluid">
+                                 </div>
+                                 <div>
+                                    <h4>FREE Carbon Offset Shipping</h4>
+                                    <p>All orders ship in 3-5 days. We offer FREE carbon offset shipping.</p>
+                                 </div>
                               </div>
+                           </div>
+                           <hr class="d-sm-block d-lg-none">
+                           <div class="policy-row mt-4 d-sm-block d-lg-none">
+                              <ul class="list-unstyled">
+                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#Refund">Refund policy</a></li>
+                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#Shipping">Shipping policy</a>
+                                 </li>
+                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#Privacy">Privacy policy</a>
+                                 </li>
+                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#Terms">Terms of service</a>
+                                 </li>
+                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#Cancellation">Cancellation
+                                       policy</a></li>
+                                 <li><a href="#" data-bs-toggle="modal" data-bs-target="#Contact">Contact
+                                       information</a></li>
+                              </ul>
                            </div>
                         </div>
                      </div>
                   </div>
-      </form>
-      </div>
-      </div>
-      </div>
-      <div class="modal fade" id="Refund" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-         data-bs-backdrop="static" data-bs-keyboard="false">
-         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLabel">Refund policy</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                </div>
-               <div class="modal-body">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <div class="modal fade" id="Refund" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="modal-title" id="exampleModalLabel">Refund policy</h3>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                  exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                  autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
             </div>
          </div>
       </div>
-      <div class="modal fade" id="Shipping" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-         data-bs-backdrop="static" data-bs-keyboard="false">
-         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLabel">Shipping policy</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-               </div>
+   </div>
+   <div class="modal fade" id="Shipping" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="modal-title" id="exampleModalLabel">Shipping policy</h3>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                  exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                  autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
             </div>
          </div>
       </div>
-      <div class="modal fade" id="Privacy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-         data-bs-backdrop="static" data-bs-keyboard="false">
-         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLabel">Privacy policy</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-               </div>
+   </div>
+   <div class="modal fade" id="Privacy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="modal-title" id="exampleModalLabel">Privacy policy</h3>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                  exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                  autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
             </div>
          </div>
       </div>
-      <div class="modal fade" id="Terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-         data-bs-backdrop="static" data-bs-keyboard="false">
-         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLabel">Terms of service</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-               </div>
+   </div>
+   <div class="modal fade" id="Terms" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="modal-title" id="exampleModalLabel">Terms of service</h3>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                  exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                  autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
             </div>
          </div>
       </div>
-      <div class="modal fade" id="Cancellation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-         data-bs-backdrop="static" data-bs-keyboard="false">
-         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLabel">Cancellation policy</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                  <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-               </div>
+   </div>
+   <div class="modal fade" id="Cancellation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="modal-title" id="exampleModalLabel">Cancellation policy</h3>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+               <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                  consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
+                  dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
+                  incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
+                  exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
+                  autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                  illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
             </div>
          </div>
       </div>
-      <div class="modal fade" id="Contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" 
-         data-bs-backdrop="static" data-bs-keyboard="false">
-         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h3 class="modal-title" id="exampleModalLabel">Contact information</h3>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <p>Your experience is our priority, and we're committed to making it a positive one. For a fast response, email us at info@yomz.com, message us on Facebook or Instagram, or reach out through our website.</p>
-               </div>
+   </div>
+   <div class="modal fade" id="Contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-bs-backdrop="static" data-bs-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="modal-title" id="exampleModalLabel">Contact information</h3>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <p>Your experience is our priority, and we're committed to making it a positive one. For a fast response,
+                  email us at info@yomz.com, message us on Facebook or Instagram, or reach out through our website.</p>
             </div>
          </div>
       </div>
-      <script>
-         document.addEventListener("DOMContentLoaded", function () {
-            var tooltipTrigger = document.getElementById('tooltip-trigger');
-            var tooltipImages = document.getElementById('tooltip-images').innerHTML;
-          
-            var tooltip = new bootstrap.Tooltip(tooltipTrigger, {
-              title: tooltipImages,
-              html: true,
-              placement: 'top'
-            });
-          });
-      </script>
-      <!--     <script>
+   </div>
+
+   <!-- import scripts -->
+   <script src="./js/checkOut.js"></script>
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
+         var tooltipTrigger = document.getElementById('tooltip-trigger');
+         var tooltipImages = document.getElementById('tooltip-images').innerHTML;
+
+         var tooltip = new bootstrap.Tooltip(tooltipTrigger, {
+            title: tooltipImages,
+            html: true,
+            placement: 'top'
+         });
+      });
+   </script>
+   <!--     <script>
          document.addEventListener('DOMContentLoaded', function () {
            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
@@ -1088,5 +1351,6 @@
            });
          });
          </script> -->
-   </body>
+</body>
+
 </html>
