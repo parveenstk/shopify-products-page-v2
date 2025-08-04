@@ -13,7 +13,7 @@ const toaster = document.getElementById('toaster');
 const toasterTitle = document.getElementById('toaster-title');
 const toasterText = document.getElementById('toaster-text');
 const toasterCross = document.getElementById('toaster-cross');
-const timerline = document.getElementById('timerline')
+const timerline = document.getElementById('timerline');
 
 // Email inputs submission
 document.addEventListener("DOMContentLoaded", function () {
